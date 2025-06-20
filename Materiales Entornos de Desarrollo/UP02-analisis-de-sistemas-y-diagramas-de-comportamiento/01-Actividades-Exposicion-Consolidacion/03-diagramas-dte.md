@@ -25,6 +25,9 @@ Los diagramas de transición de estados se usan en multitud de circunstancias, y
 
 Un **estado** representa una condición en la que se encuentra un objeto.
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 [*] --> Estado1
@@ -32,12 +35,17 @@ Estado1 --> Estado2
 @enduml
 ```
 
+</details>
+
 - El punto negro (*) representa el **estado inicial**.
 - `Estado1` y `Estado2` son ejemplos de **estados**.
 
 #### Transición
 
 Una **transición** conecta dos estados y ocurre cuando se dispara un **evento**. Las transiciones tienen un solo sentido.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -48,12 +56,17 @@ PedidoEnviado --> Entregado : Confirmar entrega
 @enduml
 ```
 
+</details>
+
 - **Eventos**: "Pedido creado", "Preparar pedido", "Enviar pedido", etc.
 - Cada flecha entre estados representa una **transición**. Una transición cambia desde el estado de donde nace la flecha hasta el estado donde apunta la flecha y ocurre cuando se dispara el evento.
 
 #### Evento
 
 El **evento** es la acción que provoca una transición. Puede escribirse como texto en las flechas.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -65,6 +78,8 @@ Bloqueado --> NoAutenticado : Pasan 3 días
 @enduml
 ```
 
+</details>
+
 - Estados: *NoAutenticado*, *Autenticado*, *Bloqueado*.
 - Eventos: *Login exitoso*, *3 intentos fallidos*, *Logout*.
 
@@ -72,6 +87,9 @@ Bloqueado --> NoAutenticado : Pasan 3 días
 
 - **Estado inicial**: Punto de partida del sistema (círculo relleno).
 - **Estado final**: Punto donde el proceso termina (círculo doble). El proceso puede ser cíclico y no terminar.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -81,7 +99,12 @@ Proceso --> [*] : Finalizado
 @enduml
 ```
 
+</details>
+
 En el siguiente ejemplo, se muestra cómo un pedido pasa por varios estados durante su procesamiento.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -96,6 +119,8 @@ PedidoEntregado --> [*]
 PedidoCancelado --> [*]
 @enduml
 ```
+
+</details>
 
 
 En este diagrama podemos observar lo siguiente:
@@ -116,6 +141,9 @@ En este diagrama podemos observar lo siguiente:
 > **Actividad**
 > Interpreta los siguientes diagramas:
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 [*] --> NeveraVacía 
@@ -127,6 +155,12 @@ NeveraRota --> [*]
 
 @enduml
 ```
+
+</details>
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 
 ```plantuml
 @startuml
@@ -145,6 +179,9 @@ Agobiado --> Aburrido : Demasiado tiempo sin hacer nada
 
 @enduml
 ```
+
+</details>
+
 **Identifica el significado de los siguientes diagramas de estados.** Para ello, sigue los siguientes pasos:
 
 - ¿Qué representa cada estado?  
@@ -154,6 +191,9 @@ Agobiado --> Aburrido : Demasiado tiempo sin hacer nada
 Finalmente, escribe una descripción breve (de 3-5 líneas) para cada diagrama, explicando su **función y aplicación en el mundo real**.
 
 #### Diagrama 1: Ciclo de vida de una tarea
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -165,7 +205,12 @@ Completada --> [*]
 @enduml
 ```
 
+</details>
+
 #### Diagrama 2: Sistema de un semáforo
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -176,7 +221,12 @@ Amarillo --> Rojo : Cambiar luz
 @enduml
 ```
 
+</details>
+
 #### Diagrama 3: Proceso de pago en línea
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -189,7 +239,12 @@ PagoFallido --> Carrito : Reintentar pago
 @enduml
 ```
 
+</details>
+
 #### Diagrama 4: Gestión de una cuenta de usuario
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -200,11 +255,18 @@ Bloqueado --> Activo : Desbloquear cuenta
 Activo --> Inactivo : Desactivar cuenta
 @enduml
 ```  
+
+</details>
+
+
 ## Máquinas de Estados Simples y Compuestas
 
 ### Máquina de estados simple
 
 Una máquina de estados simple representa de forma lineal los estados y las transiciones.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -216,9 +278,14 @@ Rechazado --> [*]
 @enduml
 ```
 
+</details>
+
 ### Máquinas de estados compuestas
 
 Una máquina de estados compuesta representa estados que pueden contener **subestados**.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -234,6 +301,8 @@ ProcesoPrincipal --> Finalizado : Terminar proceso
 Finalizado --> [*]
 @enduml
 ```
+
+</details>
 
 > **Actividad**
 > Añade al diagrama del personaje del videojuego el estado correr, que a su vez se compone de los estados de arrancada, carrera y parada. De la parada se vuelve al estado de reposo, pero al estado salto solo se puede llegar desde el estado carrera (o desde el estado reposo).

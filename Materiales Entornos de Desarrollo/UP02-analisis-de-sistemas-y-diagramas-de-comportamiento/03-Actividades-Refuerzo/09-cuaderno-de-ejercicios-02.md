@@ -9,6 +9,9 @@ title: Cuaderno de ejercicios 02
 >
 **Diagrama 1:**
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 actor Cliente
@@ -24,7 +27,13 @@ RP <.. VP : <<include>>
 RP ..> AE : <<extend>>
 @enduml
 ```
+
+</details>
+
 **Diagrama 2:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -47,7 +56,12 @@ ALE -up-> EM : <<extend>>
 @enduml
 ```
 
+</details>
+
 **Diagrama 3:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -83,6 +97,8 @@ mod ..left..> filter : <<extend>>
 @enduml
 ```
 
+</details>
+
 ## Diagramas de transición de estados
 
 >**Actividad:** Identifica el significado de los siguientes diagramas de estados. Para ello, sigue los siguientes pasos:
@@ -95,6 +111,9 @@ mod ..left..> filter : <<extend>>
 
 **Diagrama 1: Ciclo de vida de una tarea**
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 [*] --> Pendiente
@@ -105,7 +124,12 @@ Completada --> [*]
 @enduml
 ```
 
+</details>
+
 **Diagrama 2: Sistema de un semáforo**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -116,7 +140,12 @@ Amarillo --> Rojo : Cambiar luz
 @enduml
 ```
 
+</details>
+
 **Diagrama 3: Proceso de pago en línea**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -129,7 +158,13 @@ PagoFallido --> Carrito : Reintentar pago
 @enduml
 ```
 
+</details>
+
+
 **Diagrama 4: Gestión de una cuenta de usuario**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -140,6 +175,8 @@ Bloqueado --> Activo : Desbloquear cuenta
 Activo --> Inactivo : Desactivar cuenta
 @enduml
 ```
+
+</details>
 
 >**Actividad:** Describe los siguientes diagramas de estados siguiendo estas pautas:
 >
@@ -153,6 +190,9 @@ Activo --> Inactivo : Desactivar cuenta
 >
 
 **Ciclo de vida de un teléfono móvil**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -183,7 +223,12 @@ Desbloqueado --> Bloqueado : Bloquear pantalla
 @enduml
 ```
 
+</details>
+
 **Proceso de reserva de un vuelo**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -207,6 +252,8 @@ Pago --> ReservaConfirmada : Pago exitoso
 ReservaConfirmada --> [*]
 @enduml
 ```
+
+</details>
 
 **Gestión de una máquina expendedora**
 
@@ -232,6 +279,8 @@ EsperaPago --> EntregaProducto : Pago exitoso
 EntregaProducto --> [*] : Retirar producto
 @enduml
 ```
+</details>
+
 ## Diagramas de actividad
 
 >**Actividad:** Dibuja un diagrama de flujo que determine si un número es positivo, negativo o cero.

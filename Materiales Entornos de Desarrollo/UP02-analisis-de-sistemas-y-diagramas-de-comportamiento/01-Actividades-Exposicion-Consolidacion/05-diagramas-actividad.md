@@ -16,31 +16,52 @@ Los diagramas de actividad son equivalentes a los diagramas de flujo que se empl
 1. **Flechas**: Conectan los diferentes símbolos y muestran el flujo del proceso.
 
 2. **Círculo**: Representa el inicio (simple) o fin del proceso (doble).
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 start
 stop
 @enduml
 ```
+</details>
+
 3. **Rectángulo**: Indica una acción o proceso.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 :acción;
 @enduml
 ```
+</details>
+
 4. **Rombo o hexágono**: Representa una decisión, como una bifurcación. Se usan siempre dos: una para abrir y otra para cerrar.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 if (¿decisión?) then (se cumple)
 else (no se cumple)
 @enduml
 ```
+</details>
+
 ## Estructuras comunes
 
 ### Estructuras if-else, if y switch
 
 Estas estructuras se utilizan para representar decisiones lógicas.  
 **Ejemplo de if-else:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -54,8 +75,12 @@ endif
 stop
 @enduml
 ```
+</details>
 
 **Ejemplo de if:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -69,7 +94,12 @@ stop
 @enduml
 ```
 
+</details>
+
 **Ejemplo de Switch-case**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -89,10 +119,15 @@ stop
 @enduml
 ```
 
+</details>
+
 ### Estructuras while, do-while y for
 
 Los bucles permiten repetir una acción varias veces.  
 >**Ejemplo de bucle while que pide suma números hasta que introduces 0:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -107,7 +142,12 @@ stop
 @enduml
 ```
 
+</details>
+
 >**Ejemplo de bucle do-while para hacer diagramas:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -123,7 +163,12 @@ stop
 @enduml
 ```
 
+</details>
+
 >**Ejemplo de bucle for para separar los números pares e impares desde 0 hasta una entrada dada por el usuario:**
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -145,6 +190,8 @@ stop
 @enduml
 ```
 
+</details>
+
 ### Programación modular
 
 Dentro del diseño de programas, existe un paradigma que es el de la programación modular. En él, se adopta un enfoque de diseño descendente en el cual un problema grande se divide en subproblemas más pequeños que permiten simplificar el problema general.
@@ -154,6 +201,9 @@ Estos subproblemas se conocen como módulos y tienen la ventaja de ser más fác
 La dependencia entre módulos se llama **acoplamiento**, y puede ser peligrosa si va más allá de que un módulo emplee el resultado de otro. Por ello, es conveniente diseñar los módulos como si fueran **cajas negras**, es decir, de tal forma que solo nos importe los parámetros que le pasamos como entrada y el resultado que nos devuelve.
 
 Podemos representar la invocación a módulos en los diagramas de actividad como una instrucción o condición cualquiera, indicando entre paréntesis los parámetros que le pasamos.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -167,6 +217,8 @@ end note
 stop
 @enduml
 ```
+
+</details>
 
 ## Concurrencia en diagramas de actividad
 
@@ -188,6 +240,9 @@ Ambas tareas pueden ejecutarse de forma concurrente, ya que no dependen entre s�
 
 **Representación en un diagrama de actividad:**
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 start
@@ -204,6 +259,8 @@ endfork
 stop
 @enduml
 ```
+
+</details>
 
 En este caso, se puede observar que el diagrama representa las siguientes acciones:
 
@@ -226,6 +283,9 @@ Aunque no vayamos a hacer programación concurrente este curso, la división en 
 Para representar la intervención de varios actores dentro de una misma actividad, se puede dividir el diagrama de actividad en carriles, reservando cada carril para cada actor.
 
 Aunque los carriles son especialmente prácticos para describir las actividades concurrentes, se pueden emplear en cualquier momento. Asimismo, también podemos agrupar diferentes bloques de acciones para facilitar la interpretación del diagrama.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -252,6 +312,8 @@ stop
 
 @enduml
 ```
+
+</details>
 
 ***Nota**: En Plantuml, los carriles dividen las particiones por la mitad. Sin embargo, al diseñarlos con otros editores, como Visual Paradigm o en papel y lápiz, puedes agruparlos como te resulte más conveniente*
 

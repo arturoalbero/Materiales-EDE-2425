@@ -43,6 +43,9 @@ Para crear un diagrama de casos de uso, nos basamos en los requisitos funcionale
 
 Con esta información, podemos finalmente crear su representación visual en forma de diagrama de casos de uso:
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 actor Cliente
@@ -57,6 +60,7 @@ Cliente --> CR
 Administrador --> GH
 @enduml
 ```
+</details>
 
 > **Actividad**
 > Dados los tres enunciados anteriores, crea un diagrama de casos de uso cada uno de ellos.
@@ -72,7 +76,8 @@ La relación de tipo `<<extend>>` sirve para añadir una funcionalidad **opciona
 La relación de tipo `<<include>>` sirve para añadir una funcionalidad **obligatoria** que se lanzará siempre después de un caso de uso. Por ejemplo, después del caso de uso `reservar pista` podríamos añadir una extensión que fuera `validar pago`. Esta validación se tendría que dar siempre después de cada reserva para que esta se realizara con éxito.
 
 Las relaciones `<<extend>>` y `<<include>>` se representan así:
-
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 ```plantuml
 @startuml
 actor Cliente
@@ -88,6 +93,7 @@ RP <.. VP : <<include>>
 RP ..> AE : <<extend>>
 @enduml
 ```
+</details>
 
 > **Actividad**
 > En un restaurante, tenemos clientes que pueden acceder a una aplicación de reservas. Un cliente normal puede hacer una reserva y, si es necesario, indicar posibles alergias. Cuando se hace una reserva, se procesa un método de pago para disuadir a los clientes de no ir a las reservas. Por otro lado, un cliente puede cancelar su reserva siempre y cuando lo haga con una antelación de al menos 6 horas. Al cancelar la reserva, puede añadir si quiere los motivos.
@@ -106,6 +112,9 @@ RP ..> AE : <<extend>>
 Aparte de las relaciones `extend` y `include` contamos con relaciones de generalización entre actores, que funcionan de manera similar a lo ya visto en los diagramas de clases. Si unimos un actor **A** a un actor **B** mediante una flecha de generalización que apunta de A a B, lo que estamos diciendo es que el actor A es una especificación del actor B, es decir, cuenta con todos los casos de uso del actor B más los suyos propios.
 
 Continuando con el ejemplo de las pistas deportivas, vamos a añadir un subtipo de cliente, el cliente VIP que, además de los casos de uso del cliente, también puede reservar la piscina.
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml
@@ -126,6 +135,8 @@ RP <..  VP : <<include>>
 RP ..>  AE : <<extend>>
 @enduml
 ```
+
+</details>
 
 > **Actividad**
 > En la aplicación anterior del **restaurante**, se quiere añadir un tipo de clientes especiales que pueda hacer lo mismo que el cliente normal, pero que además pueda reservar en la zona VIP un menú especial.
@@ -150,6 +161,9 @@ Por otro lado, un caso de uso describe cómo un usuario interactúa con un siste
 
 2. **Varias historias de usuario pueden derivarse de un caso de uso complejo.**
 
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
+
 ```plantuml
 @startuml
 actor cliente
@@ -165,6 +179,8 @@ gdc <.. vp : <<extends>>
 gdc <.. ep : <<extends>>
 @enduml
 ```
+</details>
+
 * Historias:
     * Como usuario, quiero agregar productos al carrito
     * Como usuario, quiero eliminar productos del carrito
