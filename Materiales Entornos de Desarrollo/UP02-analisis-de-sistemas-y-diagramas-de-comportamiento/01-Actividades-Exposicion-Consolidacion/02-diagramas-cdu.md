@@ -3,7 +3,11 @@ title: Diagramas de casos de uso
 ---
 # Diagramas de casos de uso
 
-Los diagramas de este bloque están hechos usando plantuml, que es un lenguaje de marcado con una sintaxis similar a un lenguaje de programación. Extensiones de VS Code como Markdown Enhanced Preview permiten ver el código como diagramas directamente, pero github no, por lo que las imágenes están compiladas en el [servidor oficial de plantum.](lhttps://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000)
+> **Notas sobre los diagramas**
+>
+>Los diagramas de esta unidad y la siguiente están hechos usando plantuml, que es un lenguaje de marcado con una sintaxis similar a un lenguaje de programación. Extensiones de VS Code como Markdown Enhanced Preview permiten ver el código como diagramas directamente, pero github no, por lo que las imágenes están compiladas en el [servidor oficial de plantum.](lhttps://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000) y [el futuro editor.](https://editor.plantuml.com/uml/LOyn3i8m34NtdCBgtYkWeWvbHBs1bLXWaIQHdNP1t1qJkYIRdVV_zv-qejHzYmvzpG9pP4gLpkaQDawiLJ1aSGNz2ny4mqBw-mq4d4mVqNDEfBOeMIeVgCFRWRrToQEQOYKbEL2Wc1iEW0hhlKTcJ9wY8TBOFpIl7TIIBSkePnOKpjgmvUO-xZmTnl5YvjreDbsLjZJHH2bOzoy0)
+>
+>Algunos diagramas están hechos en mermaid.js, que sí se renderiza en github y no incluyen ejemplos de código de forma explícita, aunque puedes copiarlo directamente de la página usando el botón arriba a la derecha y copia en formato código.
 
 ## Diagramas UML de Casos de Uso
 
