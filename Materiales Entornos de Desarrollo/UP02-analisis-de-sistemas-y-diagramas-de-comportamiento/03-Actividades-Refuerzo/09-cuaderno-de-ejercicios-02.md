@@ -9,6 +9,7 @@ title: Cuaderno de ejercicios 02
 >
 **Diagrama 1:**
 
+![alt text](image.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -31,6 +32,8 @@ RP ..> AE : <<extend>>
 </details>
 
 **Diagrama 2:**
+
+![alt text](image-1.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -60,6 +63,7 @@ ALE -up-> EM : <<extend>>
 
 **Diagrama 3:**
 
+![alt text](image-2.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -111,6 +115,7 @@ mod ..left..> filter : <<extend>>
 
 **Diagrama 1: Ciclo de vida de una tarea**
 
+![alt text](image-3.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -128,6 +133,7 @@ Completada --> [*]
 
 **Diagrama 2: Sistema de un semáforo**
 
+![alt](image-4.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -144,6 +150,7 @@ Amarillo --> Rojo : Cambiar luz
 
 **Diagrama 3: Proceso de pago en línea**
 
+![alt text](image-5.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -162,7 +169,7 @@ PagoFallido --> Carrito : Reintentar pago
 
 
 **Diagrama 4: Gestión de una cuenta de usuario**
-
+![alt text](image-6.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -190,6 +197,8 @@ Activo --> Inactivo : Desactivar cuenta
 >
 
 **Ciclo de vida de un teléfono móvil**
+
+![alt text](image-7.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -226,7 +235,7 @@ Desbloqueado --> Bloqueado : Bloquear pantalla
 </details>
 
 **Proceso de reserva de un vuelo**
-
+![alt text](image-8.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -256,6 +265,11 @@ ReservaConfirmada --> [*]
 </details>
 
 **Gestión de una máquina expendedora**
+
+![alt text](image-9.png)
+
+<details>
+<summary><strong>Ver el código en plantuml</strong></summary>
 
 ```plantuml
 @startuml

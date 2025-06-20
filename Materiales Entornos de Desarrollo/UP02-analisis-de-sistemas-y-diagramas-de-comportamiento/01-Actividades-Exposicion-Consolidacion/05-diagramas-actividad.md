@@ -17,6 +17,8 @@ Los diagramas de actividad son equivalentes a los diagramas de flujo que se empl
 
 2. **Círculo**: Representa el inicio (simple) o fin del proceso (doble).
 
+![alt text](image-17.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -30,6 +32,8 @@ stop
 
 3. **Rectángulo**: Indica una acción o proceso.
 
+![alt text](image-18.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -41,6 +45,8 @@ stop
 </details>
 
 4. **Rombo o hexágono**: Representa una decisión, como una bifurcación. Se usan siempre dos: una para abrir y otra para cerrar.
+
+![alt text](image-19.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -59,6 +65,8 @@ else (no se cumple)
 
 Estas estructuras se utilizan para representar decisiones lógicas.  
 **Ejemplo de if-else:**
+
+![alt text](image-20.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -79,6 +87,8 @@ stop
 
 **Ejemplo de if:**
 
+![alt text](image-21.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -97,6 +107,8 @@ stop
 </details>
 
 **Ejemplo de Switch-case**
+
+![alt text](image-22.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -126,6 +138,8 @@ stop
 Los bucles permiten repetir una acción varias veces.  
 >**Ejemplo de bucle while que pide suma números hasta que introduces 0:**
 
+![alt text](image-23.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -145,6 +159,8 @@ stop
 </details>
 
 >**Ejemplo de bucle do-while para hacer diagramas:**
+
+![alt text](image-24.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -166,6 +182,8 @@ stop
 </details>
 
 >**Ejemplo de bucle for para separar los números pares e impares desde 0 hasta una entrada dada por el usuario:**
+
+![alt text](image-25.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -201,6 +219,8 @@ Estos subproblemas se conocen como módulos y tienen la ventaja de ser más fác
 La dependencia entre módulos se llama **acoplamiento**, y puede ser peligrosa si va más allá de que un módulo emplee el resultado de otro. Por ello, es conveniente diseñar los módulos como si fueran **cajas negras**, es decir, de tal forma que solo nos importe los parámetros que le pasamos como entrada y el resultado que nos devuelve.
 
 Podemos representar la invocación a módulos en los diagramas de actividad como una instrucción o condición cualquiera, indicando entre paréntesis los parámetros que le pasamos.
+
+![alt text](image-26.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -239,6 +259,8 @@ Por ejemplo, Supongamos un sistema de cajero automático que debe realizar dos t
 Ambas tareas pueden ejecutarse de forma concurrente, ya que no dependen entre sí, pero deben completarse antes de que el sistema pueda finalizar la operación.
 
 **Representación en un diagrama de actividad:**
+
+![alt text](image-27.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -283,6 +305,8 @@ Aunque no vayamos a hacer programación concurrente este curso, la división en 
 Para representar la intervención de varios actores dentro de una misma actividad, se puede dividir el diagrama de actividad en carriles, reservando cada carril para cada actor.
 
 Aunque los carriles son especialmente prácticos para describir las actividades concurrentes, se pueden emplear en cualquier momento. Asimismo, también podemos agrupar diferentes bloques de acciones para facilitar la interpretación del diagrama.
+
+![alt text](image-28.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>

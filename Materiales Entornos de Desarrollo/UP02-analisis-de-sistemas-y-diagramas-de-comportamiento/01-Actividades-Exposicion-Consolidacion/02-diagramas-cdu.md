@@ -3,6 +3,8 @@ title: Diagramas de casos de uso
 ---
 # Diagramas de casos de uso
 
+Los diagramas de este bloque están hechos usando plantuml, que es un lenguaje de marcado con una sintaxis similar a un lenguaje de programación. Extensiones de VS Code como Markdown Enhanced Preview permiten ver el código como diagramas directamente, pero github no, por lo que las imágenes están compiladas en el [servidor oficial de plantum.](lhttps://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000)
+
 ## Diagramas UML de Casos de Uso
 
 Un diagrama de casos de uso especifica cómo funciona un sistema. Más concretamente, qué puede hacer cada usuario que interactúe con el sistema. Para ello, se requieren cuatro elementos principales: Los casos de uso, los actores, las relaciones y el sistema.
@@ -42,7 +44,7 @@ Para crear un diagrama de casos de uso, nos basamos en los requisitos funcionale
     - "Gestionar horarios."
 
 Con esta información, podemos finalmente crear su representación visual en forma de diagrama de casos de uso:
-
+![alt text](image.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -76,6 +78,9 @@ La relación de tipo `<<extend>>` sirve para añadir una funcionalidad **opciona
 La relación de tipo `<<include>>` sirve para añadir una funcionalidad **obligatoria** que se lanzará siempre después de un caso de uso. Por ejemplo, después del caso de uso `reservar pista` podríamos añadir una extensión que fuera `validar pago`. Esta validación se tendría que dar siempre después de cada reserva para que esta se realizara con éxito.
 
 Las relaciones `<<extend>>` y `<<include>>` se representan así:
+
+![alt text](image-1.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 ```plantuml
@@ -112,6 +117,8 @@ RP ..> AE : <<extend>>
 Aparte de las relaciones `extend` y `include` contamos con relaciones de generalización entre actores, que funcionan de manera similar a lo ya visto en los diagramas de clases. Si unimos un actor **A** a un actor **B** mediante una flecha de generalización que apunta de A a B, lo que estamos diciendo es que el actor A es una especificación del actor B, es decir, cuenta con todos los casos de uso del actor B más los suyos propios.
 
 Continuando con el ejemplo de las pistas deportivas, vamos a añadir un subtipo de cliente, el cliente VIP que, además de los casos de uso del cliente, también puede reservar la piscina.
+
+![alt text](image-2.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -160,6 +167,8 @@ Por otro lado, un caso de uso describe cómo un usuario interactúa con un siste
      * Caso de uso: *"Iniciar sesión"* (con actor: usuario; flujo básico: ingresar usuario/contraseña, verificación, redirección).
 
 2. **Varias historias de usuario pueden derivarse de un caso de uso complejo.**
+
+![alt text](image-3.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>

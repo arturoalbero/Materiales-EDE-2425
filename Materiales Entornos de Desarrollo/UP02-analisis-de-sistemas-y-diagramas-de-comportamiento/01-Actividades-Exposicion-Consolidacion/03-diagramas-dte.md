@@ -25,6 +25,8 @@ Los diagramas de transición de estados se usan en multitud de circunstancias, y
 
 Un **estado** representa una condición en la que se encuentra un objeto.
 
+![alt text](image-4.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -43,6 +45,8 @@ Estado1 --> Estado2
 #### Transición
 
 Una **transición** conecta dos estados y ocurre cuando se dispara un **evento**. Las transiciones tienen un solo sentido.
+
+![alt text](image-5.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -64,6 +68,8 @@ PedidoEnviado --> Entregado : Confirmar entrega
 #### Evento
 
 El **evento** es la acción que provoca una transición. Puede escribirse como texto en las flechas.
+
+![alt text](image-6.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -88,6 +94,8 @@ Bloqueado --> NoAutenticado : Pasan 3 días
 - **Estado inicial**: Punto de partida del sistema (círculo relleno).
 - **Estado final**: Punto donde el proceso termina (círculo doble). El proceso puede ser cíclico y no terminar.
 
+![alt text](image-7.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -102,6 +110,8 @@ Proceso --> [*] : Finalizado
 </details>
 
 En el siguiente ejemplo, se muestra cómo un pedido pasa por varios estados durante su procesamiento.
+
+![alt text](image-8.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -141,6 +151,8 @@ En este diagrama podemos observar lo siguiente:
 > **Actividad**
 > Interpreta los siguientes diagramas:
 
+![alt text](image-9.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -157,6 +169,8 @@ NeveraRota --> [*]
 ```
 
 </details>
+
+![alt text](image-10.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -176,7 +190,6 @@ Descansado --> Aburrido : No hay motivación
 Descansado --> Trabajando : Sí hay motivación
 Agobiado --> Aburrido : Demasiado tiempo sin hacer nada
 
-
 @enduml
 ```
 
@@ -191,6 +204,8 @@ Agobiado --> Aburrido : Demasiado tiempo sin hacer nada
 Finalmente, escribe una descripción breve (de 3-5 líneas) para cada diagrama, explicando su **función y aplicación en el mundo real**.
 
 #### Diagrama 1: Ciclo de vida de una tarea
+
+![alt text](image-11.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -209,6 +224,8 @@ Completada --> [*]
 
 #### Diagrama 2: Sistema de un semáforo
 
+![alt text](image-12.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -224,6 +241,8 @@ Amarillo --> Rojo : Cambiar luz
 </details>
 
 #### Diagrama 3: Proceso de pago en línea
+
+![alt text](image-13.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -242,6 +261,8 @@ PagoFallido --> Carrito : Reintentar pago
 </details>
 
 #### Diagrama 4: Gestión de una cuenta de usuario
+
+![alt text](image-14.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -265,6 +286,8 @@ Activo --> Inactivo : Desactivar cuenta
 
 Una máquina de estados simple representa de forma lineal los estados y las transiciones.
 
+![alt text](image-15.png)
+
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -283,6 +306,8 @@ Rechazado --> [*]
 ### Máquinas de estados compuestas
 
 Una máquina de estados compuesta representa estados que pueden contener **subestados**.
+
+![alt text](image-16.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
