@@ -108,6 +108,8 @@ Para mejorar la experiencia trabajando con Markdown en VSCode, es necesario inst
       * Para exportarlo, abre la paleta de comandos (`Ctrl+Shift+P` o `Cmd+Shift+P`) y escribe "Markdown PDF: Export". Selecciona el formato deseado.
       * También puedes escribir `>` en la barra de búsqueda. Tiene el mismo efecto y puede ser más fácil de recordar.
 
+Otra herramienta de diagramas que está ganando popularidad recientemente, en parte gracias a su compatibilidad con diferentes frameworks de aplicaciones web como `astro.build`, es d2. Puedes encontrar más información [aquí](https://d2lang.com/).
+
 ## Memoria de entrega
 
 Para entregar la actividad, crea una memoria en la que repases paso a paso el proceso de instalación y preparación de las extensiones necesarias para poder editar plantuml y mermaid.js en VS Code. Crea un documento con capturas de pantalla de todo el proceso.
