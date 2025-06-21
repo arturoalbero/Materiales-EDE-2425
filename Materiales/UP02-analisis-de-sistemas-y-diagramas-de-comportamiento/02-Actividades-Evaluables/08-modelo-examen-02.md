@@ -1,0 +1,1 @@
+Para ver el modelo de examen, consultar el [pdf](08-modelo-examen-02.pdf) extraído del anexo de la programación didáctica.
