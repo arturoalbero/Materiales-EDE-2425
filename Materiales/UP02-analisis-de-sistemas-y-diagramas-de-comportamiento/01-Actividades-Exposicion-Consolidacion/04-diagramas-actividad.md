@@ -17,7 +17,7 @@ Los diagramas de actividad son equivalentes a los diagramas de flujo que se empl
 
 2. **Círculo**: Representa el inicio (simple) o fin del proceso (doble).
 
-![alt text](image-17.png)
+![alt text](images/image-17.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -32,7 +32,7 @@ stop
 
 3. **Rectángulo**: Indica una acción o proceso.
 
-![alt text](image-18.png)
+![alt text](images/image-18.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -46,7 +46,7 @@ stop
 
 4. **Rombo o hexágono**: Representa una decisión, como una bifurcación. Se usan siempre dos: una para abrir y otra para cerrar.
 
-![alt text](image-19.png)
+![alt text](images/image-19.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -66,7 +66,7 @@ else (no se cumple)
 Estas estructuras se utilizan para representar decisiones lógicas.  
 **Ejemplo de if-else:**
 
-![alt text](image-20.png)
+![alt text](images/image-20.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -87,7 +87,7 @@ stop
 
 **Ejemplo de if:**
 
-![alt text](image-21.png)
+![alt text](images/image-21.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -108,7 +108,7 @@ stop
 
 **Ejemplo de Switch-case**
 
-![alt text](image-22.png)
+![alt text](images/image-22.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -138,7 +138,7 @@ stop
 Los bucles permiten repetir una acción varias veces.  
 >**Ejemplo de bucle while que pide suma números hasta que introduces 0:**
 
-![alt text](image-23.png)
+![alt text](images/image-23.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -160,7 +160,7 @@ stop
 
 >**Ejemplo de bucle do-while para hacer diagramas:**
 
-![alt text](image-24.png)
+![alt text](images/image-24.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -183,7 +183,7 @@ stop
 
 >**Ejemplo de bucle for para separar los números pares e impares desde 0 hasta una entrada dada por el usuario:**
 
-![alt text](image-25.png)
+![alt text](images/image-25.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -220,7 +220,7 @@ La dependencia entre módulos se llama **acoplamiento**, y puede ser peligrosa s
 
 Podemos representar la invocación a módulos en los diagramas de actividad como una instrucción o condición cualquiera, indicando entre paréntesis los parámetros que le pasamos.
 
-![alt text](image-26.png)
+![alt text](images/image-26.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -260,7 +260,7 @@ Ambas tareas pueden ejecutarse de forma concurrente, ya que no dependen entre s�
 
 **Representación en un diagrama de actividad:**
 
-![alt text](image-27.png)
+![alt text](images/image-27.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -306,7 +306,7 @@ Para representar la intervención de varios actores dentro de una misma activida
 
 Aunque los carriles son especialmente prácticos para describir las actividades concurrentes, se pueden emplear en cualquier momento. Asimismo, también podemos agrupar diferentes bloques de acciones para facilitar la interpretación del diagrama.
 
-![alt text](image-28.png)
+![alt text](images/image-28.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>

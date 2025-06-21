@@ -1,14 +1,12 @@
-Aquí tienes la traducción al castellano:
-
------
-
-# Integración de Git y GitHub en Visual Studio Code, IntelliJ y PyCharm. Convertir VSCode en un editor de Markdown con el poder de las extensiones.
-
------
+# Convertir VSCode en un editor de Markdown con el poder de las extensiones.
 
 ## 1\. ¿Qué es Markdown y cómo se utiliza?
 
 **Markdown** es un lenguaje de marcado ligero que permite formatear texto de manera sencilla e intuitiva. Es muy utilizado para escribir documentación, blogs o cualquier otro tipo de texto que luego se convierte a HTML, ya que facilita mucho su legibilidad. Un documento Markdown es esencialmente texto plano que se puede leer fácilmente y que luego se puede exportar a otros formatos como HTML o PDF.
+
+Estos apuntes están escritos combinando Markdown con plantuml y mermaidjs. Además, Markdown es el lenguaje de marcado más empleado a la hora de elaborar **documentación técnica**, y también es el lenguaje de marcado que emplean los chatbots como ChatGPT o Gemini para imprimir sus resultados.
+
+Además, la sencillez de Markdown se puede combinar con el poder de HTML5, permitiendo intercalar etiquetas HTML en documentos Markdown para así conseguir cosas complejas, como aplicar un estilo CSS o usar `<details>` para ocultar elementos (como se hace en estos apuntes con los códigos en plantuml).
 
 ### Sintaxis básica de Markdown
 
@@ -70,7 +68,6 @@ Aquí tienes la traducción al castellano:
 
       * `> Esto es una cita`
 
------
 
 ## 2\. Utilizar Markdown en Visual Studio Code
 
@@ -78,7 +75,7 @@ Aquí tienes la traducción al castellano:
 
 Primero que todo y si no lo has hecho aún, es necesario instalar **VSCode**, que se puede descargar desde su [página oficial](https://code.visualstudio.com/). Una vez instalado, ya estaremos listos para personalizarlo y utilizarlo para editar Markdown.
 
-#### Extensiones necesarias
+#### Extensiones importantes
 
 Para mejorar la experiencia trabajando con Markdown en VSCode, es necesario instalar algunas **extensiones muy útiles**:
 
@@ -87,17 +84,20 @@ Para mejorar la experiencia trabajando con Markdown en VSCode, es necesario inst
 
       * Para instalarla, ve a la sección de extensiones dentro de VSCode y busca "Markdown All in One".
 
-2.  **Markdownlint**
-    Añade un **linter** que verifica si tu Markdown sigue buenas prácticas, ayudándote a corregir errores comunes.
-
-      * Busca "Markdownlint" en la sección de extensiones.
-
-3.  **Markdown PDF**
+2.  **Markdown PDF**
     Esta extensión permite convertir ficheros `.md` a PDF, HTML u otros formatos.
 
       * Busca "Markdown PDF" e instálala para poder exportar tus documentos.
 
-#### Comandos útiles dentro de VSCode
+3. **Markdown Enhanced Preview (RECOMENDADA)**
+    Esta extensión es ideal para trabajar con Markdown, Mermaid y Plantuml. Incorpora funciones de todo lo anterior, por lo que vas a poder exportar el resultado a pdf o incluso HTML. Puedes instalar solamente esta extensión y funcionará, es una especie de sustituta de las otras dos.
+
+4.  **Markdownlint**
+    Añade un **linter** que verifica si tu Markdown sigue buenas prácticas, ayudándote a corregir errores comunes y a seguir una sintaxis pura de Markdown (cosa que no siempre te será útil)
+
+      * Busca "Markdownlint" en la sección de extensiones.
+
+#### Comandos útiles dentro de VSCode usando Markdown All In One
 
 1.  **Vista previa de Markdown**
     Para ver una vista previa del fichero Markdown que estás editando, puedes abrir el fichero `.md` y hacer clic en `Ctrl+Shift+V` (Windows/Linux) o `Cmd+Shift+V` (Mac). También puedes hacer clic con el botón derecho sobre el fichero y seleccionar "Open Preview".
@@ -108,3 +108,6 @@ Para mejorar la experiencia trabajando con Markdown en VSCode, es necesario inst
       * Para exportarlo, abre la paleta de comandos (`Ctrl+Shift+P` o `Cmd+Shift+P`) y escribe "Markdown PDF: Export". Selecciona el formato deseado.
       * También puedes escribir `>` en la barra de búsqueda. Tiene el mismo efecto y puede ser más fácil de recordar.
 
+## Memoria de entrega
+
+Para entregar la actividad, crea una memoria en la que repases paso a paso el proceso de instalación y preparación de las extensiones necesarias para poder editar plantuml y mermaid.js en VS Code. Crea un documento con capturas de pantalla de todo el proceso.

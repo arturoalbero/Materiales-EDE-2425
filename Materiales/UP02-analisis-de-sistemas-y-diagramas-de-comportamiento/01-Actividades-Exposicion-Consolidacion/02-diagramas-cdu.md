@@ -48,7 +48,7 @@ Para crear un diagrama de casos de uso, nos basamos en los requisitos funcionale
     - "Gestionar horarios."
 
 Con esta información, podemos finalmente crear su representación visual en forma de diagrama de casos de uso:
-![alt text](image.png)
+![alt text](images/image.png)
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
 
@@ -83,7 +83,7 @@ La relación de tipo `<<include>>` sirve para añadir una funcionalidad **obliga
 
 Las relaciones `<<extend>>` y `<<include>>` se representan así:
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -122,7 +122,7 @@ Aparte de las relaciones `extend` y `include` contamos con relaciones de general
 
 Continuando con el ejemplo de las pistas deportivas, vamos a añadir un subtipo de cliente, el cliente VIP que, además de los casos de uso del cliente, también puede reservar la piscina.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
@@ -172,7 +172,7 @@ Por otro lado, un caso de uso describe cómo un usuario interactúa con un siste
 
 2. **Varias historias de usuario pueden derivarse de un caso de uso complejo.**
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 <details>
 <summary><strong>Ver el código en plantuml</strong></summary>
