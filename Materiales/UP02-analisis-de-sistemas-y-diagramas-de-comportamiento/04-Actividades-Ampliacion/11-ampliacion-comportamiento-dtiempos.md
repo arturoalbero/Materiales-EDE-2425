@@ -141,8 +141,8 @@ highlight 20 to 30 #Gold;line:DimGrey : Subrayado
 
 ![alt text](images/image-5.png)
 
-</details>
-</summary></strong>Haz click aquí para ver el código plantuml </strong></summary>
+<details>
+<summary><strong>Haz click aquí para ver el código plantuml </strong></summary>
 
 ```plantuml
 @startuml
