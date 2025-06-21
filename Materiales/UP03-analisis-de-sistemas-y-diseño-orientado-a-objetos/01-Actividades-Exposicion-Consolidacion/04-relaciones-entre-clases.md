@@ -123,9 +123,8 @@ Avion ..|> PuedeVolar
 
 Como se puede observar, puede haber paquetes dentro de paquetes y las clases de un paquete pueden relacionarse con clases de otros paquetes. Los paquetes tienen una relación más de conveniencia a la hora de programar que semántica. 
 
----
-
-### Actividad 3: Explica el siguiente diagrama
+> **Actividad**
+> Explica el siguiente diagrama:
 
 ```plantuml
 @startuml
@@ -164,6 +163,7 @@ Persona "1" o-- "1" Perro : tiene
 @enduml
 ```
 
-### Actividad 4: Crea un diagrama de la siguiente explicación
-
-La vida es dura, pero la vida de cada persona tiene un grado de dureza diferente, que clasificamos con un número. Las personas asismo tienen algo que las identifica, su propio nombre. Pueden elegir varias profesiones, como carpintero o influencer. Los carpinteros usan la madera para construir muebles. Los influencer usan las mesas, que son muebles, para poner sus ordenadores. Una persona puede tener varios muebles. Las sillas también son muebles.
+> **Actividad** 
+>Crea un diagrama de la siguiente explicación
+>
+>La vida es dura, pero la vida de cada persona tiene un grado de dureza diferente, que clasificamos con un número. Las personas asismo tienen algo que las identifica, su propio nombre. Pueden elegir varias profesiones, como carpintero o influencer. Los carpinteros usan la madera para construir muebles. Los influencer usan las mesas, que son muebles, para poner sus ordenadores. Una persona puede tener varios muebles. Las sillas también son muebles.
