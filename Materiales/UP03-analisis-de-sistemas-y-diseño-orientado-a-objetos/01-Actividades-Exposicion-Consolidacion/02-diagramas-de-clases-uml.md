@@ -8,6 +8,13 @@ Para representar una clase emplearemos diagramas de clases del estándar UML. Ca
 - **Medio**: En este espacio se colocan los atributos de la clase, en CamelCase pero con la primera letra en minúscula (lowerCamelCase). El tipo se puede colocar antes, como en Java o C#, o después, como en TypeScript.
 - **Inferior**: En este espacio se colocan los métodos. Se nombran como los atributos, pero al final tienen paréntesis. Dentro del paréntesis puede haber parámetros (con su tipo correspondiente) y, si el método devuelve algo, se coloca al lado el tipo de datos del retorno.
 
+![alt text](images/image.png)
+
+<details>
+<summary>
+<b>Haz click aquí para ver el código plantuml</b>
+</summary>
+
 ```plantuml
 @startuml
 skinparam classAttributeIconSize 0
@@ -16,6 +23,9 @@ class EstoEsUnaClase{
     - estoEsUnMetodo(parametro : number) : number
 }
 ```
+
+</details>
+
 
 Podemos pensar en los atributos y métodos de una clase de la siguiente forma:
 
@@ -26,6 +36,12 @@ Cuando definimos una clase, los diferentes componentes tienen una visibilidad de
 
 - Si un componente es **público**, es accesible por cualquier otro objeto. Lo representamos con un +:
 
+![alt text](images/image-1.png)
+
+<details>
+
+<summary><b>Haz click aquí para ver el código plantuml</b></summary>
+
 ```plantuml
 @startuml
 skinparam classAttributeIconSize 0
@@ -34,8 +50,13 @@ class AtributoPúblico{
 }
 @enduml
 ```
+</details>
 
 - Si un componente es **privado**, es accesible solo por el mismo objeto. Lo representamos con un -:
+
+![alt text](images/image-2.png)
+
+<details><summary><b>Haz click aquí para ver el código plantuml</b></summary>
 
 ```plantuml
 @startuml
@@ -46,7 +67,16 @@ class AtributoPrivado{
 @enduml
 ```
 
+</details>
+
 - Si un componente es **protegido**, funciona como privado excepto cuando el objeto que quiere acceder a él es de una clase derivada, que entonces funciona como público. Lo representamos con un #:
+
+![alt text](images/image-3.png)
+
+<details>
+<summary>
+<b>Haz click aquí para ver el código plantuml </b>
+</summary>
 
 ```plantuml
 @startuml
@@ -56,8 +86,16 @@ class AtributoProtegido{
 }
 @enduml
 ```
+</details>
 
 - Si un componente tiene visibilidad de **paquete**, funciona como público para todos los miembros del paquete y privado para todos los demás. Es una visibilidad característica del lenguaje de programación Java (es la visibilidad por defecto, de hecho). En UML se representa con el signo ~:
+
+![alt text](images/image-4.png)
+
+<details>
+<summary>
+<b>Haz click aquí para ver el código plantuml</b>
+</summary>
 
 ```plantuml
 @startuml
@@ -67,10 +105,17 @@ class AtributoPaquete{
 }
 @enduml
 ```
+</details>
 
 La visibilidad es una herramienta clave a la hora de determinar la encapsulación de la información. A las partes públicas (generalmente métodos) se las conoce como la API (application programming interface) del objeto.
 
 Para estos diagramas se está usando [PlantUML](https://plantuml.com/es/class-diagram). Para que aparezcan los signos indicados se debe especificar antes de empezar a escribir el diagrama la línea `skinparam classAttributeIconSize 0`. Si no se hace, aparecen formas geométricas de diferentes colores según la visibilidad, y están rellenas o no según si son atributo o método:
+
+![alt text](images/image-5.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código
+</b></summary>
 
 ```plantuml
 @startuml
@@ -87,6 +132,7 @@ class TodasLasVisibilidades{
 }
 @enduml
 ```
+</details>
 
 Además de Plantuml, puedes usar [Mermaidjs](https://mermaid.js.org/syntax/classDiagram.html). Tanto Plantuml como Mermaid utilizan un lenguaje que es muy similar a un lenguaje de programación orientado a objetos convencional.
 
@@ -105,6 +151,12 @@ Por otro lado, existen herramientas especializadas como [Visual Paradigm Online]
 >
 >Explica los siguientes diagramas:
 
+![alt text](images/image-6.png)
+
+<details><summary><b>
+Haz click aquí para ver el código plantuml
+</b></summary>
+
 ```plantuml
 @startuml
 skinparam classAttributeIconSize 0
@@ -118,6 +170,11 @@ class Motocicleta{
 }
 @enduml
 ```
+</details>
+
+![alt text](images/image-7.png)
+
+<details><summary><b>Haz click aquí para ver el código plantuml</b></summary>
 
 ```plantuml
 @startuml
@@ -132,6 +189,13 @@ abstract class Poste{
 @enduml
 ```
 
+</details>
+
+![alt text](images/image-8.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código plantuml</b></summary>
+
 ```plantuml
 @startuml
 skinparam classAttributeIconSize 0
@@ -143,6 +207,14 @@ class Motorista{
 }
 @enduml
 ```
+</details>
+
+![alt text](images/image-9.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código plantuml
+</b></summary>
+
 
 ```plantuml
 @startuml
@@ -152,4 +224,5 @@ interface PuedeCircular{
 }
 @enduml
 ```
+</details>
 

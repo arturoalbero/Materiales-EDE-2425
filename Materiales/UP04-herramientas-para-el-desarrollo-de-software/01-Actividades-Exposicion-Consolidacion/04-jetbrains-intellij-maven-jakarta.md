@@ -127,3 +127,4 @@ Crea un proyecto en Java usando Gradle y un programa que, al ejecutarlo, escriba
 
 Durante el curso emplearemos Maven, por su mayor implantación en la actualidad.
 
+[Uso de funciones Hash](https://www.youtube.com/watch?v=KyUTuwz_b7Q)

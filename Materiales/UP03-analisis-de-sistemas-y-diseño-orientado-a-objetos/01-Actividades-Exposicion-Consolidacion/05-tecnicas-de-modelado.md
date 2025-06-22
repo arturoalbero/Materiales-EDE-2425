@@ -1,13 +1,94 @@
 # Técnicas de modelado
 
+## Modelizar las relaciones de Herencia y sus alternativas
+
+Entendido. Vamos a desarrollar la sección sobre el dominio del problema y los tipos de herencia, incluyendo las alternativas y cómo se gestiona en diferentes lenguajes.
+
+### El Dominio del Problema
+
+Antes de sumergirnos en las complejidades de la herencia y otras relaciones, es crucial comprender el **dominio del problema**. El dominio del problema se refiere al área de conocimiento o la realidad para la que estamos construyendo nuestro sistema. Modelar el dominio del problema implica entender las entidades, conceptos, reglas de negocio y procesos relevantes de ese mundo real. El dominio del problema lo solemos acotar en el documento de Especificación de Requerimientos del Sistema (ERS, IEEE 830).
+
+**Una de las primeras cosas que tenemos que tener claras a la hora de modelar un dominio de problema es identificar cómo las entidades se relacionan entre sí**, especialmente en términos de generalización y especialización. Aquí es donde entra en juego el concepto de herencia, pero no es la única herramienta.
+
+Al modelar, buscamos capturar las características y comportamientos esenciales de estas entidades, así como las interacciones entre ellas. Esto se traduce en la creación de **clases** que representan estas entidades, con sus **atributos** y **métodos**, y el establecimiento de **relaciones** entre ellas. Una vez que hemos identificado estas relaciones, podemos empezar a considerar cómo se expresarán en nuestro diseño.
+
+### Tipos de Herencia
+
+La **herencia** es un mecanismo fundamental de la POO que permite a una clase (subclase o clase hija) adquirir las propiedades (atributos) y comportamientos (métodos) de otra clase (superclase o clase padre). Esto modela una relación "es un tipo de" (por ejemplo, un `Perro` *es un tipo de* `Animal`). Sin embargo, la herencia no siempre es sencilla y presenta varias formas y consideraciones importantes.
+
+#### Herencia Múltiple vs. Herencia Simple más Interfaces
+
+Esta es una de las primeras y más importantes decisiones de diseño cuando se considera la herencia:
+
+* **Herencia Simple:** Una clase solo puede heredar de **una única** superclase. Este enfoque es el más común en muchos lenguajes orientados a objetos (Java, C#, Smalltalk).
+    * **Ventajas:** Simplifica la jerarquía de clases, reduce la complejidad del "diamante de la muerte" (problema de ambigüedad cuando una clase hereda el mismo método de dos ancestros distintos que a su vez heredan de un mismo ancestro común), y es más fácil de mantener.
+    * **Desventajas:** Puede llevar a la duplicación de código si una clase necesita funcionalidades de múltiples fuentes.
+* **Herencia Múltiple:** Una clase puede heredar de **múltiples** superclases, combinando sus características y comportamientos. Lenguajes como C++ y Python la soportan.
+    * **Ventajas:** Permite reutilizar código de múltiples jerarquías, lo que puede resultar en un diseño más conciso.
+    * **Desventajas:** Aumenta la complejidad, especialmente con el problema del "diamante de la muerte", donde puede haber ambigüedad sobre qué implementación de un método heredar si varias superclases lo tienen. Esto puede llevar a un código más difícil de entender y depurar.
+
+* **Herencia Simple más Interfaces:** Muchos lenguajes (como Java y C#) optan por la herencia simple pero compensan sus limitaciones con el uso de **interfaces**. Una interfaz define un contrato de métodos que una clase debe implementar, sin proporcionar una implementación concreta. Una clase puede implementar **múltiples interfaces**.
+    * **Ventajas:** Permite a una clase adoptar múltiples "roles" o comportamientos sin los problemas de ambigüedad de la herencia múltiple de clases. Promueve el polimorfismo y un diseño más flexible. Es una forma de lograr "herencia de comportamiento" sin "herencia de estado".
+    * **Desventajas:** Las interfaces no pueden proporcionar implementaciones por defecto de atributos o métodos (aunque esto ha evolucionado con métodos por defecto en Java 8+ o propiedades en C#), lo que a veces requiere más código.
+
+> **Actividad**
+> Busca 3 ejemplos donde tenga sentido la herencia múltiple. Diseña una alternativa para cada uno de estos ejemplos usando Herencia simple más interfaces.
+
+#### Herencia Privada o Herencia Pública (En C++)
+
+Este concepto es específico de lenguajes como C++ y define cómo los miembros (atributos y métodos) de la superclase son accesibles desde la subclase y desde fuera de ella:
+
+* **Herencia Pública (`public`):** Es el tipo de herencia más común y representa la relación "es un tipo de". Los miembros públicos de la superclase permanecen públicos en la subclase, y los miembros protegidos permanecen protegidos. Permite el polimorfismo y la sustitución de Liskov.
+* **Herencia Protegida (`protected`):** Los miembros públicos y protegidos de la superclase se convierten en miembros protegidos en la subclase. Esto significa que los miembros heredados son accesibles dentro de la subclase y por sus propias subclases, pero no desde fuera de la jerarquía.
+* **Herencia Privada (`private`):** Los miembros públicos y protegidos de la superclase se convierten en miembros privados en la subclase. Esto significa que la subclase puede usar esos miembros internamente, pero no son accesibles desde fuera de la subclase, ni siquiera por las subclases de esta. La herencia privada modela una relación "implementado en términos de" o "contiene una" más que "es un tipo de", funcionando casi como una composición interna.
+
+#### Herencia frente a Composición
+
+Esta es una de las decisiones de diseño más importantes y a menudo debatidas en la Programación Orientada a Objetos: ¿cuándo usar herencia y cuándo usar composición?
+
+* **Herencia:** Modela una relación **"es un tipo de" (is-a)**. Una `Motocicleta` *es un tipo de* `Vehículo`. Implica una fuerte acoplamiento entre la superclase y la subclase, ya que la subclase hereda tanto la interfaz como la implementación de la superclase.
+    * **Cuándo usarla:** Cuando la subclase es verdaderamente una especialización de la superclase y quieres reutilizar su implementación, a menudo junto con el polimorfismo.
+* **Composición:** Modela una relación **"tiene un" (has-a)**. Una `Motocicleta` *tiene un* `Motor`. Implica que una clase contiene una instancia de otra clase (o varias) como uno de sus atributos. La funcionalidad se delega al objeto compuesto.
+    * **Cuándo usarla:** Cuando la relación es de "todo-parte" o cuando una clase necesita la funcionalidad de otra pero no es un tipo de ella. Promueve un **acoplamiento bajo** y una mayor **flexibilidad**, ya que la implementación de la parte puede cambiarse sin afectar al todo (siempre que la interfaz de la parte se mantenga).
+    * **Principio "Prefiere Composición sobre Herencia":** Es una regla de oro en el diseño de software. La composición suele ser más flexible y menos propensa a problemas de mantenimiento que la herencia profunda, ya que permite cambiar el comportamiento en tiempo de ejecución y reduce la fragilidad de las jerarquías.
+
+Puedes ver el vídeo de CodeAesthetic sobre este tema en este [enlace](https://www.youtube.com/watch?v=hxGOiiR9ZKg).
+
+> **Actividad**
+> Convierte los tres ejemplos de la actividad anterior sobre herencias en sistemas que usen la composición.
+
+> **Actividad**
+> Busca qué es, en el contexto de la programación, el acoplamiento. Razona qué tiene que ver con la herencia y la composición. Esta información se puede extraer del vídeo anterior.
+
+#### Lenguajes Orientados a Objetos sin Herencia de Clases (como Rust)
+
+Algunos lenguajes modernos, si bien son orientados a objetos en el sentido de encapsulación de datos y comportamiento, han optado por **no incluir la herencia de clases tradicional** para evitar sus problemas de complejidad y fragilidad.
+
+* **Rust:** Se centra en la seguridad de la memoria y la concurrencia. No tiene herencia de clases. En su lugar, fomenta el uso de:
+    * **`Structs` (estructuras):** Para definir la estructura de los datos (atributos).
+    * **`Impl` (implementaciones):** Para definir métodos asociados a los `structs`.
+    * **`Traits` (rasgos):** Son similares a las interfaces o mixins. Un `trait` define un conjunto de métodos que un tipo debe implementar. Permiten el polimorfismo (un objeto puede ser tratado como un `trait` si implementa ese `trait`) y la reutilización de comportamiento a través de implementaciones por defecto en `traits` o al "mezclar" `traits` en `structs`. Esto es una forma de **polimorfismo de inclusión** sin la rigidez de la herencia de clases.
+
+#### Lenguajes Orientados a Objetos usando Prototipos (como JavaScript)
+
+A diferencia de los lenguajes basados en clases, que usan "planos" para crear objetos, los lenguajes basados en prototipos crean objetos directamente a partir de otros objetos existentes.
+
+* **JavaScript:** Históricamente, JavaScript se basó en **prototipos** para la herencia. Cada objeto tiene una propiedad interna `[[Prototype]]` (o `__proto__`) que apunta a otro objeto. Cuando se accede a una propiedad o método de un objeto y no se encuentra en el propio objeto, JavaScript busca en su prototipo, y luego en el prototipo del prototipo, y así sucesivamente, formando una **cadena de prototipos**.
+    * **Creación de objetos:** Se pueden crear objetos vacíos y añadirles propiedades, o usar la sintaxis `Object.create(otroObjeto)` para crear un objeto cuyo prototipo sea `otroObjeto`.
+    * **"Herencia" basada en prototipos:** Un objeto "hereda" propiedades y métodos de su prototipo. No hay una distinción clara entre "clase" e "instancia" como en los lenguajes basados en clases.
+    * **Sintaxis `class` en JavaScript (ES6+):** Aunque JavaScript introdujo la palabra clave `class` en ECMAScript 2015 (ES6), esto es principalmente **azúcar sintáctico** (syntactic sugar) sobre el modelo de herencia basado en prototipos existente. Por debajo, sigue funcionando con prototipos; la sintaxis `class` simplemente proporciona una forma más familiar para los programadores de lenguajes basados en clases de definir constructores y métodos.
+
+
+Modelar la estructura de clases de un sistema requiere una comprensión profunda de estas opciones y sus implicaciones. La elección entre herencia, composición, y los diferentes mecanismos que ofrecen los lenguajes es crucial para construir sistemas robustos, flexibles y mantenibles.
+
+
 ## Técnicas de Modelado con Diagramas de Clases UML
 
-Modelar un sistema con diagramas de clases UML no es solo dibujar cajas y flechas; es un proceso iterativo y reflexivo para entender y comunicar la estructura de un software. Implica identificar las entidades, sus características y cómo interactúan. Aquí te presento algunas técnicas clave para un modelado efectivo:
-
+Modelar un sistema con diagramas de clases UML no es solo dibujar cajas y flechas; es un proceso iterativo y reflexivo para entender y comunicar la estructura de un software. Implica identificar las entidades, sus características y cómo interactúan. 
 
 ### 1. Identificación de Clases Candidatas
 
-El primer paso es reconocer las posibles clases en tu sistema. Esto se puede hacer de varias maneras:
+El primer paso es reconocer las posibles clases en el sistema. Esto se puede hacer de varias maneras:
 
 * **Análisis de Sustantivos:** Lee la descripción del problema o los requisitos del sistema y subraya todos los **sustantivos** (personas, lugares, cosas, conceptos, eventos). Cada sustantivo es un candidato potencial para una clase.
     * **Ejemplo:** En un "sistema de gestión de biblioteca", sustantivos como "libro", "miembro", "préstamo", "autor", "editorial" son posibles clases.
@@ -22,7 +103,7 @@ El primer paso es reconocer las posibles clases en tu sistema. Esto se puede hac
 
 ### 2. Definición de Atributos y Comportamientos (Métodos)
 
-Una vez que tienes tus clases candidatas, el siguiente paso es dotarlas de contenido:
+Una vez que se tienen las clases candidatas, el siguiente paso es dotarlas de contenido:
 
 * **Atributos:** Piensa en las **propiedades** que necesita conocer cada instancia de la clase para ser completamente descrita.
     * ¿Qué datos necesita almacenar este objeto?
@@ -52,7 +133,7 @@ Las clases no existen en el vacío; interactúan. Modelar estas interacciones es
 
 ### 4. Refinamiento y Verificación
 
-El modelado es un proceso iterativo. Rara vez acertarás a la primera.
+El modelado es un proceso iterativo. Rara vez se acierta a la primera. Por ello, es importante ir refinándolas poco a poco.
 
 * **Aplicación de Principios de Diseño (SOLID):**
     * **SRP (Responsabilidad Única):** ¿Cada clase tiene una única razón para cambiar? Si una clase tiene demasiados atributos o métodos no relacionados, considera dividirla.
@@ -106,10 +187,14 @@ A continuación, se describen las correspondencias más habituales:
 
     **Ejemplo:**
 
-      * Entidad: `CLIENTE` $\\rightarrow$ Clase: `Cliente`
-      * Entidad: `PRODUCTO` $\\rightarrow$ Clase: `Producto`
+      * Entidad: `CLIENTE` -> Clase: `Cliente`
+      * Entidad: `PRODUCTO` -> Clase: `Producto`
 
+![alt text](images/image-18.png)
 
+<details>
+<summary><b>Haz click aquí para ver el código plantuml
+</b></summary>
 
 ```plantuml
 @startuml
@@ -120,6 +205,7 @@ class Producto {
 }
 @enduml
 ```
+</details>
 
 #### 2\. Atributos de Entidades -> Atributos de Clases
 
@@ -135,9 +221,15 @@ class Producto {
 
     **Ejemplo:**
 
-      * Entidad `CLIENTE` con atributos `id_cliente` (PK), `nombre`, `direccion`
-      * Clase `Cliente` con atributos `- id : int`, `- nombre : string`, `- direccion : string`
+Este diagrama ER:
 
+![alt text](images/image-19.png)
+
+Se convierte en este diagrama de clases UML:
+![alt text](images/image-20.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código plantuml</b></summary>
 
 ```plantuml
 @startuml
@@ -150,64 +242,77 @@ class Cliente {
 @enduml
 ```
 
+</details>
+
 #### 3\. Relaciones -> Asociaciones
 
-  * **Cada relación entre entidades en el Diagramas ER se convierte en una asociación entre las clases correspondientes en UML.** 
+* **Cada relación entre entidades en el Diagramas ER se convierte en una asociación entre las clases correspondientes en UML.** 
 
-  * La **cardinalidad** de la relación en el Diagramas ER se traduce directamente a la cardinalidad de la asociación en UML.
+* La **cardinalidad** de la relación en el Diagramas ER se traduce directamente a la cardinalidad de la asociación en UML.
 
-      * `1:1` $\\rightarrow$ `1..1` o `1` en ambos extremos
-      * `1:N` $\\rightarrow$ `1` en el lado "uno", `*` (o `0..*` o `1..*`) en el lado "muchos"
-      * `N:M` $\\rightarrow$ `*` en ambos extremos
+    * `1:1` -> `1..1` o `1` en ambos extremos
+    * `1:N` -> `1` en el lado "uno", `*` (o `0..*` o `1..*`) en el lado "muchos"
+    * `N:M` -> `*` en ambos extremos
 
-  * **Nombres de Roles:** Si la relación en el Diagramas ER tiene roles, estos se pueden usar como nombres de rol en los extremos de la asociación en UML.
+* **Nombres de Roles:** Si la relación en el Diagramas ER tiene roles, estos se pueden usar como nombres de rol en los extremos de la asociación en UML.
 
-    **Ejemplos:**
+**Ejemplos:**
 
-      * **1:N (Uno a Muchos):** Un `Cliente` **realiza** `Pedidos`.
+* **1:N (Uno a Muchos):** Un `Cliente` **realiza** `Pedidos`.
 
-        ```plantuml
-        @startuml
-        skinparam classAttributeIconSize 0
-        class Cliente {
-            - id : int
-            - nombre : string
-        }
-        class Pedido {
-            - id : int
-            - fecha : Date
-        }
-        Cliente "1" -- "0..*" Pedido : realiza
-        @enduml
-        ```
+![alt text](images/image-21.png)
 
-      * **N:M (Muchos a Muchos):** Un `Estudiante` **se matricula en** `Cursos`.
+<details>
+<summary><b>Haz click aquí para ver el código plantuml</b></summary>
 
-          * En un Diagrama ER, una relación N:M a menudo se resuelve con una tabla intermedia. En UML, esto se modela como una **clase de asociación**.
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+class Cliente {
+    - id : int
+    - nombre : string
+}
+class Pedido {
+    - id : int
+    - fecha : Date
+}
+Cliente "1" -- "0..*" Pedido : realiza
+@enduml
+```
+</details>
 
-        <!-- end list -->
+* **N:M (Muchos a Muchos):** Un `Estudiante` **se matricula en** `Cursos`.
 
-        ```plantuml
-        @startuml
-        skinparam classAttributeIconSize 0
-        class Estudiante {
-            - id : int
-            - nombre : string
-        }
-        class Curso {
-            - id : int
-            - titulo : string
-        }
-        class Matricula {
-            - fechaMatricula : Date
-            - calificacion : float
-        }
-        Estudiante "1" -- "0..*" Matricula
-        Curso "1" -- "0..*" Matricula
-        @enduml
-        ```
+    * En un Diagrama ER, una relación N:M a menudo se resuelve con una tabla intermedia. En UML, esto se modela como una **clase de asociación**.
 
-        Aquí, `Matricula` es una clase que contiene atributos propios de la relación (fecha, calificación) y se asocia tanto con `Estudiante` como con `Curso`.
+![alt text](images/image-22.png)
+
+<details><summary><b>
+Haz click aquí para ver el código plantuml
+</b></summary>
+
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+class Estudiante {
+    - id : int
+    - nombre : string
+}
+class Curso {
+    - id : int
+    - titulo : string
+}
+class Matricula {
+    - fechaMatricula : Date
+    - calificacion : float
+}
+Estudiante "1" -- "0..*" Matricula
+Curso "1" -- "0..*" Matricula
+@enduml
+```
+</details>
+
+Aquí, `Matricula` es una clase que contiene atributos propios de la relación (fecha, calificación) y se asocia tanto con `Estudiante` como con `Curso`.
 
 #### 4\. Entidades Débiles -> Clases (con Composición/Agregación)
 
@@ -217,52 +322,73 @@ class Cliente {
 
     **Ejemplo:** Un `Pedido` tiene `LineasDeDetalle`. Si el pedido se elimina, sus líneas de detalle también.
 
-    ```plantuml
-    @startuml
-    skinparam classAttributeIconSize 0
-    class Pedido {
-        - id : int
-        - fecha : Date
-    }
-    class LineaDetalle {
-        - cantidad : int
-        - precioUnitario : float
-    }
-    Pedido "1" *-- "1..*" LineaDetalle : contiene
-    @enduml
-    ```
+![alt text](images/image-23.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código plantuml
+</b></summary>
+
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+class Pedido {
+    - id : int
+    - fecha : Date
+}
+class LineaDetalle {
+    - cantidad : int
+    - precioUnitario : float
+}
+Pedido "1" *-- "1..*" LineaDetalle : contiene
+@enduml
+```
+
+</details>
 
 #### 5\. Atributos Multivaluados -> Colecciones o Clases Separadas
 
   * Si un atributo en el Diagrama ER puede tener múltiples valores (ej., `telefono` de una persona, que puede tener varios), en UML se modela como una **colección** (ej., `List<string>`, `Set<string>`) del atributo dentro de la clase, o, si los valores tienen atributos propios (ej., un teléfono con `tipo` y `numero`), como una **clase separada** relacionada por asociación o composición.
 
-    **Ejemplo (como colección):**
+![alt text](images/image-24.png)
 
-    ```plantuml
-    @startuml
-    skinparam classAttributeIconSize 0
-    class Persona {
-        - nombre : string
-        - telefonos : List<string>
-    }
-    @enduml
-    ```
+**Ejemplo (como colección):**
+![alt text](images/image-25.png)
 
-    **Ejemplo (como clase separada si `Telefono` tiene más propiedades):**
+<details>
+<summary><b>Haz click aquí para ver el código plantuml</b></summary>
 
-    ```plantuml
-    @startuml
-    skinparam classAttributeIconSize 0
-    class Persona {
-        - nombre : string
-    }
-    class Telefono {
-        - numero : string
-        - tipo : string
-    }
-    Persona "1" -- "0..*" Telefono : tiene
-    @enduml
-    ```
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+class Persona {
+    - nombre : string
+    - telefonos : List<string>
+}
+@enduml
+```
+</details>
+
+**Ejemplo (como clase separada si `Telefono` tiene más propiedades):**
+![alt text](images/image-26.png)
+
+<details>
+<summary><b>Haz click aquí para ver el código plantuml
+</b></summary>
+
+```plantuml
+@startuml
+skinparam classAttributeIconSize 0
+class Persona {
+    - nombre : string
+}
+class Telefono {
+    - numero : string
+    - tipo : string
+}
+Persona "1" -- "0..*" Telefono : tiene
+@enduml
+```
+</details>
 
 ### Consideraciones Adicionales
 
@@ -278,5 +404,10 @@ Puedes usar [ERDPlus](https://erdplus.com/standalone) para crear diagramas entid
 > **Actividad**
 > Dados los siguientes Diagramas Entidad Relación, modela los diagramas de clases correspondiente. Añade los métodos que creas oportunos según la semántica de la base de datos (por ejemplo, un pájaro "vuela", aunque en el diagrama Entidad Relación eso no se represente).
 
+**Diagrama 1**
 
+![alt text](images/image-27.png)
 
+**Diagrama 2**
+
+![alt text](images/image-28.png)
