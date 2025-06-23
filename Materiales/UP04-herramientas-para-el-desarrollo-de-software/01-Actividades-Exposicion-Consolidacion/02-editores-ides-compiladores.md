@@ -65,6 +65,32 @@ Los IDEs están compuestos por varias herramientas que facilitan el desarrollo d
 
 4. **Gestión de Proyectos**: Facilita la organización de archivos y recursos. Los IDEs permiten gestionar múltiples proyectos desde una única interfaz.
 
+### Diferencias entre compiladores, intérpretes y máquinas virtuales
+
+**Compiladores: La Traducción Completa**
+
+Un **compilador** actúa como un traductor completo de un idioma a otro. Toma el código fuente escrito en un lenguaje de programación de alto nivel (como C++ o C) y lo convierte, de una sola vez, en código máquina o en un formato intermedio que la computadora puede entender directamente. Este proceso de compilación genera un archivo ejecutable independiente.
+
+Las ventajas de la compilación radican en la velocidad de ejecución: una vez compilado, el programa se ejecuta de forma muy eficiente. Sin embargo, cualquier cambio en el código fuente requiere una nueva compilación de todo el programa. Ejemplos clásicos incluyen el compilador GCC para C/C++ y el compilador de Java que genera bytecode.
+
+**Intérpretes: La Ejecución Línea a Línea**
+
+A diferencia de los compiladores, un **intérprete** no traduce el código fuente por completo antes de la ejecución. En su lugar, lee y ejecuta el código línea por línea, o instrucción por instrucción, en tiempo real. Esto significa que el código fuente se traduce y ejecuta simultáneamente.
+
+Los intérpretes ofrecen mayor flexibilidad y son ideales para el desarrollo rápido, ya que los cambios en el código se pueden probar de inmediato sin una fase de compilación. Sin embargo, la ejecución suele ser más lenta que la de los programas compilados debido al proceso de traducción en cada ejecución. Python, JavaScript y Ruby son ejemplos prominentes de lenguajes que suelen ser interpretados.
+
+**Máquinas Virtuales: Un Entorno de Ejecución Abstracción**
+
+Las **máquinas virtuales (VM)** añaden otra capa de abstracción. No son ni compiladores ni intérpretes en sí mismas, sino un entorno de software que emula un sistema informático completo o una plataforma de hardware específica. Su objetivo es proporcionar un entorno aislado y consistente para la ejecución de programas, independientemente del hardware o sistema operativo subyacente.
+
+En el contexto de la ejecución de código, muchas máquinas virtuales trabajan en conjunto con un compilador o un intérprete. Por ejemplo, la Máquina Virtual de Java (JVM) toma el bytecode compilado de Java y lo interpreta o lo compila "justo a tiempo" (JIT) en código máquina para su ejecución. Esto permite que los programas Java sean "escritos una vez, ejecutados en cualquier lugar". Otro ejemplo son las máquinas virtuales de sistemas operativos (como VMware o VirtualBox) que permiten ejecutar múltiples sistemas operativos en un solo equipo físico.
+
+> **Actividad**
+> Busca 3 lenguajes compilados (que no sean C y C++), tres lenguajes interpetados (que no sean python, Javascript ni Ruby) y otros lenguajes que funcionen con un sistema de máquina virtual similar al de Java.
+
+> **Actividad**
+> Busca qué significa el término *transpilación*
+
 ## Características Comunes en los IDEs
 
 ### IntelliSense
@@ -89,20 +115,34 @@ Los IDEs están compuestos por varias herramientas que facilitan el desarrollo d
 Los IDEs y editores se especializan en diferentes lenguajes de programación. A continuación, se presentan algunos ejemplos destacados:
 
 1. **Java**:
-   - **IntelliJ IDEA**: Community Edition es gratuito; Ultimate Edition de pago con versión educativa.
+   - **IntelliJ IDEA**: Community Edition es gratuito; Ultimate Edition de pago, pero dispone de gratuicidad con la versión educativa.
    - **Eclipse**: Gratuito y de código abierto.
 
-2. **C++**:
+> **Actividad**
+> Instala IntelliJ IDEA y ejecuta un hola mundo.
+
+2. **C/C++**:
    - **Visual Studio**: Community Edition es gratuito; versiones Professional y Enterprise son de pago con licencias educativas.
    - **Code::Blocks**: Gratuito y de código abierto.
+   - **CLion**: IDE de Jetbrains, gratuito para uso no comercial.
+
+> **Actividad**
+> Instala CLION y ejecuta un hola mundo en C (usando printf) y otro en C++ (usando cout)
 
 3. **C#**:
    - **Visual Studio**: Community Edition es gratuito; versiones de pago con licencias educativas.
    - **Visual Studio Code + C# Dev Kit**: Gratuito; ideal para desarrollo de aplicaciones C# multiplataforma.
+   - **Rider**: IDE de Jetbrains, gratuito para uso no comercial
+
+> **Actividad**
+> Instala Rider y ejecuta un hola mundo.
 
 4. **Python**:
    - **PyCharm**: Community Edition es gratuito; Professional Edition de pago con licencia educativa.
-   - **Visual Studio Code**: Gratuito; soporte para Python mediante extensiones.
+   - **Visual Studio Code**: Gratuito; soporte para Python mediante extensiones. Necesitas instalar [Python 3](https://www.python.org/downloads/).
+
+> **Actividad**
+> Instala Pycharm y también Python. Ejecuta el mismo hola mundo en Pycharm y en VS Code usando Python3.
 
 5. **JavaScript**:
    - **Visual Studio Code**: Gratuito; muy popular para desarrollo web.
@@ -111,8 +151,6 @@ Los IDEs y editores se especializan en diferentes lenguajes de programación. A 
 6. **SQL**:
    - **DataGrip**: De pago, con licencia educativa.
    - **DBeaver**: Gratuito y de código abierto.
-
----
 
 ## Licencias Educativas de JetBrains
 
@@ -125,10 +163,14 @@ Para obtener la **licencia gratuita para estudiantes de JetBrains**, sigue estos
 
 Puedes usar tu identidad digital (@alu.edu.gva.es) para crear una cuenta en JetBrains y aplicar para solicitar la licencia educativa. Dicha licencia es renovable mientras dure tu educación.
 Ten en cuenta que tu identidad digital no será accesible cuando acabes tu etapa en el instituto, pero puedes transferir o añadir más correos electrónicos a tu cuenta para poder seguir accediendo a Jetbrains.
+
 Cuando acaba tu periodo educativo, dispones de un descuento del 40% para comprar una licencia anual, tanto del pack completo de IDEs de Jetbrains como los IDEs en específico que más emplees. Esta licencia ya no tiene las limitaciones de las licencias educativas y la puedes usar para tu día a día.
 Con la licencia anual, Jetbrains ofrece una [licencia de reserva perpetua](https://sales.jetbrains.com/hc/es/articles/207240845--Qu%C3%A9-es-una-licencia-de-reserva-perpetua). Esta licencia te permite usar para toda la vida la versión del IDE más actual en el momento de la compra.
 
----
+Aunque con los IDEs community edition o gratuitos sin uso comercial nos es suficiente en la mayoría de casos, el poder acceder a IntelliJ IDEA Ultimate de forma gratuita nos permite, por ejemplo, configurar proyectos con Jakarta EE.
+
+> **Actividad**
+> Solicita tu licencia educativa de JetBrains usando tu carnet de estudiante. Cuando lo tengas, instala desde su aplicación JetBrains Toolbox todos los IDEs que necesites, especialmente IntelliJ IDEA Ultimate Edition.
 
 ## Servicios Educativos de Otras Plataformas
 
@@ -139,32 +181,6 @@ Además de JetBrains, los estudiantes pueden acceder a otros servicios gratuitos
 - **AWS Educate**: Acceso a recursos y herramientas de Amazon Web Services para aprender sobre computación en la nube.
 - **Google Cloud Services**: Ofrece créditos gratuitos para estudiantes que deseen experimentar con servicios de Google.
 
----
 
-## Resumen Esquemático
-
-### IDEs Gratuitos
-
-- **Notepad++**
-- **Visual Studio Code**
-- **Eclipse**
-- **NetBeans**
-- **Godot**
-- **Unity (Personal Edition)**
-- **GameMaker (versión gratuita)**
-- **DataGrip (prueba gratuita)**
-
-### IDEs de Pago
-
-- **IntelliJ IDEA Ultimate**
-- **Visual Studio Professional y Enterprise**
-- **PyCharm Professional**
-- **WebStorm**
-- **DataGrip (sin licencia educativa)**
-
-### IDEs con Licencias Educativas Gratuitas
-
-- **IDEs de Jetbrains con su programa educativo**
-- **Visual Studio (Professional y Enterprise)**
 
 
