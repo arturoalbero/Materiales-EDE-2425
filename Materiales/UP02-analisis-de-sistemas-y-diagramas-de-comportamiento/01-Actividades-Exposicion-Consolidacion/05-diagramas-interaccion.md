@@ -1,9 +1,4 @@
----
-title: Diagramas de interacción
-description: a
----
-
-## Diagramas de interacción
+# Diagramas de interacción
 
 Existen varios tipos de diagramas de interacción.
 - Diagramas de secuencia

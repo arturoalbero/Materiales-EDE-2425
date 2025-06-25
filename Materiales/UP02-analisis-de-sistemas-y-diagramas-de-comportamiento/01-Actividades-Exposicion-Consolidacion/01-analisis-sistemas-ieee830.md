@@ -1,6 +1,3 @@
----
-title: El documento IEEE 830. La especificación de requisitos del sistema
----
 # Especificación de requisitos del sistema
 
 ## Introducción al análisis de sistemas

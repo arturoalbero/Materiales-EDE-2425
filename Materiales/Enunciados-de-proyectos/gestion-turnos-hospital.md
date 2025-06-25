@@ -1,11 +1,10 @@
----
-title: Gestión de turnos de un hospital
-description: a
----
-# Gestión de comandas de un restaurante
 
-El objetivo de este reto es crear una aplicación para gestionar los turnos del personal de un hospital.
+# Gestión de turnos de un hospital
 
-- Cliente: Se trata de un administrativo, que trabaja en un hospital público, y que necesita un programa para agilizar su trabajo a la hora de gestionar de manera ágil su tarea, gestionar la distribución de los turnos del resto de trabajadores del hospital.
-
->Para gestionar los turnos de un hospital y evitar que se acumulen horas excesivas en los profesionales, debemos tener en cuenta que un miembro del personal puede estar trabajando, descansando o en expectativa de turno. El periodo de descanso empieza inmediatamente después de haber estado trabajando y dura 12 horas. En el momento en que vencen esas 12 horas, un trabajador puede o bien volver a trabajar o bien quedarse en expectativa de turno. Un trabajador en expectativa de turno puede ser asignado para trabajar por el gestor de turnos. El trabajador comienza siempre en expectativa de turno. Los trabajadores pueden ser enfermeros, médicos o administrativos. Solo los administrativos son capaces de gestionar turnos, pero todos los trabajadores pueden solicitar permutas o permisos, así como consultar sus turnos y su estado actual.
+> El objetivo de este proyecto es el diseño y la construcción de una aplicación integral para la gestión de turnos del personal en un hospital público. Esta herramienta es fundamental para un administrativo clave, quien busca optimizar la compleja tarea de distribuir las jornadas laborales del equipo, asegurando una asignación eficiente, el bienestar del personal y el cumplimiento de las normativas de descanso.
+>
+> La aplicación deberá gestionar la dinámica de los estados del personal, que transitan entre: trabajando, descansando (un periodo obligatorio de 12 horas inmediatamente después de un turno), y en expectativa de turno. Es crucial que el sistema gestione automáticamente el paso del estado de "descansando" a "en expectativa de turno" una vez concluidas esas 12 horas. Cada miembro del personal siempre inicia su ciclo en "expectativa de turno", desde donde podrá ser asignado a un nuevo turno por el gestor.
+>
+> El personal del hospital se clasifica en enfermeros, médicos y administrativos. Solo estos últimos tendrán la capacidad de gestionar y asignar los turnos a los demás. No obstante, todos los trabajadores, sin importar su rol, deberán poder solicitar permutas con compañeros, solicitar permisos para días libres, consultar sus turnos asignados y verificar su estado actual en el ciclo de turnos.
+>
+> La aplicación también deberá almacenar información laboral detallada del personal, incluyendo su especialidad, antigüedad en el hospital y datos de identificación relevantes. Además, es fundamental gestionar la estructura física del hospital, lo que implica registrar las plantas, las secciones dentro de cada planta y las habitaciones dentro de las secciones. Un aspecto crítico será el control de acceso a instalaciones especiales, como el laboratorio de rayos X o el quirófano, garantizando que solo el personal autorizado y cualificado pueda interactuar con ellas. Asimismo, el sistema deberá contemplar la gestión del personal de limpieza, incluyendo sus propios turnos y asignaciones de áreas. Este enunciado establece los requisitos fundamentales para una aplicación robusta y adaptable, cuyo diseño modular y extensible será esencial para futuras incorporaciones de funcionalidades.

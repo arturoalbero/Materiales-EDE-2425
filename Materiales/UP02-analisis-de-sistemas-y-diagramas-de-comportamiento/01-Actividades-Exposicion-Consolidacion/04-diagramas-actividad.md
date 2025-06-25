@@ -1,7 +1,3 @@
----
-title: Diagramas de actividad
----
-
 # Diagramas de actividad
 
 ## Diagramas actividad

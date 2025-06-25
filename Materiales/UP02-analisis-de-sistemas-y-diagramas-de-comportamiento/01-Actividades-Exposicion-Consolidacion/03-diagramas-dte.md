@@ -1,7 +1,3 @@
----
-title: Diagramas de transición de estados
----
-
 # Diagramas de Transición de Estados
 
 ## Introducción a los Diagramas de Estados

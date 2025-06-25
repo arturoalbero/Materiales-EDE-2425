@@ -1,6 +1,3 @@
----
-title: Reto individual evaluable
----
 # Reto individual
 
 Lee el enunciado de esta problemática y establece, según los criterios del IEEE 830 estudiado en la primera unidad, los requisitos funcionales la aplicación que se te pide desarrollar. A continuación, basándote en dicha información, realiza los siguientes diagramas:

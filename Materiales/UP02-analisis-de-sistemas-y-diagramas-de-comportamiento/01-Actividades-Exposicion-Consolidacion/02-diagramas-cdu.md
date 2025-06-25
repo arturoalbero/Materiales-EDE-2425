@@ -1,6 +1,3 @@
----
-title: Diagramas de casos de uso
----
 # Diagramas de casos de uso
 
 > **Notas sobre los diagramas**

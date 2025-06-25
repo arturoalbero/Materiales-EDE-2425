@@ -1,14 +1,8 @@
----
-title: Gestión de acceso a un edificio inteligente
-description: a
----
-# Gestión de comandas de un restaurante
+# Gestión de Acceso a Edificio Inteligente
 
-El objetivo de este reto es crear una aplicación para gestionar el acceso a un edificio inteligente. 
-
-- Cliente: Se trata de una empresa de domótica de formación reciente que quiere diseñar un sistema de control de acceso a un edificio inteligente para vendérselo a terceros.
-
+> El objetivo de este proyecto es diseñar y construir una aplicación robusta y fiable para la gestión de acceso a un edificio inteligente. Esta herramienta es fundamental para una empresa de domótica de reciente creación, la cual busca desarrollar un sistema de control de acceso avanzado y completo para su comercialización a terceros, ofreciendo una solución integral para la seguridad y el flujo de personas.
+> 
+> La aplicación deberá gestionar de forma precisa la entrada y salida de las personas en el edificio. Cada persona, al iniciar su interacción con el sistema, se considera en un estado "fuera del edificio". Cuando una persona intenta acceder, debe escanear su tarjeta de identificación, lo que inmediatamente inicia un proceso de verificación multifase. Durante este proceso de acceso, el sistema realizará una validación exhaustiva de la tarjeta (comprobando su validez, permisos, etc.) y un escaneo de seguridad (que podría implicar reconocimiento facial, huella dactilar u otras tecnologías para confirmar la identidad y el estado de seguridad de la persona). Si todas las comprobaciones son exitosas y no se detecta ninguna anomalía, se concederá el acceso y el estado de la persona cambiará a "dentro del edificio".
 >
->El sistema de control de acceso de un edificio inteligente se encarga de gestionar la entrada y salida de las personas. Una persona comienza siempre fuera del edificio. Cuando intenta acceder, debe escanear su tarjeta, iniciando así un proceso de verificación. Durante este proceso de acceso, se realizan varios pasos, como la validación de la tarjeta y un escaneo de seguridad. Si todo es correcto, la persona puede entrar al edificio y pasar al estado de estar dentro.
->
->Sin embargo, si la tarjeta es inválida o se detecta algún problema de seguridad, el acceso se deniega y la persona entra en un estado bloqueado. Para salir de este estado, un guardia de seguridad puede intervenir y decidir si la persona debe volver al inicio, es decir, al estado fuera del edificio, o si puede intentar nuevamente el acceso. Por último, una vez que una persona se encuentra dentro del edificio, puede salir en cualquier momento, regresando al estado inicial fuera del edificio.
+> Sin embargo, si la tarjeta resulta ser inválida, no está autorizada para ese acceso en ese momento, o si se detecta cualquier problema de seguridad durante el proceso de escaneo, el acceso será denegado de forma automática. En este escenario, la persona entrará en un estado "bloqueado", lo que indica una situación que requiere intervención. Para salir de este estado, será necesaria la intervención de un guardia de seguridad autorizado. El guardia, tras evaluar la situación, podrá tomar una de dos decisiones: bien la persona regresa al estado inicial de "fuera del edificio" (lo que implica que debe reiniciar todo el proceso de acceso si desea intentarlo de nuevo), o bien se le permite "intentar nuevamente el acceso", lo que la devolvería al punto de escanear su tarjeta para una nueva verificación. Finalmente, una vez que una persona se encuentra "dentro del edificio", tendrá la libertad de salir en cualquier momento, y al hacerlo, su estado regresará al inicial de "fuera del edificio". El sistema debe ser capaz de registrar y auditar todos estos cambios de estado y los eventos de acceso y denegación.
+
