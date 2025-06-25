@@ -1,28 +1,14 @@
+<style> body{
+    text-align: justify;
+    }
+    p{
+        text-indent: 2rem;
+    } 
+</style>
+
 # Herramientas para la prueba de software
 
 En este bloque, vamos a repasar diferentes herramientas para la prueba de software. Primero veremos qué son las anotaciones, un recurso que emplean todos los frameworks para funcionar. Después, veremos las herramientas JUnit y Mockito.
-
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
-<!-- code_chunk_output -->
-
-- [Herramientas para la prueba de software](#herramientas-para-la-prueba-de-software)
-  - [¿Qué son los **Test de Unidad**?](#qué-son-los-test-de-unidad)
-    - [Beneficios de los Test de Unidad](#beneficios-de-los-test-de-unidad)
-      - [Ejemplo sencillo de test de unidad](#ejemplo-sencillo-de-test-de-unidad)
-    - [Implementación de Test de Unidad en Java usando IntelliJ y JUnit](#implementación-de-test-de-unidad-en-java-usando-intellij-y-junit)
-      - [**Paso 1: Configurar el proyecto en IntelliJ con JUnit**](#paso-1-configurar-el-proyecto-en-intellij-con-junit)
-      - [**Paso 2: Escribir un Test de Unidad en Java usando JUnit**](#paso-2-escribir-un-test-de-unidad-en-java-usando-junit)
-      - [**Paso 3: Ejecutar el Test en IntelliJ**](#paso-3-ejecutar-el-test-en-intellij)
-    - [Agregando más tests](#agregando-más-tests)
-  - [Diseño de Test de unidad](#diseño-de-test-de-unidad)
-    - [Actividad 1: Números primos](#actividad-1-números-primos)
-    - [Actividad 2: Sumador de palabras](#actividad-2-sumador-de-palabras)
-  - [Anotaciones en Java](#anotaciones-en-java)
-  - [Test de unidad con JUNIT](#test-de-unidad-con-junit)
-    - [Principales anotaciones de JUnit:](#principales-anotaciones-de-junit)
-
-<!-- /code_chunk_output -->
 
 ## ¿Qué son los **Test de Unidad**?
 
@@ -34,7 +20,6 @@ Los **tests de unidad** son pequeñas pruebas automatizadas que se escriben para
 2. **Facilitan el mantenimiento**: Al cambiar el código, los tests ayudan a asegurarse de que no se rompa el comportamiento existente.
 3. **Permiten refactorizar con confianza**: Si los tests pasan después de refactorizar, es probable que el código siga funcionando.
 
----
 
 #### Ejemplo sencillo de test de unidad
 
@@ -50,7 +35,6 @@ public class Calculadora {
 
 Queremos escribir un test de unidad para verificar que el método `sumar()` funciona correctamente.
 
----
 
 ### Implementación de Test de Unidad en Java usando IntelliJ y JUnit
 
@@ -82,8 +66,6 @@ Queremos escribir un test de unidad para verificar que el método `sumar()` func
    - En el árbol de directorios de IntelliJ, crea un nuevo paquete llamado `test` (en `src/test/java`).
    - Crea una nueva clase de prueba (ej. `CalculadoraTest`) en ese paquete.
 
----
-
 #### **Paso 2: Escribir un Test de Unidad en Java usando JUnit**
 
 Vamos a escribir un test para la clase `Calculadora`:
@@ -107,14 +89,11 @@ public class CalculadoraTest {
 - **@Test**: Esta anotación indica que el método `testSumar` es una prueba que se debe ejecutar.
 - **assertEquals(esperado, actual)**: Verifica si el valor que devuelve el método (en este caso `5`) es igual al valor esperado (también `5`). Si no coincide, el test fallará.
 
----
-
 #### **Paso 3: Ejecutar el Test en IntelliJ**
 
 1. Haz clic derecho sobre la clase de prueba `CalculadoraTest` y selecciona "Run 'CalculadoraTest'".
 2. Si todo está bien, IntelliJ te mostrará que el test ha pasado exitosamente.
 
----
 
 ### Agregando más tests
 
@@ -129,8 +108,6 @@ public void testSumarNumerosNegativos() {
 ```
 
 Cada vez que agregues un test, simplemente ejecútalo de nuevo para verificar que todos los casos pasen.
-
----
 
 ## Diseño de Test de unidad
 
@@ -147,9 +124,10 @@ Una buena estrategia es:
 - Si procede, buscar casos en el límite de operaciones.
 - Comprobar cómo reacciona un método ante entradas inesperadas.
 
-### Actividad 1: Números primos
-
-Diseña test de unidad para el siguiente método, tanto en una tabla como en JUNIT.
+> **Actividad** 
+> Números primos
+>
+> Diseña test de unidad para el siguiente método, tanto en una tabla como en JUNIT.
 
 ```java
 public class Calculadora {
@@ -163,9 +141,10 @@ public class Calculadora {
 }
 ```
 
-### Actividad 2: Sumador de palabras
-
-Diseña test de unidad para el siguiente método, tanto en una tabla como en JUNIT. El método coge dos palabras y suma el valor de todos los caracteres. El valor de un caracter es su número en ASCII.
+> **Actividad**
+> Sumador de palabras
+>
+>Diseña test de unidad para el siguiente método, tanto en una tabla como en JUNIT. El método coge dos palabras y suma el valor de todos los caracteres. El valor de un caracter es su número en ASCII.
 
 ```java
 public class Calculadora {
@@ -203,7 +182,11 @@ Las anotaciones **no cambian la lógica del código**, pero **permiten que herra
 
 JUnit es el framework más utilizado para realizar **pruebas unitarias en Java**. En este tutorial, aprenderás a configurarlo y a escribir pruebas paso a paso.  
 
-**1. Configurar JUnit en IntelliJ**  
+> **Actividad**
+> Realiza una memoria con capturas de pantalla de este tutorial
+
+
+### **1. Configurar JUnit en IntelliJ**  
 
 1. **Abre IntelliJ IDEA**.  
 2. **Crea un nuevo proyecto** con soporte para **Java**. Usa Maven (aunque también es compatible con Gradle)  
@@ -240,7 +223,7 @@ Si no estuviera creada la etiqueta `dependencies`, añádela. También puedes de
 
 Dentro de la etiqueta `<version></version>` puedes colocar el número de la versión que quieras usar o emplear alguna palabra clave, como `LATEST` que en este caso descargará la versión más reciente de la dependencia. En un entorno experimental, esto es útil. Sin embargo, para una producción real sería mejor escoger una versión y no cambiarla. En este caso, al tratarse de unos apuntes, nos quedamos con la versión `LATEST`.
 
-**2. Crear la clase a probar**  
+### **2. Crear la clase a probar**  
 
 Vamos a probar una **clase simple de calculadora**. Crea un nuevo archivo `Calculadora.java` y añade el siguiente código:  
 
@@ -267,7 +250,7 @@ public class Calculadora {
 }
 ```
 
-**3. Escribir pruebas con JUnit**  
+### **3. Escribir pruebas con JUnit**  
 
 1. **Crea un nuevo archivo de prueba** en `src/test/java` o haz click derecho en el nombre de la clase, selecciona Generate y luego Test.  
 2. **Nombra la clase** como `CalculadoraTest.java`. Si usas la opción de Generate, puedes decirle a IntelliJ que además te genere las cabeceras necesarias para testear todos los métodos, así como las opciones de ***setup*** y ***teardown***. La opción de setup `@BeforeEach` ejecuta dicho código antes de cada prueba y la función `@AfterEach` al acabar cada prueba. En este caso, emplearemos solo la de `setup`, pero la de `teardown` puede ser interesante trabajando con propiedades estáticas.

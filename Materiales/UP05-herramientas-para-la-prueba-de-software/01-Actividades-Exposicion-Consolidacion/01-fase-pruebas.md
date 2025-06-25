@@ -1,4 +1,12 @@
-### **La fase de pruebas**
+<style> body{
+    text-align: justify;
+    }
+    p{
+        text-indent: 2rem;
+    } 
+</style>
+
+# **La fase de pruebas**
 
 Antes de poner un software en producción, es esencial comprobar que funciona correctamente. Las pruebas permiten detectar errores, asegurar que el sistema cumple con los requisitos y garantizar que sea fiable y estable. No basta con “parece que funciona”: hay que probarlo de forma rigurosa.
 

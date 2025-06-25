@@ -7,11 +7,12 @@
     } 
 </style>
 
-# Pruebas de Software
+# Tipos de pruebas de Software
 
 En este documento vamos a introducirnos en una de las fases más importantes del desarrollo de software, la fase de pruebas. Introduciremos los diferentes tipos de pruebas que se pueden realizar y más adelante profundizaremos en ellas.
 
->**Actividad:** A lo largo de este documento se introducirán conceptos relacionados con la fase de pruebas. Realiza un mapa conceptual, un esquema o una infografía con las fases de las pruebas de software, asociando cada una a las distintas herramientas que se van introduciendo.
+>**Actividad:** 
+> A lo largo de este documento se introducirán conceptos relacionados con la fase de pruebas. Realiza un mapa conceptual, un esquema o una infografía con las fases de las pruebas de software, asociando cada una a las distintas herramientas que se van introduciendo.
 
 ## Las pruebas de software dentro del desarrollo de un sistema  
 
@@ -180,7 +181,8 @@ Supongamos que estamos probando una aplicación de banca en línea. Un tester ex
 
 En el ámbito académico, los profesores de programación son expertos *destruyendo* los programas de los alumnos a base de pruebas exploratorias. Son una forma excelente de simular el comportamiento caótico de miles de clientes interactuando con tu aplicación.  
 
-> **Actividad:** Realiza una sesión de pruebas exploratorias sobre una aplicación web de tu elección. Registra los errores que encuentres y clasifícalos según su gravedad. 
+> **Actividad:** 
+> Realiza una sesión de pruebas exploratorias sobre una aplicación web de tu elección. Registra los errores que encuentres y clasifícalos según su gravedad. 
 
 ## Estándares de pruebas de software
 
@@ -201,7 +203,8 @@ La norma **ISO/IEC 25010** define un modelo de calidad que evalúa el software e
 
 Las pruebas de software ayudan a garantizar estas características, dependiendo del tipo de prueba que se aplique.  
 
-> **Actividad:** Relaciona cada una de las 8 características de ISO 25010 con los tipos de pruebas de software vistos en clase.  
+> **Actividad:** 
+> Relaciona cada una de las 8 características de ISO 25010 con los tipos de pruebas de software vistos en clase.  
 
 ### **ISTQB - Certificación en Testing de Software**
 
@@ -239,7 +242,8 @@ El ISTQB también establece una serie de **principios fundamentales del testing*
 
 - **El testing demuestra la presencia de defectos, no la ausencia de ellos**: Las pruebas de software no garantizan que el sistema esté libre de defectos, sino que buscan identificar posibles errores en el software.
 
-## **Consolidación de conocimientos**  
+> **Actividad**
+> Contesta a las siguientes preguntas tipo test: 
 
 **Pregunta 1:** ¿Cuál de estas pruebas verifica la funcionalidad sin conocer el código interno?  
 A) Caja blanca  
@@ -259,13 +263,37 @@ B) Pruebas exploratorias
 C) Pruebas automatizadas  
 D) Pruebas alfa  
 
-> **Actividad:** Imagina que trabajas como tester en una empresa que ha desarrollado una aplicación para reservar hoteles. Debes diseñar un plan de pruebas que incluya:  
+## Documentación de Pruebas
+
+La **documentación de pruebas** es el registro organizado y sistemático de todo el proceso de prueba de software. No es solo un trámite, sino una parte fundamental para garantizar la **calidad**, la **trazabilidad** y el **mantenimiento** de cualquier aplicación. Permite que cualquier miembro del equipo, o incluso futuros equipos, comprenda qué se probó, cómo se probó, por qué se probó y cuáles fueron los resultados.
+
+### Factores de importancia para la documentación de las pruebas
+
+* **Trazabilidad:** Conecta los requisitos del software con los casos de prueba, asegurando que cada funcionalidad esperada sea validada.
+* **Reusabilidad:** Facilita la ejecución repetida de pruebas (pruebas de regresión) a lo largo del ciclo de vida del desarrollo, ahorrando tiempo y recursos.
+* **Análisis de Fallos:** Proporciona un registro detallado para depurar errores y entender por qué un defecto se manifestó.
+* **Conocimiento Compartido:** Actúa como una base de conocimiento para el equipo, reduciendo la dependencia de individuos y facilitando la incorporación de nuevos miembros.
+* **Mejora Continua:** Permite analizar el proceso de prueba, identificar cuellos de botella y optimizar futuras estrategias de testeo.
+* **Cumplimiento Normativo:** En muchos sectores (ej. médico, financiero), la documentación de pruebas es un requisito legal o de auditoría.
+
+### Elementos clave de la documentación de pruebas
+
+Aunque puede variar según el proyecto, la documentación de pruebas comúnmente incluye:
+
+* **Plan de Pruebas:** Describe el alcance, los objetivos, la estrategia, el cronograma, los recursos y los roles del equipo de pruebas.
+* **Casos de Prueba:** Especifican los pasos detallados para ejecutar una prueba, los datos de entrada, los resultados esperados y el criterio de éxito/falla.
+* **Guiones/Scripts de Prueba:** Para pruebas automatizadas, es el código y los pasos para ejecutar la automatización.
+* **Informes de Defectos (Bugs):** Documentan los errores encontrados, incluyendo pasos para reproducirlos, gravedad, prioridad y estado.
+* **Informes de Resumen de Pruebas:** Presentan un resumen ejecutivo de los resultados de la prueba, métricas clave (cobertura, defectos encontrados), riesgos y recomendaciones.
+
+> **Actividad:** 
+> Imagina que trabajas como tester en una empresa que ha desarrollado una aplicación para reservar hoteles. Debes diseñar la documentación de pruebas necesaria, que incluya:  
 > 1. **Pruebas unitarias** (ej.: verificar que el cálculo del precio total funcione correctamente).  
 > 2. **Pruebas de integración** (ej.: validar que la conexión con la pasarela de pagos funcione bien).  
 > 3. **Pruebas de aceptación** (ej.: asegurar que un usuario pueda buscar un hotel y completar una reserva sin problemas).  
 > 4. **Pruebas de seguridad** (ej.: evitar que los usuarios puedan modificar los precios desde el frontend).  
-> 
-> Crea un documento con los casos de prueba para esta aplicación y especifica qué herramientas usarías en cada prueba.  
+>
+> Debate los diferentes puntos en clase y crea un documento con los casos de prueba para esta aplicación y especifica qué herramientas usarías en cada prueba.  
 
 
 

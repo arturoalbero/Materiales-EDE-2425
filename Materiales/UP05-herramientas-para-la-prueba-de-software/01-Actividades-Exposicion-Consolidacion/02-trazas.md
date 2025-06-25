@@ -1,10 +1,19 @@
-## La traza de un programa
+<style> body{
+    text-align: justify;
+    }
+    p{
+        text-indent: 2rem;
+    } 
+</style>
+# La traza de un programa
+
+## Definición de Traza de un programa
 
 La traza de un programa es un registro detallado de la ejecución de un programa, que muestra los valores de las variables, los resultados de las operaciones y el flujo de control en cada paso. En ella implementamos las técnicas de depuración de caja blanca de manera holística.
 
 Es una herramienta útil para depurar y entender cómo funciona un programa, especialmente cuando se busca identificar errores o comportamientos inesperados.
 
-**Usar una tabla de seguimiento de variables**
+### Tabla de seguimiento de variables
 
 Una de las técnicas más efectivas es crear una tabla donde se registren los valores de las variables en cada paso del algoritmo. Supongamos el siguiente algoritmo en lenguaje natural:
 
@@ -25,6 +34,8 @@ Dado el anterior algoritmo, realizamos la siguiente tabla donde hacemos un segui
 Usando Entornos de Desarrollo Integrado, esta información la podemos consultar a través del depurador (debugger). Podemos sustituir la tabla por anotaciones (con la misma información) si el problema es simple, para reducir la aparatosidad. Las anotaciones son otra forma de expresar la traza.
 
 Además del valor de las variables, también podemos evaluar el camino que se toma en los nodos de decisión mediante el uso de tablas de verdad.
+
+## Ejemplo de aplicación
 
 Vamos a crear un **ejemplo sencillo** que combine un algoritmo, su traza y una tabla de verdad para evaluar el camino que se toma en los nodos de decisión y el número de veces que se repite un bucle. Supongamos el siguiente algoritmo:
 

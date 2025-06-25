@@ -20,7 +20,8 @@ Las pruebas de camino básico tienen como fin determinar el camino que puede seg
 
 Se llama complejidad ciclomática, representada con V(G), al número de caminos distintos que puede tomar el programa. Los caminos sirven para poder diseñar pruebas de unidad que verifiquen el funcionamiento de cada uno de ellos.
 
->**Actividad:** Diseña pruebas de camino básico para el siguiente algoritmo:
+> **Actividad:** 
+> Diseña pruebas de camino básico para el siguiente algoritmo:
 ```java
 if (num1 > 10)
 {
@@ -91,7 +92,8 @@ Si nos fijamos bien, los casos 3 y 4 llevan al mismo resultado independientement
 |3	|true	|false	|*	|true
 |4	|false	|*	|*	|false
 
->**Actividad:** Utiliza el código del ejercicio del apartado anterior para realizar las pruebas condicionales.
+> **Actividad:** 
+> Utiliza el código del ejercicio del apartado anterior para realizar las pruebas condicionales.
 
 ### Pruebas de comprobación de bucles
 
@@ -150,7 +152,8 @@ Podemos construir la siguiente tabla de casos de prueba:
 
  
 
->**Actividad:** El siguiente fragmento de código verifica si los dígitos de un número están en orden ascendente:  
+>**Actividad:** 
+> El siguiente fragmento de código verifica si los dígitos de un número están en orden ascendente:  
 >
 
 ```java
@@ -229,7 +232,8 @@ Lo primero que debemos hacer es añadir un punto de ruptura. Para ello hacemos c
 
 Los puntos de ruptura pueden ser condicionales o incondicionales. Para añadir una condición a un punto de ruptura, haz click derecho. En la línea 20, añade la condición `esPrimo` para que el programa solo se detenga cuando la variable `esPrimo` sea cierta.
 
->**Actividad**: Comprueba el funcionamiento de los dos puntos de ruptura. Añade un punto más, siendo uno incondicional y el otro condicional. Después bórralos haciendo click.
+>**Actividad**: 
+> Comprueba el funcionamiento de los dos puntos de ruptura. Añade un punto más, siendo uno incondicional y el otro condicional. Después bórralos haciendo click.
 
 Cuando activas la depuración, la información se muestra en la pantalla inferior (donde está normalmente la consola):
 
@@ -237,7 +241,8 @@ Cuando activas la depuración, la información se muestra en la pantalla inferio
 
 En este menú podemos ver los puntos de ruptura, realizar acciones de ejecución paso a paso (que veremos más adelante) y comprobar el valor de las variables.
 
->**Actividad**: Inspecciona el valor de las variables en el punto de ruptura de la línea 11 cuando `i` vale `12`. ¿Qué información tenemos que no aparece en nuestro código?
+>**Actividad**: 
+> Inspecciona el valor de las variables en el punto de ruptura de la línea 11 cuando `i` vale `12`. ¿Qué información tenemos que no aparece en nuestro código?
 
 
 Una vez establecido un punto de ruptura, al parar podemos continuar la ejecución del programa paso a paso de las siguientes formas:
@@ -298,7 +303,8 @@ public class Main {
 ```
 Añade un punto de ruptura en la línea 26 y otro en la línea 38.
 
->**Actividad:** Prueba las funciones de Step Over, Step Into (desde la línea 26) y Step Out (desde la línea 38). Observa la pila de llamadas y también los valores.
+>**Actividad:** 
+> Prueba las funciones de Step Over, Step Into (desde la línea 26) y Step Out (desde la línea 38). Observa la pila de llamadas y también los valores.
 >
 > - Prueba primero el *Step Over* desde la línea 26, avanzando 3 pasos. Después, vuelve a ejecutar el debug y prueba el *Step Into* también con tres pasos. ¿Qué diferencia hay?
 >

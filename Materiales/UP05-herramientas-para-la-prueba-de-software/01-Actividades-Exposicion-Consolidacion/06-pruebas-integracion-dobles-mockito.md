@@ -1,8 +1,19 @@
-## Dobles de prueba con Mockito
+<style> body{
+    text-align: justify;
+    }
+    p{
+        text-indent: 2rem;
+    } 
+</style>
+
+# Dobles de prueba con Mockito
 
 Mockito es una de las bibliotecas más utilizadas para la creación de pruebas unitarias en Java. Permite simular objetos y comportamientos para probar métodos sin depender de implementaciones reales. Vamos a continuar el proyecto anterior y añadirle soporte para Mockito.
 
-**En el archivo `pom.xml, añade esto en `<dependencies>`:
+> **Actividad**
+> Realiza una memoria de todo el proceso de configuración de Mockito
+
+En el archivo `pom.xml, añade esto en `<dependencies>`:
 
 ```xml
 <dependency>
@@ -19,7 +30,7 @@ Mockito es una de las bibliotecas más utilizadas para la creación de pruebas u
 
 ```
 
-A continuación, debemos **refresca** el proyecto para descargar las dependencias. Haz click derecho en el archivo `pom.xml` y ve a Maven->Sync Project.
+A continuación, debemos **refrescar** el proyecto para descargar las dependencias. Haz click derecho en el archivo `pom.xml` y ve a Maven->Sync Project.
 
 Supongamos que tenemos una clase `CalculadoraService` que depende de un `Repositorio` para obtener datos. Añadamos la clase a nuestro proyecto en un archivo `CalculadoraService` dentro de src/main/java:
 
@@ -40,6 +51,7 @@ public class CalculadoraService {
     }
 }
 ```
+
 El repositorio nos va a salir en rojo, así que creamos una interfaz para representar los métodos que necesitaremos de él en un archivo `Repositorio.java`:
 
 ```java
@@ -238,3 +250,91 @@ Como siempre, debemos importar las dependencias que falten para que funcione.
 >      - **Retornos múltiples** (`thenReturn`)  
 >      - **Orden de ejecución** (`InOrder`)  
 >      - **Spies para pruebas combinadas** (`@Spy`)
+
+> **Actividad**
+>
+> Verificación de Interacciones Simples con Mockito
+> 
+> Completa el archivo de prueba `GestorPedidosTest.java` rellenando las líneas comentadas. Tu objetivo es:
+>
+> 1.  Declarar e inicializar un mock de `ServicioNotificaciones`.
+> 2.  Inyectar este mock en una instancia de `GestorPedidos`.
+> 3.  Invocar el método `procesarPedido` en la clase bajo prueba.
+> 4.  Verificar que el método `enviarNotificacion` del mock fue llamado exactamente una vez, con los argumentos correctos (`clienteEmail` y el mensaje esperado).
+>
+>Asegúrate de que tu test compile y pase correctamente.
+>
+> A continuación, se proporcionan los archivos Java necesarios:
+
+**`ServicioNotificaciones.java`**
+
+```java
+package com.ejercicio.mockito;
+
+public class ServicioNotificaciones {
+    public void enviarNotificacion(String destinatario, String mensaje) {
+        System.out.println("Enviando notificación a " + destinatario + ": " + mensaje);
+    }
+}
+```
+
+**`GestorPedidos.java`**
+
+```java
+package com.ejercicio.mockito;
+
+public class GestorPedidos {
+    private ServicioNotificaciones servicioNotificaciones;
+
+    public GestorPedidos(ServicioNotificaciones servicioNotificaciones) {
+        this.servicioNotificaciones = servicioNotificaciones;
+    }
+
+    public void procesarPedido(String idPedido, String clienteEmail) {
+        System.out.println("Procesando pedido: " + idPedido + " para " + clienteEmail);
+        servicioNotificaciones.enviarNotificacion(clienteEmail, "Su pedido " + idPedido + " ha sido procesado.");
+    }
+}
+```
+
+**`GestorPedidosTest.java`**
+
+```java
+package com.ejercicio.mockito;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.*;
+
+public class GestorPedidosTest {
+
+    // 1. Declara una variable para el mock de ServicioNotificaciones
+    // private ServicioNotificaciones mockServicioNotificaciones;
+
+    // 2. Declara una variable para la instancia de GestorPedidos
+    // private GestorPedidos gestorPedidos;
+
+    @BeforeEach
+    void setUp() {
+        // 3. Inicializa el mock antes de cada test
+        // mockServicioNotificaciones = mock(ServicioNotificaciones.class);
+
+        // 4. Inicializa GestorPedidos inyectando el mock
+        // gestorPedidos = new GestorPedidos(mockServicioNotificaciones);
+    }
+
+    @Test
+    void testProcesarPedidoEnvioNotificacion() {
+        String idPedido = "PED001";
+        String clienteEmail = "cliente@example.com";
+        String mensajeEsperado = "Su pedido PED001 ha sido procesado.";
+
+        // 5. Llama al método que quieres probar en GestorPedidos
+        // gestorPedidos.procesarPedido(idPedido, clienteEmail);
+
+        // 6. Verifica que el método 'enviarNotificacion' del mock fue llamado
+        //    una vez, con los argumentos 'clienteEmail' y 'mensajeEsperado'.
+        // verify(mockServicioNotificaciones, times(1)).enviarNotificacion(eq(clienteEmail), eq(mensajeEsperado));
+    }
+}
+```
