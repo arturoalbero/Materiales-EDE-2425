@@ -6,6 +6,21 @@
     } 
 </style>
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Depuración](#depuración)
+  - [Pruebas de caja blanca](#pruebas-de-caja-blanca)
+    - [Pruebas de camino básico](#pruebas-de-camino-básico)
+    - [Pruebas condicionales](#pruebas-condicionales)
+    - [Pruebas de comprobación de bucles](#pruebas-de-comprobación-de-bucles)
+  - [Depuración de Software: El Debugger](#depuración-de-software-el-debugger)
+  - [Uso del debugger de IntelliJ](#uso-del-debugger-de-intellij)
+
+<!-- /code_chunk_output -->
+
+
 # Depuración
 
 En este documento vamos a analizar diversas técnicas para comprobar el comportamiento de nuestro programas, relacionadas con las pruebas de tipo caja blanca. Primero veremos los tipos de pruebas de caja blanca, después el uso de trazas y tablas de verdad para finalmente introducirnos en el uso del depurador, concretamente del integrado en el IDE IntelliJ Community Edition.

@@ -1,5 +1,25 @@
 # Entornos de Desarrollo Integrados (IDEs) y otros editores
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Entornos de Desarrollo Integrados (IDEs) y otros editores](#entornos-de-desarrollo-integrados-ides-y-otros-editores)
+  - [Tipos de Editores de Código](#tipos-de-editores-de-código)
+    - [Editores de Texto](#editores-de-texto)
+    - [IDEs](#ides)
+  - [Herramientas que Componen un IDE](#herramientas-que-componen-un-ide)
+    - [Diferencias entre compiladores, intérpretes y máquinas virtuales](#diferencias-entre-compiladores-intérpretes-y-máquinas-virtuales)
+  - [Características Comunes en los IDEs](#características-comunes-en-los-ides)
+    - [IntelliSense](#intellisense)
+    - [Multicursor](#multicursor)
+    - [Ejecución Paso a Paso](#ejecución-paso-a-paso)
+  - [IDEs Especializados por Lenguaje](#ides-especializados-por-lenguaje)
+  - [Licencias Educativas de JetBrains](#licencias-educativas-de-jetbrains)
+  - [Servicios Educativos de Otras Plataformas](#servicios-educativos-de-otras-plataformas)
+
+<!-- /code_chunk_output -->
+
 ## Tipos de Editores de Código
 
 Los editores de código se dividen en dos categorías principales: **editores de texto** y **IDEs**. Los editores de texto son más livianos y sencillos, pero no integran de forma nativa todas las herramientas necesarias para la ejecución de código. Los IDEs, en cambio, integran en un solo programa tanto el editor de texto, como las herramientas de compilación y depuración de programas. Sin embargo, son más pesados y menos versátiles precisamente debido a esto. A continuación, vamos a repasar una serie de editores e IDEs:
@@ -180,6 +200,10 @@ Además de JetBrains, los estudiantes pueden acceder a otros servicios gratuitos
 - **GitHub**: Licencias educativas que ofrecen herramientas premium de desarrollo colaborativo.
 - **AWS Educate**: Acceso a recursos y herramientas de Amazon Web Services para aprender sobre computación en la nube.
 - **Google Cloud Services**: Ofrece créditos gratuitos para estudiantes que deseen experimentar con servicios de Google.
+
+
+
+
 
 
 

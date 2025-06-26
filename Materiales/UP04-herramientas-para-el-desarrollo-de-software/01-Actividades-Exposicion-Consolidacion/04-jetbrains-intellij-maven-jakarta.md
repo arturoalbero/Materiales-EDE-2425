@@ -1,4 +1,41 @@
-# Gestores de dependencias
+# Introducción a Java. Gestores de dependencias. Aprender con Inteligencia Artificial. JSP.
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Introducción a Java. Gestores de dependencias. Aprender con Inteligencia Artificial. JSP.](#introducción-a-java-gestores-de-dependencias-aprender-con-inteligencia-artificial-jsp)
+  - [Gestores de dependencias](#gestores-de-dependencias)
+  - [1. **Gestor de dependencias de IntelliJ**](#1-gestor-de-dependencias-de-intellij)
+    - [Ventajas del gestor de IntelliJ](#ventajas-del-gestor-de-intellij)
+    - [Desventajas del gestor de IntelliJ](#desventajas-del-gestor-de-intellij)
+    - [¿Cuándo usaremos el gestor de IntelliJ?](#cuándo-usaremos-el-gestor-de-intellij)
+  - [2. **Maven**](#2-maven)
+    - [Ventajas de Maven](#ventajas-de-maven)
+    - [Desventajas de Maven](#desventajas-de-maven)
+    - [¿Cuándo usaremos Maven?](#cuándo-usaremos-maven)
+    - [Configuración de un proyecto con Maven](#configuración-de-un-proyecto-con-maven)
+  - [3. **Gradle**](#3-gradle)
+    - [Ventajas de Gradle](#ventajas-de-gradle)
+    - [Desventajasde Gradle](#desventajasde-gradle)
+    - [¿Cuándo usamos Gradle?](#cuándo-usamos-gradle)
+    - [Configuración de un proyecto con Gradle](#configuración-de-un-proyecto-con-gradle)
+  - [Programación en Java. Aprendizaje a través de la Inteligencia Artificial](#programación-en-java-aprendizaje-a-través-de-la-inteligencia-artificial)
+  - [Uso de JSP y Jakarta EE en IntelliJ Ultimate](#uso-de-jsp-y-jakarta-ee-en-intellij-ultimate)
+    - [Pasos para crear y ejecutar un proyecto JSP en IntelliJ IDEA Ultimate:](#pasos-para-crear-y-ejecutar-un-proyecto-jsp-en-intellij-idea-ultimate)
+      - [1. Crear un Nuevo Proyecto Web](#1-crear-un-nuevo-proyecto-web)
+      - [2. Configurar el Servidor de Aplicaciones (Tomcat)](#2-configurar-el-servidor-de-aplicaciones-tomcat)
+      - [3. Explorar la Estructura del Proyecto](#3-explorar-la-estructura-del-proyecto)
+      - [4. Modificar el `index.jsp` (Opcional)](#4-modificar-el-indexjsp-opcional)
+      - [5. Configurar la Ejecución (Run Configuration)](#5-configurar-la-ejecución-run-configuration)
+      - [6. Ejecutar el Proyecto](#6-ejecutar-el-proyecto)
+    - [Uso de JSP en la actualidad](#uso-de-jsp-en-la-actualidad)
+
+<!-- /code_chunk_output -->
+
+
+
+## Gestores de dependencias
 
 En IntelliJ tienes varias opciones para gestionar las dependencias de tus proyectos Java, como el gestor de dependencias propio de IntelliJ, **Maven** o **Gradle**. Aquí te doy una visión rápida de cada uno, con recomendaciones sobre cuál podría ser la mejor opción según tu caso.
 
@@ -22,12 +59,9 @@ El gestor de dependencias integrado en IntelliJ se encarga de gestionar bibliote
 
 Usar el gestor de dependencias propio de IntelliJ solo es recomendable para proyectos **muy pequeños** o **prototipos** que no requieran integración continua, automatización, o un sistema de construcción más avanzado.
 
-### Actividad 1
-
-Crea un proyecto en Java usando el gestor de dependencias propio de IntelliJ y un programa que, al ejecutarlo, escriba por consola "Hola Mundo".
-
----
-<div style="page-break-after: always;"></div>
+> **Actividad**
+>
+> Crea un proyecto en Java usando el gestor de dependencias propio de IntelliJ y un programa que, al ejecutarlo, escriba por consola "Hola Mundo".
 
 ## 2. **Maven**
 
@@ -73,12 +107,9 @@ Crea un proyecto en Java usando el gestor de dependencias propio de IntelliJ y u
    - Puedes ejecutar comandos de Maven directamente en IntelliJ desde el panel de Maven (en la barra lateral derecha).
    - Comandos comunes incluyen `clean`, `install`, y `package`.
 
-### Actividad 2
-
-Crea un proyecto en Java usando Maven y un programa que, al ejecutarlo, escriba por consola "Hola Mundo, vivo en Maven".
-
----
-<div style="page-break-after: always;"></div>
+> **Actividad**
+>
+>Crea un proyecto en Java usando Maven y un programa que, al ejecutarlo, escriba por consola "Hola Mundo, vivo en Maven".
 
 ## 3. **Gradle**
 
@@ -119,17 +150,57 @@ Crea un proyecto en Java usando Maven y un programa que, al ejecutarlo, escriba 
 3. **Ejecutar Gradle**:
    - Al igual que con Maven, puedes ejecutar tareas de Gradle directamente desde IntelliJ usando el panel de Gradle. Tareas comunes incluyen `build`, `test`, y `clean`.
 
----
+> **Actividad**
+>
+> Crea un proyecto en Java usando Gradle y un programa que, al ejecutarlo, escriba por consola "Hola Mundo, vivo en Gradle".
 
-### Actividad 3
-
-Crea un proyecto en Java usando Gradle y un programa que, al ejecutarlo, escriba por consola "Hola Mundo, vivo en Gradle".
-
----
 
 Durante el curso emplearemos Maven, por su mayor implantación en la actualidad.
 
 [Uso de funciones Hash](https://www.youtube.com/watch?v=KyUTuwz_b7Q)
+
+## Programación en Java. Aprendizaje a través de la Inteligencia Artificial
+
+Java es un lenguaje muy popular en el desarrollo de aplicaciones web, se emplea sobre todo en el campo del backend aunque puede ser empleado para el frontend usando extensiones como JavaServer Pages (JSP). Java emplea la misma lógica que otros lenguajes como C# o C++.
+
+Al crear nuestro proyecto en Maven, en la carpeta src introducimos nuestros archivos de código fuente, en los que insertamos nuestras clases. En java, los archivos deben tener el mismo nombre que las clases públicas definidas y solo puede haber una clase pública por archivo. Dentro de la clase pública, podemos crear métodos estáticos, que nos permiten tratar la clase como si fuera un contenedor de funciones, o definirla como una clase normal, como las que trabajamos en la Unidad de Programación 3 sobre diseño orientado a objetos.
+
+- *archivo Main.java*
+```java
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// The main method must be in a class named "Main".
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+}
+```
+Este es el código de un `Hola Mundo` extraído de MyCompiler.io. Si usamos la autocompleción de IntelliJ, los `import` se añadirán solos. Es importante, por lo tanto, emplear esas herramientas que nos facilita el IDE, conocidas como herramientas de refactorización. 
+
+Una vez que conocemos la estructura básica de un programa en Java, es hora de transferir nuestros conocimientos en cualquier otro lenguaje de programación a Java. Para ello, una herramienta fundamental es la **Inteligencia Artificial**. Podemos usar ChatGPT, Gemini o cualquier otra. Incluso podemos ir alternando para obtener diferentes perspectivas. La versión de Java que trabajaremos será la 21 LTS (Long Term Support), por temas de compatibilidad.
+
+> **Actividad**
+> Coge tus apuntes de Programación sobre `Entrada y salida de datos por consola` y pídele a un modelo de lenguaje que te los traduzca a Java.
+
+Más adelante aprenderemos a traducir lo aprendido en la unidad de programación 3 a lenguaje Java y, aunque no es necesario para este módulo, sí que sería recomendable hacer un esfuerzo en aprender los siguientes puntos sobre Java:
+- Uso de if, if-else, switch y enhaced switch en Java.
+- Uso de while, do-while, for y enhanced for en Java.
+
+> **Actividad**
+> Pídele a un modelo de lenguaje que te haga un tutorial para aprender a manejar cada uno de los siguientes puntos en Java. Pídele un tutorial distinto por punto, para evitar respuestas demasiado largas o complejas. Pídele que te proponga ejercicios para que tú los resuelvas y luego él te los corrija.
+> - Uso de if y de if-else
+> - Uso de switch-case
+> - Uso de while y do-while
+> - Uso de for
+> - Creación y consulta de arrays
+> - Uso de enhanced for para recorrer arrays
+
+Puedes emplear también la información obtenida en el apartado de Diagramas de Actividad de la Unidad de Programación 2, pero ten en cuenta que los diagramas que tratan la concurrencia son de carácter avanzado y pueden hacerse complicados de trabajar y depurar en Java.
+
+Conforme vayas avanzando en el módulo de programación, procura tratar de convertir esos conocimientos a Java. Te será de utilidad en un futuro.
 
 ## Uso de JSP y Jakarta EE en IntelliJ Ultimate
 
@@ -147,7 +218,7 @@ Necesitarás:
 
 ### Pasos para crear y ejecutar un proyecto JSP en IntelliJ IDEA Ultimate:
 
-### 1. Crear un Nuevo Proyecto Web
+#### 1. Crear un Nuevo Proyecto Web
 
 1.  Abre IntelliJ IDEA.
 2.  Desde la pantalla de bienvenida, haz clic en **"New Project"**. Si ya tienes un proyecto abierto, ve a `File > New > Project...`.
@@ -162,7 +233,7 @@ Necesitarás:
 
 5.  Haz clic en **"Next"**.
 
-### 2. Configurar el Servidor de Aplicaciones (Tomcat)
+#### 2. Configurar el Servidor de Aplicaciones (Tomcat)
 
 1.  En la siguiente pantalla, bajo **"Application Server"**:
     * Haz clic en el botón **"New..."**.
@@ -180,7 +251,7 @@ Necesitarás:
 3.  Haz clic en **"Create"**.
 
 
-### 3. Explorar la Estructura del Proyecto
+#### 3. Explorar la Estructura del Proyecto
 
 IntelliJ IDEA creará el proyecto con una estructura similar a esta (si usas Maven):
 
@@ -201,7 +272,7 @@ MiPrimerJSP/
 * **`src/main/webapp/WEB-INF/web.xml`**: Este archivo es el descriptor de despliegue de tu aplicación web. Contiene configuraciones importantes, como la bienvenida, mapeos de servlets, etc.
 * **`src/main/java/`**: Si vas a escribir servlets o clases Java que tu JSP va a usar, irán aquí.
 
-### 4. Modificar el `index.jsp` (Opcional)
+#### 4. Modificar el `index.jsp` (Opcional)
 
 Abre el archivo `src/main/webapp/index.jsp`. Verás un código HTML básico. Puedes modificarlo para incluir un poco de código JSP para probar:
 
@@ -222,7 +293,7 @@ Abre el archivo `src/main/webapp/index.jsp`. Verás un código HTML básico. Pue
 </html>
 ```
 
-### 5. Configurar la Ejecución (Run Configuration)
+#### 5. Configurar la Ejecución (Run Configuration)
 
 IntelliJ IDEA suele crear automáticamente una configuración de ejecución para Tomcat cuando creas un proyecto web.
 
@@ -240,7 +311,7 @@ IntelliJ IDEA suele crear automáticamente una configuración de ejecución para
 
 3.  Haz clic en **"OK"**.
 
-### 6. Ejecutar el Proyecto
+#### 6. Ejecutar el Proyecto
 
 1.  En la barra de herramientas superior, haz clic en el botón verde de **"Play"** (Run) junto al desplegable de la configuración de Tomcat.
 2.  IntelliJ IDEA:
@@ -249,7 +320,7 @@ IntelliJ IDEA suele crear automáticamente una configuración de ejecución para
     * Desplegará tu aplicación web en Tomcat.
     * Automáticamente abrirá tu navegador predeterminado en la URL de tu aplicación (ej., `http://localhost:8080/MiPrimerJSP/`).
 
-¡Deberías ver tu `index.jsp` renderizado en el navegador!
+Deberías ver tu `index.jsp` renderizado en el navegador.
 
 **Consejos adicionales:**
 
@@ -265,5 +336,8 @@ JSP no es una tecnología muy popular en la actualidad, ya que en general las p�
 La ventaja es que podemos trabajar con los conocimientos que adquiramos en Java de forma directa y es una forma muy sencilla de poder conectar nuestros proyectos de Java a una interfaz gráfica diseñada en HTML5, CSS y Javascript, tal y como se trabaja en el módulo profesional de Lenguaje de Marcas y Gestión de Sistemas de la información.
 
 Si quieres profundizar más sobre el uso de JSP, puedes realizar la actividad de ampliación relacionada.
+
+> **Actividad**
+> Crea una página en JSP que calcule los primeros 7 números primos y los imprima en la página web. Usa scriptlets para el cálculo.
 
 

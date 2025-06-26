@@ -1,6 +1,48 @@
-## Uso de Git y Github
+# Uso de Git y Github
 
 Como hemos visto antes, Git es un sistema de control de versiones distribuido (DVCS) creado por el equipo de Linux. Actualmente, se utiliza en muchos servidores de control de versiones, como GitHub, BitBucket o GitLab, para almacenar proyectos de forma remota. Pero, si queremos interactuar con estos proyectos o repositorios remotos desde nuestra máquina local, debemos instalar Git localmente y utilizar los diferentes comandos que proporciona. En este documento aprenderemos cómo instalar Git y cómo utilizar algunos de los comandos básicos.
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Uso de Git y Github](#uso-de-git-y-github)
+  - [Instalación de Git en tu máquina](#instalación-de-git-en-tu-máquina)
+    - [1. Instalación y configuración de Git](#1-instalación-y-configuración-de-git)
+      - [1.1. Configuración de Git](#11-configuración-de-git)
+    - [2. Comandos locales básicos útiles](#2-comandos-locales-básicos-útiles)
+      - [2.1. Crear un repositorio local](#21-crear-un-repositorio-local)
+      - [2.2. Añadir o editar ficheros en el repositorio](#22-añadir-o-editar-ficheros-en-el-repositorio)
+      - [2.3. Guardar o *commitear* cambios](#23-guardar-o-commitear-cambios)
+        - [Mostrar el historial de commits](#mostrar-el-historial-de-commits)
+        - [Mostrar los cambios](#mostrar-los-cambios)
+        - [Etiquetar commits](#etiquetar-commits)
+      - [2.4. Deshacer cambios](#24-deshacer-cambios)
+      - [2.5. El fichero .gitignore](#25-el-fichero-gitignore)
+    - [3. Trabajando con repositorios remotos](#3-trabajando-con-repositorios-remotos)
+      - [3.1. Clonar repositorios](#31-clonar-repositorios)
+      - [3.2. Actualizar los cambios remotos en local](#32-actualizar-los-cambios-remotos-en-local)
+      - [3.3. Subir los cambios locales al repositorio remoto](#33-subir-los-cambios-locales-al-repositorio-remoto)
+      - [3.4 Crear un repositorio remoto a partir de nuestro repositorio local](#34-crear-un-repositorio-remoto-a-partir-de-nuestro-repositorio-local)
+    - [Tabla resumen de comandos básicos](#tabla-resumen-de-comandos-básicos)
+  - [Uso de ramas en Git](#uso-de-ramas-en-git)
+    - [1. ¿Qué es una rama en Git?](#1-qué-es-una-rama-en-git)
+    - [2. Crear y cambiar de ramas](#2-crear-y-cambiar-de-ramas)
+      - [2.1. Crear una nueva rama](#21-crear-una-nueva-rama)
+      - [2.2. Cambiar de rama](#22-cambiar-de-rama)
+      - [2.3. Crear y cambiar de rama en un solo paso](#23-crear-y-cambiar-de-rama-en-un-solo-paso)
+    - [3. Trabajar en una rama](#3-trabajar-en-una-rama)
+      - [3.1. Ver las ramas disponibles](#31-ver-las-ramas-disponibles)
+    - [4. Fusionar ramas (merge)](#4-fusionar-ramas-merge)
+    - [5. Resolver conflictos de fusión](#5-resolver-conflictos-de-fusión)
+    - [6. Borrar ramas](#6-borrar-ramas)
+    - [7. Trabajo con ramas remotas](#7-trabajo-con-ramas-remotas)
+    - [Tabla resumen de comandos de ramas en Git](#tabla-resumen-de-comandos-de-ramas-en-git)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Instalación de Git en tu máquina
 
@@ -94,14 +136,14 @@ nothing to commit, working tree clean
 Alternativamente, también podemos utilizar el parámetro `-a` para añadir o preparar automáticamente los cambios antes de commitearlos. Este comando combina un `git add .` y un comando `git commit`:
 `git commit -a -m "Tu mensaje de commit"`
 
-##### **Mostrar el historial de commits**
+##### Mostrar el historial de commits
 
 Si queremos ver el historial de commits de nuestro repositorio, podemos escribir este comando:
 `git log`
 
 Cada commit tiene una etiqueta que consiste en una secuencia de dígitos y letras. En el ejemplo anterior, nuestro commit se ha etiquetado como `08f4ed1751…`. Esta etiqueta será útil para comprobar el commit más adelante, aunque no es necesario recordar todos estos caracteres, solo el prefijo inicial.
 
-##### **Mostrar los cambios**
+##### Mostrar los cambios
 
 También podemos ver los cambios entre dos versiones consecutivas del repositorio. Hay muchas maneras de hacerlo:
 
@@ -137,7 +179,7 @@ Date: Wed Apr 14 16:00 2023
 > Los nuevos cambios se muestran en verde si han sido añadidos (en este caso, tu nombre al final del contenido del fichero), o en rojo si han sido eliminados.
 
 
-##### **Etiquetar commits**
+##### Etiquetar commits
 
 Podemos añadir manualmente etiquetas a un commit determinado, de manera que lo podemos encontrar fácilmente más adelante cuando queramos mostrar sus cambios. Utilizamos el comando `git tag` seguido del nombre de la etiqueta:
 `git tag v1.0`
@@ -176,7 +218,7 @@ Esto omite la carpeta `node_modules` y todos los ficheros `.exe` o `.tmp` en la 
 **NOTA**: El fichero `.gitignore` **NO** excluye ficheros que ya han sido *commiteados* previamente. Por ejemplo, si le decimos a este fichero que ignore ficheros `.exe` pero previamente hemos commiteado un fichero `.exe` al repositorio, este fichero no se eliminará del mismo.
 
 
-### 3\. Trabajando con repositorios remotos
+### 3. Trabajando con repositorios remotos
 
 Ahora que hemos aprendido cómo añadir y editar contenido en un repositorio local, veamos cómo conectarnos a un repositorio remoto de GitHub para descargar o subir los cambios. Primeramente, si queremos trabajar con repositorios remotos almacenados en GitHub, necesitaremos crear este repositorio remoto en GitHub.
 
@@ -296,7 +338,7 @@ git branch -M main
 git push -u origin main
 ```
 
-## Tabla resumen de comandos básicos
+### Tabla resumen de comandos básicos
 
 | Comando | Utilidad |
 | :------------------------- | :------------------------------------------------------------------ |
@@ -321,17 +363,17 @@ git push -u origin main
 | `git version` | Muestra la versión de Git instalada. |
 
 
-# Uso de ramas en Git
+## Uso de ramas en Git
 
 En esta segunda parte, nos centraremos en el trabajo con **ramas** (**branches**) de Git, una de las funcionalidades más poderosas de este sistema de control de versiones. Las ramas permiten trabajar en funciones o mejoras de manera independiente sin afectar la rama principal del proyecto (normalmente llamada `main` o `master`). Así, podemos desarrollar, probar y modificar nuevas funcionalidades sin interferir en la versión estable del proyecto.
 
-### 1\. ¿Qué es una rama en Git?
+### 1. ¿Qué es una rama en Git?
 
 Una rama en Git es esencialmente una secuencia de commits que comienza a partir de un punto específico en la historia del repositorio. La rama principal del proyecto es generalmente `main` o `master`, pero podemos crear tantas ramas como necesitemos para desarrollar nuevas características o corregir errores de manera paralela.
 
 Cuando trabajamos con ramas, podemos hacer cambios en una rama sin que afecten a las otras, y posteriormente podemos combinar las ramas para integrar esos cambios en el proyecto principal.
 
-### 2\. Crear y cambiar de ramas
+### 2. Crear y cambiar de ramas
 
 #### 2.1. Crear una nueva rama
 
@@ -379,7 +421,7 @@ git checkout -b nueva-funcion
 
 Este comando crea la rama `nueva-funcion` y automáticamente nos cambia a ella.
 
-### 3\. Trabajar en una rama
+### 3. Trabajar en una rama
 
 Una vez estemos trabajando en una nueva rama, podemos hacer modificaciones, añadir ficheros y realizar commits de la misma manera que lo haríamos en la rama principal. Estos cambios quedarán aislados dentro de la rama y no afectarán a ninguna otra rama hasta que decidamos combinarlas.
 
@@ -393,7 +435,7 @@ git branch
 
 La rama en la que estamos trabajando actualmente estará marcada con un asterisco `*`.
 
-### 4\. Fusionar ramas (merge)
+### 4. Fusionar ramas (merge)
 
 Una vez hayamos terminado el desarrollo o la corrección de errores en nuestra rama, es momento de fusionar los cambios con la rama principal. Este proceso se denomina **fusión** o **merge**.
 
@@ -411,7 +453,7 @@ git merge nueva-funcion
 
 Si no hay conflictos entre los cambios, Git combinará automáticamente las dos ramas. Si hay conflictos (por ejemplo, si se han modificado las mismas líneas de código en ambas ramas), Git nos avisará y tendremos que resolverlos manualmente.
 
-### 5\. Resolver conflictos de fusión
+### 5. Resolver conflictos de fusión
 
 Cuando aparecen conflictos durante una fusión, Git marca las líneas de código en los ficheros afectados que tienen conflictos. Deberíamos revisar estas líneas manualmente, escoger qué versión queremos mantener, y después marcar los conflictos como resueltos con `git add`. Finalmente, hacemos un commit para completar la fusión:
 
@@ -420,7 +462,7 @@ git add <fichero>
 git commit
 ```
 
-### 6\. Borrar ramas
+### 6. Borrar ramas
 
 Después de fusionar los cambios de una rama secundaria a la rama principal, es una buena práctica eliminar esa rama para mantener el repositorio limpio. Podemos hacerlo con el comando `git branch -d`:
 
@@ -434,7 +476,7 @@ Si la rama no ha sido fusionada, Git no permitirá borrarla. Si estamos seguros 
 git branch -D nueva-funcion
 ```
 
-### 7\. Trabajo con ramas remotas
+### 7. Trabajo con ramas remotas
 
 Cuando trabajamos con repositorios remotos (como GitHub o GitLab), las ramas locales no se suben automáticamente al servidor remoto. Para subir una nueva rama, debemos utilizar el comando `git push` especificando el nombre de la rama:
 
@@ -590,54 +632,3 @@ git branch -d añadir-introduccion
 | `git stash` | Guarda los cambios no commiteados temporalmente para cambiar de rama. |
 | `git stash apply` | Recupera los cambios guardados anteriormente con `git stash`. |
 
-Aquí tienes la traducción al castellano:
-
-## **Gestión básica de GitHub**
-
-GitHub es una herramienta en línea que nos permite gestionar proyectos utilizando el control de versiones a través de Git. Así, podemos hacer uso de un DVCS, que es Git, y la gestión del código fuente. Además, GitHub proporciona algunas funcionalidades adicionales, como el control de acceso, el trabajo colaborativo, la integración continua, el alojamiento de páginas web estáticas, etc.
-
-Hay algunas alternativas a GitHub, como BitBucket o GitLab, pero actualmente GitHub es la más popular.
-
-1. **Registrarse y primeros pasos**
-   Para utilizar esta plataforma, debemos ir al sitio web oficial y registrarnos utilizando el botón "Sign Up" en la esquina superior derecha. Una vez registrados, podemos ver nuestra página principal. Podemos distinguir algunas áreas importantes en esta página principal:
-
-* A la izquierda, podemos ver la lista de nuestros repositorios. Al principio, esta lista estará vacía. Ahora veremos qué es un repositorio y cómo crear uno.
-* En el centro hay una lista de tu actividad reciente. Cada cambio que hayas hecho en tus repositorios se publicará aquí.
-* En la barra superior hay algunos enlaces y menús que pueden ser útiles:
-
-  * El icono en la parte superior izquierda te enviará a esta página de inicio.
-  * El enlace con el símbolo "+" te permite añadir nuevos elementos a tu cuenta: repositorios, organizaciones…
-  * El último icono en la parte superior derecha es tu perfil, desde donde puedes gestionar tu información personal, repositorios, organizaciones creadas, configuración personal, etc.
-
-2. **Repositorios**
-   Un VCS se utiliza normalmente para almacenar proyectos que pueden ser desarrollados por muchas personas. Tanto si desarrollamos el proyecto por nuestra cuenta como con otras personas, puede ser necesario tener una copia remota del proyecto, de modo que podamos restaurarlo si hay algún problema con la copia local. Para hacer esto, necesitamos un repositorio donde se almacenará nuestra copia remota.
-
-Podemos crear nuestro repositorio en GitHub, Bitbucket u otras plataformas. En este caso, utilizaremos GitHub, que es el más popular. Además, nos permite crear repositorios tanto públicos como privados. Los repositorios públicos pueden ser vistos por cualquiera, pero solo las personas autorizadas pueden hacer cambios tanto en los repositorios públicos como en los privados.
-
-Si queremos crear un repositorio en GitHub (siempre que ya nos hayamos registrado), debemos hacer clic en el botón "New" en la esquina superior izquierda (o a través del enlace "+" en la esquina superior derecha, eligiendo después "New repository"), y especificar el nombre del repositorio y algunas de sus configuraciones generales: si queremos que sea público o privado, y si queremos añadir un archivo README inicial (recomendado).
-
-**Crear repositorio**
-Si hacemos clic sobre el nombre del repositorio en el panel de la izquierda de la vista principal, podemos acceder a dicho repositorio. Desde esta página podemos, por ejemplo, clonar o descargar el repositorio, o ver el historial de commits.
-
-**Página principal del repositorio**
-Si hacemos clic en el enlace "Settings", podemos cambiar algunas configuraciones. Desde esta página, podemos añadir colaboradores desde el menú "Collaborators" a la izquierda (es decir, otros usuarios de GitHub) a nuestro proyecto, para que también puedan hacer cambios. También podemos borrar el repositorio o cambiar su visibilidad (público/privado).
-
-**Configuración del repositorio**
-2.1. **Añadir contenidos manualmente**
-Desde la herramienta de GitHub, podemos añadir o editar los archivos de nuestro proyecto (aunque esta no es la manera recomendada). Por ejemplo, si hemos creado el proyecto con un archivo README.md, podemos hacer clic sobre ese archivo para abrirlo. Después, podemos hacer clic en el icono del lápiz para editar su contenido.
-
-**Editar README**
-También podemos añadir nuevos archivos al repositorio desde su página principal, haciendo clic en el botón "Add file".
-
-**Añadir archivos al repositorio**
-A continuación, debemos especificar el nombre del nuevo archivo, junto con las carpetas y subcarpetas donde se colocará (podemos especificar tantas carpetas y subcarpetas como queramos, separadas por /, y se crearán automáticamente).
-
-**Añadir archivos al repositorio**
-
-> **Actividad**
->
-> Regístrate en GitHub si aún no tienes una cuenta. Después, crea un nuevo repositorio público llamado MyFirstRepo, con un archivo README. A continuación, realiza los siguientes pasos:
->
->1. Edita el archivo README.md y añade este texto: "This is my first repo".
->2. Añade un nuevo archivo llamado notes.md y añade alguna información sobre ti: aficiones, intereses…
->3. Recuerda guardar los cambios después de editar estos archivos.

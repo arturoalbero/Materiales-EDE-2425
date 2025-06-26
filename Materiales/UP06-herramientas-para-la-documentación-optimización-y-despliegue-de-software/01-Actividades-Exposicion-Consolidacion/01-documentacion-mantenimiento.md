@@ -41,7 +41,8 @@ Para crear un manual de usuario, podemos usar cualquier editor de texto disponib
 
 [*fuente*](https://nachoiborraies.github.io/java/md/en/09a)
 
-> **Actividad:** Busca un ejemplo real de cada tipo de documentación.
+> **Actividad:** 
+> Busca un ejemplo real de cada tipo de documentación.
 
 A la hora de programar, disponemos de varias herramientas para generar documentación, como javadoc o Doxygen.
 ## 3. Javadoc
@@ -115,6 +116,96 @@ public class CuentaBancaria {
     }
 }
 ```
+> **Actividad**
+> Crea documentación javadoc para el siguiente código, trabajado en la unidad de programación 4. Organiza el proyecto en paquetes para que tenga sentido.
+>
+
+```java
+// Martillo.java
+public class Martillo {
+    protected float longitud;
+    protected String marca;
+    protected CabezaDeMartillo cabeza; // Composición: Martillo "tiene" una CabezaDeMartillo
+
+    public Martillo() {
+        this.cabeza = new CabezaDeMartillo(); // La CabezaDeMartillo se crea con el Martillo
+    }
+
+    public void martillar() {
+        // Implementación del método martillar
+    }
+}
+
+// MartilloElectrico.java
+public class MartilloElectrico extends Martillo { // Herencia: MartilloElectrico "es un" Martillo
+    private float bateria;
+
+    public float getBateria() {
+        return bateria;
+    }
+
+    public void setBateria(float bateria) {
+        this.bateria = bateria;
+    }
+
+    public int tiempoRestante() {
+        // Cálculo y retorno del tiempo restante de la batería
+        return 0; // Placeholder
+    }
+}
+
+// Trabajador.java
+public class Trabajador {
+    private String nombre;
+    private Martillo martillo; // Agregación: Trabajador "usa un" Martillo
+
+    public Trabajador(String nombre, Martillo martillo) { // El Martillo se pasa al constructor
+        this.nombre = nombre;
+        this.martillo = martillo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Martillo getMartillo() {
+        return martillo;
+    }
+
+    public void setMartillo(Martillo martillo) {
+        this.martillo = martillo;
+    }
+
+    public void trabajar() {
+        // Implementación del método trabajar
+    }
+}
+
+// CabezaDeMartillo.java
+public class CabezaDeMartillo {
+    private String material;
+
+    public CabezaDeMartillo() {
+        // Constructor por defecto
+    }
+
+    public CabezaDeMartillo(String material) {
+        this.material = material;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+}
+```
 
 IntelliJ ofrece herramientas para generar tanto la documentación como la página web resultante de manera más o menos automatizada. Cuando colocas comentarios especiales de javadoc encima de un método, al pulsar intro después de `/**`, aparecerán los parámetros relevantes, así como el cierre del comentario. Una vez documentado el proyecto, seguimos los siguientes pasos en IntelliJ:
 
@@ -132,11 +223,7 @@ Una vez completada la generación, se puede encontrar la documentación en el di
 
 La documentación es especialmente importante cuando se trabaja en equipo o en proyectos grandes, pero es peligrosa si no se mantiene con regularidad, ya que los compiladores avisan de errores en el código, pero normalmente no en la documentación. Puedes emplear modelos de generación de texto a través de Inteligencia Artificial, como *Chatgpt*, para generar documentación de tus clases, aunque el resultado no siempre será adecuado. Sin embargo, sí puede ayudarte a la hora de comprobar que la clase hace, efectivamente, lo que la documentación dice que hace la clase y corregir errores menores y de formato.
 
-### Actividad 11: Documenta el proyecto Biblioteca
+> **Actividad**
+> Genera la documentación del proyecto anterior como si fuera una web con las herramientas de IntelliJ.
 
-Crea un proyecto llamado Biblioteca si no lo tenías hecho ya. El proyecto contendrá un paquete también llamado `biblioteca` y dentro de él estarán las clases `Libro`, `Estanteria` y `Biblioteca` definidas en las actividades anteriores. Fuera del paquete, en el raíz del código fuente, estará la clase  `Main`. Adapta el código para que se ejecute con normalidad. Incluye los test de la clase `Biblioteca`. Documéntalo todo en javadoc y genera la documentación. Con esto, ya tienes un proyecto sencillo de gestión de bibliotecas.
-
----
-
-
-> **Actividad:** Entra en esta [**página web**](https://nachoiborraies.github.io/java/md/en/09c) y aprende a usar Doxygen. Genera un documento del programa que has realizado para las pruebas de software con Junit y Mockito.
+> **Actividad:** Entra en esta [**página web**](https://nachoiborraies.github.io/java/md/en/09c) y aprende a usar Doxygen. Genera un documento del programa anterior.

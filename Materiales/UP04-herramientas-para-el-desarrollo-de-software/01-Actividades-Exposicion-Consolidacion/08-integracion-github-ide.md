@@ -1,5 +1,39 @@
 # Integración de github y git en un IDE
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Integración de github y git en un IDE](#integración-de-github-y-git-en-un-ide)
+  - [**Autenticación en Git con Tokens Personales (PAT)**](#autenticación-en-git-con-tokens-personales-pat)
+    - [Crear un Token de Acceso Personal en GitHub](#crear-un-token-de-acceso-personal-en-github)
+    - [Métodos según tu sistema operativo:](#métodos-según-tu-sistema-operativo)
+      - [Para Windows:](#para-windows)
+      - [Para macOS:](#para-macos)
+      - [Para sistemas basados en Linux:](#para-sistemas-basados-en-linux)
+    - [Integración con diferentes IDEs](#integración-con-diferentes-ides)
+      - [Para IDEs de JetBrains (IntelliJ, PhpStorm, WebStorm, etc.):](#para-ides-de-jetbrains-intellij-phpstorm-webstorm-etc)
+      - [Integrar Git y GitHub en VSCode](#integrar-git-y-github-en-vscode)
+        - [Crear un repositorio Git](#crear-un-repositorio-git)
+        - [Clonar un repositorio de GitHub](#clonar-un-repositorio-de-github)
+        - [Push y pull](#push-y-pull)
+        - [Otros comandos útiles de Git](#otros-comandos-útiles-de-git)
+  - [Integrar IntelliJ IDEA y PyCharm con Git y GitHub](#integrar-intellij-idea-y-pycharm-con-git-y-github)
+      - [Configurar Git en IntelliJ IDEA o PyCharm](#configurar-git-en-intellij-idea-o-pycharm)
+    - [Crear un repositorio Git en IntelliJ IDEA o PyCharm](#crear-un-repositorio-git-en-intellij-idea-o-pycharm)
+      - [Inicializar un repositorio Git](#inicializar-un-repositorio-git)
+    - [Conectar con GitHub](#conectar-con-github)
+      - [Configurar el cuenta de GitHub](#configurar-el-cuenta-de-github)
+    - [Crear un repositorio GitHub desde IntelliJ IDEA o PyCharm](#crear-un-repositorio-github-desde-intellij-idea-o-pycharm)
+    - [Clonar un repositorio GitHub en IntelliJ IDEA o PyCharm](#clonar-un-repositorio-github-en-intellij-idea-o-pycharm)
+    - [Push y pull en GitHub](#push-y-pull-en-github)
+    - [Otras funcionalidades de Git dentro de IntelliJ IDEA y PyCharm](#otras-funcionalidades-de-git-dentro-de-intellij-idea-y-pycharm)
+
+<!-- /code_chunk_output -->
+
+
+
 ## **Autenticación en Git con Tokens Personales (PAT)**
 
 A partir del 13 de agosto de 2021, GitHub ya no acepta contraseñas de cuenta para la autenticación de operaciones Git. Es necesario utilizar un **PAT (Token de Acceso Personal)**. Puedes seguir el siguiente método para añadir un PAT a tu sistema.

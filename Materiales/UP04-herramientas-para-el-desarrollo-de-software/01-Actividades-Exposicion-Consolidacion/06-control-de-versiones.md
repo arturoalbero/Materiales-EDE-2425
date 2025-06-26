@@ -1,4 +1,24 @@
-# **Sistemas de control de versiones**
+# Control de versiones
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Control de versiones](#control-de-versiones)
+  - [**Sistemas de control de versiones**](#sistemas-de-control-de-versiones)
+  - [1. Tipos de VCS](#1-tipos-de-vcs)
+    - [**1.1 VCS Local**](#11-vcs-local)
+    - [**1.2 VCS Centralizado**](#12-vcs-centralizado)
+    - [**1.3 VCS Distribuido**](#13-vcs-distribuido)
+  - [2. Git](#2-git)
+    - [2.1. Fundamentos de Git](#21-fundamentos-de-git)
+
+<!-- /code_chunk_output -->
+
+
+
+## **Sistemas de control de versiones**
 
 Los sistemas de control de versiones (VCS) son herramientas que pueden registrar cualquier cambio en cualquier archivo o conjunto de archivos a lo largo del tiempo, de manera que podamos recuperar fácilmente cualquier versión anterior. Pueden ser utilizados no solo con archivos fuente, sino también con cualquier otro tipo de archivo.
 

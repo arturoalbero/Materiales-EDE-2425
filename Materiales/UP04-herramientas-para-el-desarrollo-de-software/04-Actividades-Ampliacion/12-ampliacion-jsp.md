@@ -1,5 +1,21 @@
 # Ampliación de conocimientos de JSP
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Ampliación de conocimientos de JSP](#ampliación-de-conocimientos-de-jsp)
+  - [Uso de clases personalizadas en un proyecto JSP](#uso-de-clases-personalizadas-en-un-proyecto-jsp)
+    - [**1. Colocar la Clase en el Directorio `WEB-INF/classes` (Método Sencillo para Desarrollo)**](#1-colocar-la-clase-en-el-directorio-web-infclasses-método-sencillo-para-desarrollo)
+    - [**2. Usar JavaBeans con `jsp:useBean` (Recomendado para Modelos Simples)**](#2-usar-javabeans-con-jspusebean-recomendado-para-modelos-simples)
+    - [**3. Usar JSTL (JSP Standard Tag Library) con EL (Expression Language) y Modelos (Recomendado para Aplicaciones Robustas)**](#3-usar-jstl-jsp-standard-tag-library-con-el-expression-language-y-modelos-recomendado-para-aplicaciones-robustas)
+    - [**Configuración en IntelliJ IDEA Ultimate (Jakarta EE Web Application)**](#configuración-en-intellij-idea-ultimate-jakarta-ee-web-application)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Uso de clases personalizadas en un proyecto JSP
 
 Para utilizar una clase Java personalizada en un archivo JSP dentro de un proyecto Jakarta EE en IntelliJ IDEA Ultimate, puedes seguir estos pasos:

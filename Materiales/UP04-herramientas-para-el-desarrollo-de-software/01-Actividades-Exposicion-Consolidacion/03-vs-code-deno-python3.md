@@ -3,7 +3,31 @@
 En este apartado, vamos a preparar **Visual Studio Code** para que sea un potente editor de código y, especialmente, para que nos sirva como una herramienta eficaz para generar documentación en **Markdown**, para programar en **Javascript**, **Typescript** y **Python**.
 
 > **Actividad**
-> A medida que sigas este tutorial, realiza una memoria de todos los pasos, con capturas de pantalla, de cada una de las configuraciones y procesos que se explican a continuación. \!
+> A medida que sigas este tutorial, realiza una memoria de todos los pasos, con capturas de pantalla, de cada una de las configuraciones y procesos que se explican a continuación.
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Configuración de los entornos de desarrollo: Visual Studio Code](#configuración-de-los-entornos-de-desarrollo-visual-studio-code)
+  - [Visual Studio Code. Instalación y configuración](#visual-studio-code-instalación-y-configuración)
+    - [1\. Instalación de Visual Studio Code](#1-instalación-de-visual-studio-code)
+    - [2\. Primeros ajustes y bienvenida](#2-primeros-ajustes-y-bienvenida)
+    - [3\. Configuración de las extensiones para Markdown](#3-configuración-de-las-extensiones-para-markdown)
+    - [4\. Configuración para Javascript en Visual Studio Code](#4-configuración-para-javascript-en-visual-studio-code)
+      - [4.1. Uso de la consola del navegador (Chrome)](#41-uso-de-la-consola-del-navegador-chrome)
+      - [4.2. Configuración y uso de Node.js](#42-configuración-y-uso-de-nodejs)
+      - [4.3. Configuración y uso de Deno (admite Typescript de forma nativa)](#43-configuración-y-uso-de-deno-admite-typescript-de-forma-nativa)
+    - [5\. Python en VS Code](#5-python-en-vs-code)
+      - [5.1. Instalación de Python 3](#51-instalación-de-python-3)
+      - [5.2. Extensiones interesantes de VS Code relacionadas con Python](#52-extensiones-interesantes-de-vs-code-relacionadas-con-python)
+    - [5.3. Seleccionar el Intérprete de Python en VS Code](#53-seleccionar-el-intérprete-de-python-en-vs-code)
+  - [Probando el mismo código en diferentes IDE y diferentes códigos en el mismo editor](#probando-el-mismo-código-en-diferentes-ide-y-diferentes-códigos-en-el-mismo-editor)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Visual Studio Code. Instalación y configuración
 
@@ -98,10 +122,7 @@ Deno es una alternativa moderna a Node.js, con soporte nativo para TypeScript.
 
 1.  **Instalación de Deno:**
       * Abre tu terminal (o la línea de comandos).
-      * Sigue las instrucciones de instalación de la web oficial de Deno: [https://deno.land/\#installation](https://www.google.com/search?q=https://deno.land/%23installation). La forma más común es:
-          * **macOS/Linux:** `curl -fsSL https://deno.land/install.sh | sh`
-          * **Windows (PowerShell):** `irm https://deno.land/install.ps1 | iex`
-      * **Importante:** Asegúrate de que el directorio de Deno se haya añadido a tu PATH (las instrucciones de instalación suelen gestionarlo).
+      * Sigue las instrucciones de instalación de la web oficial de Deno: [https://deno.land/\#installation](https://www.google.com/search?q=https://deno.land/%23installation). Sigue el [getting started](https://docs.deno.com/runtime/).
 2.  **Verifica la instalación:**
       * En tu terminal (o el Terminal integrado de VS Code), escribe `deno --version`. Debería mostrar la versión de Deno.
 3.  **Extensión de VS Code para Deno:**
@@ -141,8 +162,6 @@ Deno es una alternativa moderna a Node.js, con soporte nativo para TypeScript.
         ```
       * En el **Terminal integrado de VS Code**, navega hasta el directorio del archivo.
       * Ejecuta el archivo con `deno run main.ts`. Si es la primera vez, Deno puede pedirte permiso para acceder a la red o al sistema de archivos (si tu código lo requiere).
-
------
 
 ### 5\. Python en VS Code
 
@@ -191,4 +210,13 @@ Es importante que VS Code sepa qué versión de Python (o entorno virtual) debe 
 3.  **Elige tu intérprete:** Verás una lista de los intérpretes de Python que VS Code ha detectado en tu sistema. Selecciona la versión de Python 3 que instalaste.
       * Si tienes varios proyectos o entornos virtuales, este paso es crucial para asegurar que VS Code use el intérprete correcto para cada uno.
 
+## Probando el mismo código en diferentes IDE y diferentes códigos en el mismo editor
 
+> **Actividad**
+> Entra en la página web [mycompiler.io](https://www.mycompiler.io/es). Se trata de un emulador virtual de entornos de programación. Selecciona un lenguaje, por ejemplo Python. Aparecerá el editor con un código para el programa `Hola Mundo`. Dale a ejecutar. Prueba ese mismo código en:
+> - pycharm (instálalo a través de Jetbrains Toolbox, con la licencia educativa que conseguiste en el apartado anterior)
+> - vscode usando python3
+> Haz lo mismo con otros lenguajes de programación, pruébalos en diversos editores.
+
+> **Actividad**
+> Usando VS Code y las extensiones correspondientes, ejecuta un `Hola Mundo` en diferentes lenguajes (python, typescript y javascript, por ejemplo). Extrae el código de mycompiler.io. 

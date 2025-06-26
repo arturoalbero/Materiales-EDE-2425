@@ -5,13 +5,13 @@ body{
 </style>
 # Refactorización y patrones de diseño
 
-## 1. Refactorización de código
+## Refactorización de código
 
 En ingeniería del software, la refactorización se refiere frecuentemente a una actualización del código que no afecta a su comportamiento, lo que también se conoce como limpieza del código. La refactorización se utiliza como parte del proceso de desarrollo de software: los desarrolladores a veces añaden nuevas funcionalidades y casos de prueba, y otras veces refactorizan su código para hacerlo más claro y robusto. En este caso, ejecutar las pruebas de nuevo puede demostrar que la refactorización no ha cambiado el comportamiento de la aplicación.
 
 Por tanto, la refactorización es una parte del mantenimiento de software que no corrige ningún error ni añade ninguna funcionalidad nueva. El objetivo principal es mejorar la comprensión del código o cambiar su estructura para facilitar su mantenimiento futuro. A veces es difícil añadir nuevas funcionalidades a un programa con su estructura de código actual, por lo que un desarrollador puede refactorizarlo antes de añadir más código nuevo.
 
-### 1.1. ¿Por qué refactorizar?
+### ¿Por qué refactorizar?
 
 Hay muchas razones por las que deberíamos usar esta técnica:
 
@@ -23,7 +23,7 @@ Hay muchas razones por las que deberíamos usar esta técnica:
 
 - **Evitar reescribir código**. En la mayoría de los casos, refactorizar es mejor que reescribir. No es fácil enfrentarse a un código que no es nuestro y que no sigue nuestros estándares, pero esto no es una buena razón para empezar desde cero. Especialmente en un entorno donde el ahorro de costes lo hace imposible. De todos modos, actualizar nuestro código no siempre es necesario. Debe haber una buena razón, y solo necesitamos hacer una actualización si hay un mal diseño que dificulte desarrollos futuros. Siempre que notemos que nuestro código es difícil de entender, o que hay código duplicado, entonces necesitamos refactorizarlo. A veces puede que necesitemos dar un paso atrás y replantearnos algunos aspectos, para poder avanzar de forma rápida y sencilla.
 
-### 1.2. ¿Cuándo refactorizar?
+### ¿Cuándo refactorizar?
 Refactorizar el código no se debe a razones estéticas. Debemos prestar atención a algunas situaciones en las que es mejor parar y reorganizar nuestro código. Los elementos que nos avisan de que nuestro código está en problemas se conocen como Malos Olores. Un programador experimentado puede determinar que su programa empieza a "oler mal" cuando hay:
 
 - **Identificadores ambiguos**. Pueden ser nombres de variables, clases o métodos. Necesitaremos renombrarlos para clarificar nuestro código. Por ejemplo, podemos renombrar una variable llamada `t` por otra llamada `waitTime`.
@@ -188,7 +188,120 @@ public class NoLongMethod
 }
 ```
 
-### 1.3. Refactorización en IntelliJ
+> **Actividad**
+> Refactoriza el siguiente código y explica qué razonamientos has seguido
+```java
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class GestionPedidosAntigua {
+
+    public static void main(String[] args) {
+        GestionPedidosAntigua sistema = new GestionPedidosAntigua();
+        sistema.procesarPedidos();
+    }
+
+    public void procesarPedidos() {
+        List<String[]> dataPedidos = obtenerDatosCrudosPedidosDesdeFuenteExterna();
+
+        List<Pedido> pedidosActivos = new ArrayList<>();
+        double totalGlobal = 0.0;
+        int pedidosPremiumCount = 0;
+
+        for (String[] registro : dataPedidos) {
+            String idStr = registro[0];
+            String clienteIdStr = registro[1];
+            String fechaStr = registro[2];
+            String montoStr = registro[3];
+            String tipoClienteStr = registro[4];
+            String estadoStr = registro[5];
+
+            int pedidoId = Integer.parseInt(idStr);
+            int clienteId = Integer.parseInt(clienteIdStr);
+            double monto = Double.parseDouble(montoStr);
+            Date fechaPedido = parsearFecha(fechaStr);
+
+            if (!"CANCELADO".equals(estadoStr)) {
+                Pedido p = new Pedido(pedidoId, clienteId, fechaPedido, monto, tipoClienteStr, estadoStr);
+                pedidosActivos.add(p);
+
+                totalGlobal += p.getMonto();
+
+                if ("PREMIUM".equals(p.getTipoCliente())) {
+                    pedidosPremiumCount++;
+                }
+
+                if ("PREMIUM".equals(p.getTipoCliente()) && p.getMonto() > 500) {
+                    double descuento = p.getMonto() * 0.10;
+                    System.out.println("Descuento aplicado al pedido " + p.getId() + ": " + descuento);
+                    p.setMonto(p.getMonto() - descuento);
+                }
+            }
+        }
+
+        System.out.println("--- Informe de Pedidos ---");
+        System.out.println("Total de Pedidos Procesados: " + pedidosActivos.size());
+        System.out.println("Monto Total de Pedidos Activos: " + String.format("%.2f", totalGlobal));
+        System.out.println("Pedidos de Clientes Premium: " + pedidosPremiumCount);
+        if (pedidosActivos.isEmpty()) {
+            System.out.println("No hay pedidos activos para mostrar detalles.");
+        } else {
+            System.out.println("Detalle de Pedidos Activos:");
+            for (Pedido p : pedidosActivos) {
+                System.out.println("  ID: " + p.getId() + ", Cliente: " + p.getClienteId() +
+                                   ", Monto: " + String.format("%.2f", p.getMonto()) +
+                                   ", Tipo: " + p.getTipoCliente() + ", Estado: " + p.getEstado());
+            }
+        }
+        System.out.println("--- Fin del Informe ---");
+    }
+
+    private Date parsearFecha(String fechaStr) {
+        return new Date();
+    }
+
+    private List<String[]> obtenerDatosCrudosPedidosDesdeFuenteExterna() {
+        List<String[]> datos = new ArrayList<>();
+        datos.add(new String[]{"101", "1", "2024-01-15", "120.50", "NORMAL", "COMPLETADO"});
+        datos.add(new String[]{"102", "2", "2024-01-16", "600.00", "PREMIUM", "PENDIENTE"});
+        datos.add(new String[]{"103", "1", "2024-01-17", "50.00", "NORMAL", "PENDIENTE"});
+        datos.add(new String[]{"104", "3", "2024-01-18", "300.00", "PREMIUM", "COMPLETADO"});
+        datos.add(new String[]{"105", "2", "2024-01-19", "750.00", "PREMIUM", "PENDIENTE"});
+        datos.add(new String[]{"106", "4", "2024-01-20", "200.00", "NORMAL", "CANCELADO"});
+        return datos;
+    }
+}
+
+class Pedido {
+    private int id;
+    private int clienteId;
+    private Date fecha;
+    private double monto;
+    private String tipoCliente;
+    private String estado;
+
+    public Pedido(int id, int clienteId, Date fecha, double monto, String tipoCliente, String estado) {
+        this.id = id;
+        this.clienteId = clienteId;
+        this.fecha = fecha;
+        this.monto = monto;
+        this.tipoCliente = tipoCliente;
+        this.estado = estado;
+    }
+
+    public int getId() { return id; }
+    public int getClienteId() { return clienteId; }
+    public Date getFecha() { return fecha; }
+    public double getMonto() { return monto; }
+    public String getTipoCliente() { return tipoCliente; }
+    public String getEstado() { return estado; }
+
+    public void setMonto(double monto) { this.monto = monto; }
+}
+```
+
+### Refactorización en IntelliJ
 En IntelliJ, podemos encontrar un menú principal Refactorizar con algunas opciones para refactorizar nuestro código. También podemos hacer clic derecho sobre cualquier elemento del código (variable, método, nombre de clase...) y elegir la opción Refactorizar. Con estas opciones podemos:
 
 - **Refactorizar > Renombrar**: Renombrar variables, clases, métodos... y aplicar estos cambios a todo el código.
@@ -200,9 +313,26 @@ En IntelliJ, podemos encontrar un menú principal Refactorizar con algunas opcio
 
 [Más adelante en el documento](#4-herramientas-para-el-análisis-de-código-y-la-refactorización-en-intellij-community-edition) las trataremos con más detalle.
 
+## Riesgos y consideraciones en la refactorización
 
+### Riesgos de la refactorización
+Aunque la refactorización ofrece numerosos beneficios, conlleva ciertos riesgos que deben gestionarse adecuadamente:
 
-### 3.2 Conceptos clave de calidad del código
+1. **Introducción de errores**: Cambiar código existente sin alterar su comportamiento aparente puede introducir bugs sutiles, especialmente si no se cuenta con pruebas automatizadas sólidas.
+
+2. **Refactorización prematura**: Refactorizar código que podría ser reemplazado pronto (por cambios en requisitos) puede ser una pérdida de tiempo.
+
+3. **Refactorización excesiva**: Buscar una perfección teórica ("sobreingeniería") puede llevar a diseños demasiado abstractos o complejos.
+
+4. **Interrupción del flujo de trabajo**: En equipos, la refactorización puede causar conflictos de merge si no se coordina adecuadamente.
+
+5. **Falta de métricas claras**: Sin indicadores objetivos, puede resultar difícil justificar el tiempo invertido en refactorizar.
+
+La práctica de entrega continua y despliegue continuo (CI/CD), por ejemplo usando Github actions, nos ayudará a controlar nuestros impulsos de refactorizarlo todo y ayudarnos a mantener un código saludable. 
+
+Un error muy común entre desarrolladores jóvenes es quererlo refactorizar todo, por la arrogancia y osadía que nos otorga la juventud. Vemos un código en nuestra nueva empresa, un código muy feo que no terminamos de entender y automáticamente pensamos que es de mala calidad y que HAY QUE REFACTORIZAR. De repente, nada funciona y solamente un *rollback* en el control de versiones nos puede salvar del desastre.
+
+### Conceptos clave de calidad del código
 
 **Acoplamiento (Coupling)**:
 - **Definición**: Grado de interdependencia entre módulos/clases.
@@ -230,11 +360,11 @@ En IntelliJ, podemos encontrar un menú principal Refactorizar con algunas opcio
 - Costo implícito en elegir soluciones rápidas pero subóptimas.
 - La refactorización es el principal método para "pagar" esta deuda.
 
-## 4. Herramientas para el análisis de código y la refactorización en IntelliJ Community Edition
+## Herramientas para el análisis de código y la refactorización en IntelliJ Community Edition
 
 IntelliJ provee al desarrollador de una serie de herramientas muy útiles para analizar el código y facilitar la refactorización. La mayoría de estas herramientas están disponibles en la versión Ultimate, que es muy poderosa pero de pago, pero la versión Community Editon, gratuita, incluye las más básicas, que no por ello son menos interesantes. A continuación, vamos a repasar algunas de estas herramientas:
 
-### **4.1. Inspección Básica de Código** *(Sí incluido)*
+### Inspección Básica de Código** *(Sí incluido)*
 
 - **Marcado en tiempo real** de:
   - Errores de sintaxis *(rojo)*.
@@ -242,7 +372,7 @@ IntelliJ provee al desarrollador de una serie de herramientas muy útiles para a
   - Sugerencias de optimización *(azul/verde)*.
 - **Acción clave**: `Alt + Enter` sobre código subrayado para correcciones rápidas.
 
-### **4.2. Refactorización Esencial** *(Sí incluido)*
+### Refactorización Esencial *(Sí incluido)*
 
 | Operación                | Atajo           | Uso típico                     |
 |--------------------------|-----------------|--------------------------------|
@@ -251,13 +381,13 @@ IntelliJ provee al desarrollador de una serie de herramientas muy útiles para a
 | Extraer variable/constante| `Ctrl + Alt + V/C` | Simplificar expresiones complejas. |
 | Mover clase              | `F6`            | Reubicar archivos entre paquetes. |
 
-### **4.3. Búsqueda de Problemas** *(Sí incluido, pero limitado)*
+### Búsqueda de Problemas *(Sí incluido, pero limitado)*
 
 - **`Analyze > Inspect Code`**:
   - Detecta *code smells* básicos (código duplicado simple, métodos demasiado largos).
   - **Limitación**: No tiene detección avanzada de patrones complejos.
 
-### 4.4 **Herramientas NO Incluidas en Community**
+### Herramientas NO Incluidas en Community
 
 | Función                  | Alternativa Gratuita                          |
 |--------------------------|-----------------------------------------------|

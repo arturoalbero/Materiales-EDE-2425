@@ -1,7 +1,49 @@
-# 1. Empezando con Docker
+# Introducción al uso de Docker
+
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Introducción al uso de Docker](#introducción-al-uso-de-docker)
+  - [Docker desglosado](#docker-desglosado)
+  - [Contenedor](#contenedor)
+    - [Instalar Docker](#instalar-docker)
+  - [Manejo de imágenes](#manejo-de-imágenes)
+  - [Manejo de contenedores](#manejo-de-contenedores)
+  - [Port Mapping](#port-mapping)
+  - [Docker Run](#docker-run)
+  - [Variables de entorno y cómo conectarse a un contenedor](#variables-de-entorno-y-cómo-conectarse-a-un-contenedor)
+  - [Dockerfile, o cómo crear imágenes personalizadas](#dockerfile-o-cómo-crear-imágenes-personalizadas)
+  - [Redes internas de docker](#redes-internas-de-docker)
+  - [Docker Compose](#docker-compose)
+  - [Volúmenes](#volúmenes)
+    - [Tipos de volúmenes](#tipos-de-volúmenes)
+    - [Creación y uso de volúmenes](#creación-y-uso-de-volúmenes)
+      - [Crear un volumen con nombre](#crear-un-volumen-con-nombre)
+      - [Usar un volumen en un contenedor](#usar-un-volumen-en-un-contenedor)
+      - [Usar bind mounts](#usar-bind-mounts)
+    - [Gestión de volúmenes a través de Docker CLI](#gestión-de-volúmenes-a-través-de-docker-cli)
+      - [Listar volúmenes](#listar-volúmenes)
+      - [Inspeccionar un volumen](#inspeccionar-un-volumen)
+      - [Eliminar un volumen](#eliminar-un-volumen)
+    - [Ejemplo práctico: Persistencia de datos en MySQL](#ejemplo-práctico-persistencia-de-datos-en-mysql)
+  - [Anexo: Express y API REST](#anexo-express-y-api-rest)
+
+<!-- /code_chunk_output -->
+
+## Docker desglosado
+
+Este apartado es un **tutorial opcional** para aprender a dominar Docker en su totalidad. Algunos de los conceptos que se verán ya se han tratado en el apartado anterior. Esto se debe a que este documento trabaja tomando como referencia el siguiente vídeo de youtube:
+
 [Este es el vídeo que vamos a tomar como referencia](https://www.youtube.com/watch?v=4Dko5W96WHg)
 
+> **Actividad**
+> Realiza una memoria de todo el proceso, hasta configurar tu servidor MySQL en Docker.
+
 ## Contenedor
+
 Los contenedores son una forma de empaquetar una aplicación y todas sus dependencias.
 De esta forma, se consigue una mayor portabilidad y se mejora la posibilidad de compartir la aplicación en diferentes equipos, facilitando el desarrollo y despliegue de aplicaciones.
 
@@ -80,7 +122,6 @@ Es recomendable usar nombres personalizados, ya que facilita el uso de los conte
 
 ## Port Mapping
 
-
 En telemática y redes informáticas, los puertos son como ventanas virtuales que permiten que una computadora se conecte con varias otras al mismo tiempo. Cada ventana está numerada del 0 al 65,535 y sirve para dirigir la información entrante al programa correcto que está esperándola.
 
 El puerto que aparecía cuando ejecutábamos el comando `$ docker ps` y teníamos un contenedor corriendo era un puerto interno del contenedor, pero cerrado y no accesible desde nuestro equipo. Para poder acceder a un puerto de un contenedor, debemos mapearlo a uno de nuestro equipo.
@@ -127,17 +168,21 @@ mongoose.connect('mongodb://nombre:password@localhost:27017/miapp?authSource=adm
 En esta instrucción, le estamos diciendo al objeto mongoose que se conecte a `mongoddb` usando como nombre `nombre` y como password `password`. La @ sirve para separar esos datos de dónde vamos a conectarnos, en este caso a `localhost:27017' que es nuestro equipo en su puerto 27017. Finalmente, el URI nos indica a qué parte del programa nos conectamos, en esta caso `miapp` es la aplicación y después de `?` se colocan los parámetros de configuración, `authSource=admin`.
 
 Para poder realizar correctamente esta conexión, debemos haber configurado las **variables de entorno** del contenedor. Cada imagen tiene sus propias variables de entorno, que debemos consultar en el mismo repositorio. En el caso de la imagen de mongo, solamente necesitamos configurar las siguientes variables de entorno para que funcione todo:
+
 ```
 MONGO_INITDB_ROOT_USERNAME
 MONGO_INITDB_ROOT_PASSWORD
 ```
+
 Para ello, empleamos el siguiente comando:
+
 ```bash
 $ docker create -p27017:27017 --name mimongo 
 -e MONGO_INITDB_ROOT_USERNAME=nombre 
 -e MONGO_INITDB_ROOT_PASSWORD=password 
 mongo
 ```
+
 El argumento `-e`indica que lo que viene a continuación es una variable de entorno. Para inicializarlas, colocamos su nombre, el signo = y el valor que queremos asignarle. Recuerda que las variables de entorno se colocan antes de la imagen. Aunque en el ejemplo estén en diferentes líneas, se trata de un solo comando.
 
 ## Dockerfile, o cómo crear imágenes personalizadas
@@ -151,6 +196,7 @@ COPY . /home/app
 EXPOSE 3000
 CMD ["node", "/home/app/index.js"]
 ```
+
 Suponiendo que index.js es un archivo que hemos creado nosotros, el anterior archivo dockerfile hace lo siguiente:
 - `FROM node:lts-alpine3.19`: Le indica a Docker cuál es la imagen sobre la que creamos nuestra imagen propia.
 - `RUN mkdir -p /home/app`: Crea directorio llamado "app" dentro del directorio "/home". La opción -p le indica al comando mkdir que cree el directorio y cualquier directorio padre que aún no exista.
@@ -160,9 +206,11 @@ Suponiendo que index.js es un archivo que hemos creado nosotros, el anterior arc
 Con estas instrucciones, puedes probar a ejecutar tu propio código javascript en un contenedor de node, en lugar de tener que descargarte una versión de node en tu ordenador. 
 
 Para montar la imagen, empleamos el siguiente comando:
+
 ```bash
 $ docker build -t miapp:1 .
 ```
+
 El comando `$ docker build` construye la imagen usando el archivo dockerfile como referencia. El argumento `-t` sirve para etiquetar la imagen. En este caso, `miapp` es el nombre que le damos a la imagen y `1` la etiqueta que le asignamos. Finalmente, el '.' sirve para indicarle dónde está el archivo dockerfile, en este caso, indica el directorio actual.
 
 Para probar que esto funciona bien, vamos a usar el siguiente código (archivo index.js):
@@ -179,34 +227,12 @@ app.listen(3000);
 En este caso, necesitamos el módulo `express` que instalaremos con la orden `$ npm install express` en el directorio raíz. 
 
 Para ejecutar el código a través de la imagen de docker, debemos introducir la siguiente instrucción:
+
 ```bash
 $ docker run -p 3000:3000 miapp:1
 ```
+
 De esta forma, comunicaremos el puerto expuesto dentro de docker usando `EXPOSE 3000` con el puerto 3000 de nuestra máquina. Al ir al navegador y conectarnos a `http://localhost:3000/` obtendremos como respuesta `hello world`.
-
-## Anexo: Express y API REST
-
-`Express` es un marco de aplicación web rápido, minimalista y flexible para `Node.js`. Se utiliza para crear aplicaciones web y API REST de manera sencilla y eficiente.
-Una API REST (Representational State Transfer) es un estilo arquitectónico para diseñar sistemas distribuidos y servicios web que se basa en los principios del protocolo HTTP. Aquí hay una descripción detallada de los conceptos clave asociados con una API REST:
-
-1. **Recursos:** En una API REST, los recursos son entidades de datos que pueden ser accedidas o manipuladas mediante el protocolo HTTP. Estos recursos pueden ser cualquier cosa, desde objetos de datos simples hasta entidades más complejas. Por ejemplo, en una aplicación de redes sociales, los recursos podrían ser usuarios, publicaciones, comentarios, etc.
-
-2. **URIs (Identificadores de Recursos Uniformes):** Cada recurso en una API REST se identifica mediante un URI único. Los URIs son las rutas a través de las cuales se accede a los recursos en el servidor. Por ejemplo, `/users`, `/posts`, `/users/123`, etc.
-
-3. **Métodos HTTP:** Los métodos HTTP son verbos que indican la acción que se debe realizar en un recurso dado. Los métodos HTTP comúnmente utilizados en una API REST son:
-   - **GET:** Se utiliza para recuperar datos de un recurso.
-   - **POST:** Se utiliza para crear un nuevo recurso.
-   - **PUT:** Se utiliza para actualizar un recurso existente.
-   - **DELETE:** Se utiliza para eliminar un recurso.
-
-4. **Representaciones:** Los datos asociados con un recurso pueden ser representados en diferentes formatos, como JSON, XML, HTML, etc. En una API REST, los clientes pueden solicitar la representación de un recurso en un formato específico utilizando encabezados HTTP como `Accept`.
-
-5. **Estado del Cliente y Estado del Servidor:** En una API REST, el servidor no mantiene ningún estado de cliente entre las solicitudes. Cada solicitud del cliente al servidor debe contener toda la información necesaria para que el servidor comprenda y procese la solicitud. El estado de la aplicación reside completamente en el servidor, y el cliente puede cambiar el estado del servidor enviando solicitudes HTTP.
-
-6. **HATEOAS (Hypertext As The Engine Of Application State):** Este principio de diseño de API REST propone que las respuestas de la API deben incluir enlaces hipertextuales que permitan a los clientes descubrir de manera dinámica y navegar a través de los recursos disponibles. Esto promueve la independencia entre el cliente y el servidor, ya que el cliente puede navegar por la API sin necesidad de conocimiento previo de sus rutas.
-
-En resumen, una API REST es una interfaz que permite a los sistemas intercambiar datos y realizar operaciones utilizando el protocolo HTTP. Se basa en una serie de principios y convenciones que promueven la simplicidad, escalabilidad, y desacoplamiento entre el cliente y el servidor. 
-
 
 ## Redes internas de docker
 
@@ -286,6 +312,7 @@ $ docker start app
 Como se ha podido observar en las líneas de terminal empleadas en el ejemplo anterior, hasta ahora, para poder emplear un contenedor de docker de forma efectiva hemos tenido que realizar una gran cantidad de pasos. Sin embargo, todo ese proceso se puede simplicar empleando el comando docker-compose y un archivo de configuración de tipo `.yml` que llamaremos 'docker-compose.yml`.
 
 El lenguaje **yml**(pronunciado yámel) se emplea para crear archivos de configuración. En este lenguaje, como ocurre en otros como **python** una indentación adecuada es necesaria para que se ejecute correctamente. Vigila, por lo tanto, los espacios.
+
 ```yml
 version: "3.9"
 services:
@@ -303,62 +330,208 @@ services:
             - MONGO_INITDB_ROOT_USERNAME=nombre
             - MONGO_INITDB_ROOT_PASSWORD=password
 ```
+
 A continuación, pasamos a explicar las líneas de código.
+
 ```yml
 version: "3.9"
 ```
+
 Esta línea especifica la versión de Docker Compose que se utilizará. En este caso, se está utilizando la versión 3.9. 
 
 Esta línea es opcional. Si se omite la declaración de la versión en el archivo docker-compose.yml, Docker Compose intentará inferir automáticamente la versión correcta basándose en las características y sintaxis utilizadas en el archivo.
+
 ```yml
 services:
 ```
+
 Esta línea comienza un bloque que define los servicios que se ejecutarán como contenedores.
+
 ```yml
     app:
         build: .
 ```
+
 Con estas líneas, se define el servicio `app`, que se construirá a partir del Dockerfile presente en el directorio actual (`.`). Este servicio se ejecutará en un contenedor y representará la aplicación.
 ```yml
         ports:
             - "3000:3000"
 ```
+
 Esta sección especifica el mapeo de puertos para el servicio `app`. El puerto 3000 del contenedor se mapeará al puerto 3000 de la máquina host, lo que significa que la aplicación en el contenedor estará disponible en `localhost:3000` en la máquina host.
+
 ```yml
         links:
             - mimongo
 ```
+
 Esta sección especifica a qué otros servicios se enlaza el servicio `app`. De esta manera, docker gestiona de forma automática las redes internas.
 
 ```yml
     mimongo:
         image: mongo
 ```
+
 Se define el servicio `mimongo`, que se creará a partir de la imagen `mongo` disponible en Docker Hub. Este servicio se ejecutará en un contenedor y representará una instancia de MongoDB.
+
 ```yml
         ports:
             - "27017:27017"
 ```
+
 Esta sección especifica el mapeo de puertos para el servicio `mimongo`.
+
 ```yml
         environment:
             - MONGO_INITDB_ROOT_USERNAME=nombre
             - MONGO_INITDB_ROOT_PASSWORD=password
 ```
+
 Aquí se definen las variables de entorno para el servicio `mimongo`. Estas variables se utilizan para establecer el nombre de usuario y la contraseña de la base de datos MongoDB. En este caso, el nombre de usuario se establece como `nombre` y la contraseña como `password`.
 
 Para que docker ejecute todos los comandos especificados en el archivo docker-compose.yml debemos usar el siguiente comando:
+
 ```bash 
 $ docker compose up
 ```
+
 Se le puede añadir el argumento `-d` para que se ejecute en modo *detached*. Si no lo hacemos, cuando pulsemos `ctrl + C `, se terminará la ejecución de los contenedores, aunque seguirán creados.
 
 Para detener y/o eliminar lo creado con `docker compose up`, se emplea el siguiente comando:
+
 ```bash
 $ docker compose down
 ```
+
 Es importante borrar todo lo creado cuando se realizen cambios, antes de volver a subirlo.
 
 De esta manera se integran todos los comandos anteriores en solamente dos, lo que facilita el trabajo con contenedores de docker. Sin embargo, la información interna de estos contenedores no es persistente, lo que significa que lo que guardemos en la base de datos `mimongo` se borrará al detener la ejecución del contenedor. Además, para poder hacer pruebas en el archivo `index.js` tenemos que estar alternando entre `down` y `up` constantemente. Para solucionar estos dos inconvenientes, tenemos a nuestra disposición la herramienta `volumes`.
 
-## Volumes
+## Volúmenes
+
+Los volúmenes en Docker son un mecanismo para persistir datos fuera del sistema de archivos de un contenedor. Esto es especialmente útil para bases de datos, archivos de configuración o cualquier dato que deba sobrevivir a la eliminación o reinicio de un contenedor. Los volúmenes permiten compartir datos entre el host y los contenedores, o entre múltiples contenedores.
+
+### Tipos de volúmenes
+
+1. **Volúmenes con nombre**:
+   - Son gestionados por Docker y se almacenan en un directorio específico del host (generalmente en `/var/lib/docker/volumes` en Linux).
+   - Son ideales para persistir datos de manera independiente al ciclo de vida de los contenedores.
+
+2. **Bind mounts**:
+   - Permiten mapear un directorio o archivo específico del host a un directorio o archivo dentro del contenedor.
+   - Útiles cuando necesitas acceso directo a archivos del host o para desarrollo.
+
+3. **Tmpfs mounts**:
+   - Almacenan datos en la memoria RAM del host.
+   - Son temporales y se eliminan cuando el contenedor se detiene.
+
+### Creación y uso de volúmenes
+
+#### Crear un volumen con nombre
+
+Para crear un volumen con nombre, usa el siguiente comando:
+```bash
+docker volume create mi_volumen
+```
+Esto creará un volumen llamado `mi_volumen` que podrás usar en tus contenedores.
+
+#### Usar un volumen en un contenedor
+Para usar un volumen en un contenedor, utiliza el argumento `-v` o `--mount` en el comando `docker run`. Por ejemplo:
+```bash
+docker run -d --name mi_contenedor -v mi_volumen:/ruta/en/contenedor nginx
+```
+En este caso:
+- `mi_volumen` es el nombre del volumen.
+- `/ruta/en/contenedor` es la ruta dentro del contenedor donde se montará el volumen.
+
+#### Usar bind mounts
+Para mapear un directorio del host a un contenedor, usa:
+
+```bash
+docker run -d --name mi_contenedor -v /ruta/en/host:/ruta/en/contenedor nginx
+```
+Aquí:
+- `/ruta/en/host` es la ruta absoluta en el host.
+- `/ruta/en/contenedor` es la ruta dentro del contenedor.
+
+### Gestión de volúmenes a través de Docker CLI
+
+#### Listar volúmenes
+Para ver todos los volúmenes creados en tu sistema, usa:
+```bash
+docker volume ls
+```
+
+#### Inspeccionar un volumen
+
+Para obtener detalles sobre un volumen específico, usa:
+```bash
+docker volume inspect mi_volumen
+```
+Esto mostrará información como la ubicación del volumen en el host y su configuración.
+
+#### Eliminar un volumen
+
+Para eliminar un volumen que ya no necesitas, usa:
+```bash
+docker volume rm mi_volumen
+```
+Si el volumen está en uso por un contenedor, primero debes detener y eliminar el contenedor.
+
+### Ejemplo práctico: Persistencia de datos en MySQL
+
+Supongamos que quieres ejecutar un contenedor de MySQL y persistir los datos de la base de datos en un volumen.
+
+1. Crea un volumen para MySQL:
+   ```bash
+   docker volume create mysql_data
+   ```
+
+2. Ejecuta el contenedor de MySQL usando el volumen:
+   ```bash
+   docker run -d --name mysql_db -e MYSQL_ROOT_PASSWORD=contraseña -v mysql_data:/var/lib/mysql -p 3306:3306 mysql
+   ```
+   Aquí:
+   - `mysql_data` es el volumen que almacenará los datos de MySQL.
+   - `/var/lib/mysql` es la ruta dentro del contenedor donde MySQL guarda sus datos.
+
+3. Verifica que los datos persisten:
+   - Detén y elimina el contenedor:
+     ```bash
+     docker stop mysql_db
+     docker rm mysql_db
+     ```
+   - Vuelve a crear el contenedor con el mismo volumen:
+     ```bash
+     docker run -d --name mysql_db -e MYSQL_ROOT_PASSWORD=contraseña -v mysql_data:/var/lib/mysql -p 3306:3306 mysql
+     ```
+   - Los datos de la base de datos seguirán intactos.
+
+Algunas imágenes oficiales ya llevan incluida la creación de volúmenes anónimos (sin nombre) cuando ejecutamos su archivo Dockerfile, y esto es una práctica cada vez más frecuente. Si no estamos seguros, cuando ejecutemos por primera vez el Docker Run podemos comprobar si se ha creado un volumen nuevo (y qué nombre tiene) o bien a través de la línea de comandos o a través de la aplicación Docker Desktop.
+
+> **Actividad**
+> Crea una conexión a tu servidor corriendo en Docker desde DBeaver u otro editor SQL. [Puedes descargar DBeaver aquí](https://dbeaver.io/).
+
+## Anexo: Express y API REST
+
+`Express` es un marco de aplicación web rápido, minimalista y flexible para `Node.js`. Se utiliza para crear aplicaciones web y API REST de manera sencilla y eficiente.
+
+Una API REST (Representational State Transfer) es un estilo arquitectónico para diseñar sistemas distribuidos y servicios web que se basa en los principios del protocolo HTTP. Aquí hay una descripción detallada de los conceptos clave asociados con una API REST:
+
+1. **Recursos:** En una API REST, los recursos son entidades de datos que pueden ser accedidas o manipuladas mediante el protocolo HTTP. Estos recursos pueden ser cualquier cosa, desde objetos de datos simples hasta entidades más complejas. Por ejemplo, en una aplicación de redes sociales, los recursos podrían ser usuarios, publicaciones, comentarios, etc.
+
+2. **URIs (Identificadores de Recursos Uniformes):** Cada recurso en una API REST se identifica mediante un URI único. Los URIs son las rutas a través de las cuales se accede a los recursos en el servidor. Por ejemplo, `/users`, `/posts`, `/users/123`, etc.
+
+3. **Métodos HTTP:** Los métodos HTTP son verbos que indican la acción que se debe realizar en un recurso dado. Los métodos HTTP comúnmente utilizados en una API REST son:
+   - **GET:** Se utiliza para recuperar datos de un recurso.
+   - **POST:** Se utiliza para crear un nuevo recurso.
+   - **PUT:** Se utiliza para actualizar un recurso existente.
+   - **DELETE:** Se utiliza para eliminar un recurso.
+
+4. **Representaciones:** Los datos asociados con un recurso pueden ser representados en diferentes formatos, como JSON, XML, HTML, etc. En una API REST, los clientes pueden solicitar la representación de un recurso en un formato específico utilizando encabezados HTTP como `Accept`.
+
+5. **Estado del Cliente y Estado del Servidor:** En una API REST, el servidor no mantiene ningún estado de cliente entre las solicitudes. Cada solicitud del cliente al servidor debe contener toda la información necesaria para que el servidor comprenda y procese la solicitud. El estado de la aplicación reside completamente en el servidor, y el cliente puede cambiar el estado del servidor enviando solicitudes HTTP.
+
+6. **HATEOAS (Hypertext As The Engine Of Application State):** Este principio de diseño de API REST propone que las respuestas de la API deben incluir enlaces hipertextuales que permitan a los clientes descubrir de manera dinámica y navegar a través de los recursos disponibles. Esto promueve la independencia entre el cliente y el servidor, ya que el cliente puede navegar por la API sin necesidad de conocimiento previo de sus rutas.
+
+En segundo curso trabajarás en profundidad esta materia, pero si despierta tu curiosidad, aquí tienes esta información introductoria.

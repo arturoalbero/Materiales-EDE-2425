@@ -6,16 +6,38 @@
     } 
 </style>
 
-# **Tutorial: Desarrollo Basado en Pruebas (TDD) con Cucumber, IntelliJ y Maven**  
+# Pruebas de aceptación
 
-En este tutorial, aprenderás a utilizar **Cucumber** en **IntelliJ IDEA** con **Maven** para desarrollar una aplicación siguiendo el enfoque **TDD (Desarrollo Basado en Pruebas)**. Cucumber permite escribir pruebas en lenguaje natural **Gherkin** y ejecutarlas en Java.
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
-Siguiendo este método, primero escribiremos las pruebas en **lenguaje natural (Gherkin)**, luego implementaremos la lógica en Java para hacer que las pruebas pasen.  
+<!-- code_chunk_output -->
+
+- [Pruebas de aceptación](#pruebas-de-aceptación)
+  - [Uso de Cucumber con Maven y Java para las pruebas de aceptación](#uso-de-cucumber-con-maven-y-java-para-las-pruebas-de-aceptación)
+    - [1. Crear el Proyecto en IntelliJ con Maven](#1-crear-el-proyecto-en-intellij-con-maven)
+    - [2. Agregar Dependencias de Cucumber](#2-agregar-dependencias-de-cucumber)
+    - [3. Escribir Escenarios de Prueba en Gherkin](#3-escribir-escenarios-de-prueba-en-gherkin)
+    - [4. Implementar la Clase `Calculadora.java`](#4-implementar-la-clase-calculadorajava)
+    - [5. Implementar los Step Definitions](#5-implementar-los-step-definitions)
+    - [6. Configurar el Runner de Pruebas](#6-configurar-el-runner-de-pruebas)
+    - [7. Ejecutar las Pruebas con Maven](#7-ejecutar-las-pruebas-con-maven)
+    - [Principales anotaciones de Cucumber](#principales-anotaciones-de-cucumber)
+
+<!-- /code_chunk_output -->
+
+
+## Uso de Cucumber con Maven y Java para las pruebas de aceptación  
+
+En este documento se describen los pasos para utilizar **Cucumber** en **IntelliJ IDEA** con **Maven**, que nos ayudará a desarrollar una aplicación siguiendo el enfoque **TDD (Desarrollo guiado por Pruebas)**. Cucumber permite escribir pruebas en lenguaje natural **Gherkin** y ejecutarlas en Java.
+
+> El **Desarrollo guiado por pruebas de software**, o Test-driven development (TDD) es una práctica de ingeniería de software que involucra otras dos prácticas: Escribir las pruebas primero (Test First Development) y Refactorización (Refactoring). Para escribir las pruebas generalmente se utilizan las pruebas unitarias (unit test en inglés). En primer lugar, se escribe una prueba y se verifica que la nueva prueba falla. A continuación, se implementa el código que hace que la prueba pase satisfactoriamente y seguidamente se refactoriza el código escrito. El propósito del desarrollo guiado por pruebas es lograr un código limpio que funcione. La idea es que los requisitos sean traducidos a pruebas, de este modo, cuando las pruebas pasen se garantizará que el software cumple con los requisitos que se han establecido. El desarrollo guiado por pruebas es una metodología ágil, **centrada en el software y en el desarrollador**.
+
+Con Gherkin, transformamos el desarrollo guiado por pruebas en desarrollo guiado por comportamiento, gracias al uso del lenguaje natural. Siguiendo este método, primero escribiremos las pruebas en **lenguaje natural (Gherkin)**, luego implementaremos la lógica en Java para hacer que las pruebas pasen.  
 
 > **Actividad**
 > Registra los pasos de este tutorial en una memoria.
 
-## **1. Crear el Proyecto en IntelliJ con Maven**  
+### 1. Crear el Proyecto en IntelliJ con Maven  
 
 1. Abre **IntelliJ IDEA** y selecciona **New Project**.  
 2. Elige **Maven** como gestor de dependencias.  
@@ -43,7 +65,7 @@ calculadora-cucumber
 │── .gitignore
 ```
 
-## **2. Agregar Dependencias de Cucumber**  
+### 2. Agregar Dependencias de Cucumber
 
 Edita el archivo `pom.xml` y agrega las siguientes dependencias para **Cucumber y JUnit**:  
 
@@ -87,7 +109,7 @@ mvn clean install
 ```
 para descargar las dependencias.
 
-## **3. Escribir Escenarios de Prueba en Gherkin**  
+### 3. Escribir Escenarios de Prueba en Gherkin  
 
 Creamos el archivo `src/test/resources/features/calculadora.feature` con los escenarios en **Gherkin**:  
 
@@ -107,12 +129,12 @@ Feature: Calculadora
     Then el resultado debe ser 3
 ```
 
-**Explicación:**  
+ 
 - `Given` establece el estado inicial.  
 - `When` define la acción.  
 - `Then` verifica el resultado esperado.  
 
-## **4. Implementar la Clase `Calculadora.java`**  
+### 4. Implementar la Clase `Calculadora.java`  
 
 Creamos la clase en `src/main/java/com/ejemplo/Calculadora.java`:  
 
@@ -130,7 +152,7 @@ public class Calculadora {
 }
 ```
 
-## **5. Implementar los Step Definitions**  
+### 5. Implementar los Step Definitions 
 
 Creamos la clase `StepDefinitions.java` en `src/test/java/com/ejemplo/StepDefinitions.java`:  
 
@@ -168,7 +190,7 @@ public class StepDefinitions {
 }
 ```
 
-## **6. Configurar el Runner de Pruebas**  
+### 6. Configurar el Runner de Pruebas  
 
 Creamos la clase `RunCucumberTest.java` en `src/test/java/com/ejemplo/RunCucumberTest.java`:  
 
@@ -185,7 +207,7 @@ public class RunCucumberTest {
 }
 ```
 
-## **7. Ejecutar las Pruebas con Maven**  
+### 7. Ejecutar las Pruebas con Maven 
 
 Para ejecutar las pruebas, usa el siguiente comando en la terminal:  
 
@@ -219,7 +241,7 @@ Esto indica que las pruebas han pasado correctamente.
 > * [Tutorial de 10 minutos -se tarda más-](https://cucumber.io/docs/guides/10-minute-tutorial)
 >
 
-### **Principales anotaciones de Cucumber:**
+### Principales anotaciones de Cucumber
 
 | Anotación   | Descripción |
 |------------|------------|

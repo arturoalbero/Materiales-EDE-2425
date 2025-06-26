@@ -6,7 +6,22 @@
     } 
 </style>
 
-# Dobles de prueba con Mockito
+# Pruebas de integración
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Pruebas de integración](#pruebas-de-integración)
+  - [Dobles de prueba con Mockito](#dobles-de-prueba-con-mockito)
+    - [Principales anotaciones de Mockito:](#principales-anotaciones-de-mockito)
+
+<!-- /code_chunk_output -->
+
+
+
+## Dobles de prueba con Mockito
 
 Mockito es una de las bibliotecas más utilizadas para la creación de pruebas unitarias en Java. Permite simular objetos y comportamientos para probar métodos sin depender de implementaciones reales. Vamos a continuar el proyecto anterior y añadirle soporte para Mockito.
 

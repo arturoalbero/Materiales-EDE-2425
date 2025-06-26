@@ -11,6 +11,44 @@
 
 En este documento vamos a introducirnos en una de las fases más importantes del desarrollo de software, la fase de pruebas. Introduciremos los diferentes tipos de pruebas que se pueden realizar y más adelante profundizaremos en ellas.
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Tipos de pruebas de Software](#tipos-de-pruebas-de-software)
+  - [Las pruebas de software dentro del desarrollo de un sistema](#las-pruebas-de-software-dentro-del-desarrollo-de-un-sistema)
+  - [Objetivos y metodologías de testeo](#objetivos-y-metodologías-de-testeo)
+  - [Etapas del testeo](#etapas-del-testeo)
+    - [Pruebas de unidad](#pruebas-de-unidad)
+      - [**Características clave**](#características-clave)
+    - [Pruebas de integración](#pruebas-de-integración)
+      - [**Características clave**](#características-clave-1)
+      - [**Tipos de pruebas de integración**](#tipos-de-pruebas-de-integración)
+    - [Pruebas de CI/CD](#pruebas-de-cicd)
+      - [**Características clave**](#características-clave-2)
+      - [**Flujo de trabajo**](#flujo-de-trabajo)
+    - [Pruebas de aceptación](#pruebas-de-aceptación)
+      - [**Características clave**](#características-clave-3)
+      - [**Tipos de pruebas de aceptación**](#tipos-de-pruebas-de-aceptación)
+    - [Pruebas de validación](#pruebas-de-validación)
+      - [**Características clave**](#características-clave-4)
+      - [**Tipos de pruebas de validación**](#tipos-de-pruebas-de-validación)
+    - [Pruebas exploratorias](#pruebas-exploratorias)
+  - [Estándares de pruebas de software](#estándares-de-pruebas-de-software)
+    - [**ISO 25010 - Modelo de Calidad del Software**](#iso-25010---modelo-de-calidad-del-software)
+    - [**ISTQB - Certificación en Testing de Software**](#istqb---certificación-en-testing-de-software)
+      - [**Niveles de Pruebas**](#niveles-de-pruebas)
+      - [**Tipos de Testing**](#tipos-de-testing)
+      - [**Principios del Testing**](#principios-del-testing)
+  - [Documentación de Pruebas](#documentación-de-pruebas)
+    - [Factores de importancia para la documentación de las pruebas](#factores-de-importancia-para-la-documentación-de-las-pruebas)
+    - [Elementos clave de la documentación de pruebas](#elementos-clave-de-la-documentación-de-pruebas)
+
+<!-- /code_chunk_output -->
+
+
+
 >**Actividad:** 
 > A lo largo de este documento se introducirán conceptos relacionados con la fase de pruebas. Realiza un mapa conceptual, un esquema o una infografía con las fases de las pruebas de software, asociando cada una a las distintas herramientas que se van introduciendo.
 
@@ -293,7 +331,10 @@ Aunque puede variar según el proyecto, la documentación de pruebas comúnmente
 > 3. **Pruebas de aceptación** (ej.: asegurar que un usuario pueda buscar un hotel y completar una reserva sin problemas).  
 > 4. **Pruebas de seguridad** (ej.: evitar que los usuarios puedan modificar los precios desde el frontend).  
 >
-> Debate los diferentes puntos en clase y crea un documento con los casos de prueba para esta aplicación y especifica qué herramientas usarías en cada prueba.  
+> Debate los diferentes puntos en clase y crea un documento con los casos de prueba para esta aplicación y especifica qué herramientas usarías en cada prueba.
+
+
+  
 
 
 

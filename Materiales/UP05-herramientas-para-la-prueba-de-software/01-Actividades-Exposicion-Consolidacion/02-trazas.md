@@ -7,6 +7,20 @@
 </style>
 # La traza de un programa
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [La traza de un programa](#la-traza-de-un-programa)
+  - [Definición de Traza de un programa](#definición-de-traza-de-un-programa)
+    - [Tabla de seguimiento de variables](#tabla-de-seguimiento-de-variables)
+  - [Ejemplo de aplicación](#ejemplo-de-aplicación)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Definición de Traza de un programa
 
 La traza de un programa es un registro detallado de la ejecución de un programa, que muestra los valores de las variables, los resultados de las operaciones y el flujo de control en cada paso. En ella implementamos las técnicas de depuración de caja blanca de manera holística.

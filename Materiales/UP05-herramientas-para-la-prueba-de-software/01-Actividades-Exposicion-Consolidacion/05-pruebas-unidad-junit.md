@@ -10,6 +10,32 @@
 
 En este bloque, vamos a repasar diferentes herramientas para la prueba de software. Primero veremos qué son las anotaciones, un recurso que emplean todos los frameworks para funcionar. Después, veremos las herramientas JUnit y Mockito.
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Herramientas para la prueba de software](#herramientas-para-la-prueba-de-software)
+  - [¿Qué son los **Test de Unidad**?](#qué-son-los-test-de-unidad)
+    - [Beneficios de los Test de Unidad](#beneficios-de-los-test-de-unidad)
+      - [Ejemplo sencillo de test de unidad](#ejemplo-sencillo-de-test-de-unidad)
+    - [Implementación de Test de Unidad en Java usando IntelliJ y JUnit](#implementación-de-test-de-unidad-en-java-usando-intellij-y-junit)
+      - [**Paso 1: Configurar el proyecto en IntelliJ con JUnit**](#paso-1-configurar-el-proyecto-en-intellij-con-junit)
+      - [**Paso 2: Escribir un Test de Unidad en Java usando JUnit**](#paso-2-escribir-un-test-de-unidad-en-java-usando-junit)
+      - [**Paso 3: Ejecutar el Test en IntelliJ**](#paso-3-ejecutar-el-test-en-intellij)
+    - [Agregando más tests](#agregando-más-tests)
+  - [Diseño de Test de unidad](#diseño-de-test-de-unidad)
+  - [Anotaciones en Java](#anotaciones-en-java)
+  - [Test de unidad con JUNIT](#test-de-unidad-con-junit)
+    - [**1. Configurar JUnit en IntelliJ**](#1-configurar-junit-en-intellij)
+    - [**2. Crear la clase a probar**](#2-crear-la-clase-a-probar)
+    - [**3. Escribir pruebas con JUnit**](#3-escribir-pruebas-con-junit)
+    - [Principales anotaciones de JUnit:](#principales-anotaciones-de-junit)
+
+<!-- /code_chunk_output -->
+
+
+
 ## ¿Qué son los **Test de Unidad**?
 
 Los **tests de unidad** son pequeñas pruebas automatizadas que se escriben para verificar que una porción específica de código (una "unidad", generalmente una función o método) funcione correctamente. Su propósito es comprobar que una unidad de código aislada haga lo que se espera que haga sin depender de otras partes del sistema.
