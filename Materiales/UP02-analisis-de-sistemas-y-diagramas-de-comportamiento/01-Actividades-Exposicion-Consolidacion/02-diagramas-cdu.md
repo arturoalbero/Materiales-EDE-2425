@@ -6,6 +6,23 @@
 >
 >Algunos diagramas están hechos en mermaid.js, que sí se renderiza en github y no incluyen ejemplos de código de forma explícita, aunque puedes copiarlo directamente de la página usando el botón arriba a la derecha y copia en formato código.
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Diagramas de casos de uso](#diagramas-de-casos-de-uso)
+  - [Diagramas UML de Casos de Uso](#diagramas-uml-de-casos-de-uso)
+    - [Pasos para crear un diagrama de casos de uso](#pasos-para-crear-un-diagrama-de-casos-de-uso)
+  - [Relaciones avanzadas](#relaciones-avanzadas)
+    - [Relaciones `<<extend>>` y `<<include>>`](#relaciones-extend-y-include)
+    - [Generalización](#generalización)
+  - [Historias de Usuario (Scrum) y Casos de Uso](#historias-de-usuario-scrum-y-casos-de-uso)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Diagramas UML de Casos de Uso
 
 Un diagrama de casos de uso especifica cómo funciona un sistema. Más concretamente, qué puede hacer cada usuario que interactúe con el sistema. Para ello, se requieren cuatro elementos principales: Los casos de uso, los actores, las relaciones y el sistema.

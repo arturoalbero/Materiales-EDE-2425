@@ -1,7 +1,23 @@
----
-title: Cuaderno de ejercicios 02
----
 # Cuaderno de ejercicios 02
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Cuaderno de ejercicios 02](#cuaderno-de-ejercicios-02)
+  - [Diagramas de casos de uso](#diagramas-de-casos-de-uso)
+  - [Diagramas de transición de estados](#diagramas-de-transición-de-estados)
+  - [Diagramas de actividad](#diagramas-de-actividad)
+  - [Diagramas de interacción](#diagramas-de-interacción)
+  - [Prompts de IA para practicar](#prompts-de-ia-para-practicar)
+    - [Prompts de la IA para aprender un lenguaje de programación o de modelado como Plantuml](#prompts-de-la-ia-para-aprender-un-lenguaje-de-programación-o-de-modelado-como-plantuml)
+    - [Prompts de la IA para practicar preguntas de tipo test](#prompts-de-la-ia-para-practicar-preguntas-de-tipo-test)
+    - [Prompts para ejercicios](#prompts-para-ejercicios)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Diagramas de casos de uso
 

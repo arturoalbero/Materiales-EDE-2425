@@ -1,5 +1,29 @@
 # Diagramas de Transición de Estados
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Diagramas de Transición de Estados](#diagramas-de-transición-de-estados)
+  - [Introducción a los Diagramas de Estados](#introducción-a-los-diagramas-de-estados)
+  - [Partes de un Diagrama de Estados](#partes-de-un-diagrama-de-estados)
+    - [Estado](#estado)
+      - [Transición](#transición)
+      - [Evento](#evento)
+      - [Estado Inicial y Estado Final](#estado-inicial-y-estado-final)
+      - [Diagrama 1: Ciclo de vida de una tarea](#diagrama-1-ciclo-de-vida-de-una-tarea)
+      - [Diagrama 2: Sistema de un semáforo](#diagrama-2-sistema-de-un-semáforo)
+      - [Diagrama 3: Proceso de pago en línea](#diagrama-3-proceso-de-pago-en-línea)
+      - [Diagrama 4: Gestión de una cuenta de usuario](#diagrama-4-gestión-de-una-cuenta-de-usuario)
+  - [Máquinas de Estados Simples y Compuestas](#máquinas-de-estados-simples-y-compuestas)
+    - [Máquina de estados simple](#máquina-de-estados-simple)
+    - [Máquinas de estados compuestas](#máquinas-de-estados-compuestas)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Introducción a los Diagramas de Estados
 
 Un diagrama de estados es una representación gráfica del **comportamiento dinámico** de un objeto o sistema, mostrando los **estados** en los que puede encontrarse y las **transiciones** entre ellos debido a eventos. Se trata de la representación visual de una Máquina de Estados Finita (FSM por sus siglas en inglés).

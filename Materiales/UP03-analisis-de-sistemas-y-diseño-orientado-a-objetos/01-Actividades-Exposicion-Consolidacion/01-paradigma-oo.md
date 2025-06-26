@@ -1,5 +1,26 @@
 # El paradigma orientado a objetos
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [El paradigma orientado a objetos](#el-paradigma-orientado-a-objetos)
+  - [Programación Orientada a Objetos (POO): Conceptos Fundamentales](#programación-orientada-a-objetos-poo-conceptos-fundamentales)
+    - [Distinción con Paradigmas Imperativos](#distinción-con-paradigmas-imperativos)
+    - [Principios Clave de la POO](#principios-clave-de-la-poo)
+    - [Clases y Prototipos](#clases-y-prototipos)
+  - [Principios SOLID](#principios-solid)
+    - [**S** - Principio de Responsabilidad Única (Single Responsibility Principle - SRP)](#s---principio-de-responsabilidad-única-single-responsibility-principle---srp)
+    - [**O** - Principio de Abierto/Cerrado (Open/Closed Principle - OCP)](#o---principio-de-abiertocerrado-openclosed-principle---ocp)
+    - [**L** - Principio de Sustitución de Liskov (Liskov Substitution Principle - LSP)](#l---principio-de-sustitución-de-liskov-liskov-substitution-principle---lsp)
+    - [**I** - Principio de Segregación de la Interfaz (Interface Segregation Principle - ISP)](#i---principio-de-segregación-de-la-interfaz-interface-segregation-principle---isp)
+    - [**D** - Principio de Inversión de Dependencias (Dependency Inversion Principle - DIP)](#d---principio-de-inversión-de-dependencias-dependency-inversion-principle---dip)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Programación Orientada a Objetos (POO): Conceptos Fundamentales
 
 El paradigma de la **Programación Orientada a Objetos (POO)**, del inglés *Object-Oriented Programming (OOP)*, es un enfoque de programación que se fundamenta en el concepto de **objeto**. Un objeto es una entidad que encapsula datos y los procedimientos que operan sobre esos datos, denominados **métodos**, en una única unidad cohesionada.

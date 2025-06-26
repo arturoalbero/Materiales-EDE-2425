@@ -1,5 +1,25 @@
 # Diagramas de actividad
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Diagramas de actividad](#diagramas-de-actividad)
+  - [Diagramas actividad](#diagramas-actividad)
+    - [Componentes básicos de un diagrama de actividad](#componentes-básicos-de-un-diagrama-de-actividad)
+  - [Estructuras comunes](#estructuras-comunes)
+    - [Estructuras if-else, if y switch](#estructuras-if-else-if-y-switch)
+    - [Estructuras while, do-while y for](#estructuras-while-do-while-y-for)
+    - [Programación modular](#programación-modular)
+  - [Concurrencia en diagramas de actividad](#concurrencia-en-diagramas-de-actividad)
+    - [Representación de los hilos](#representación-de-los-hilos)
+    - [Uso de carriles en los diagramas de actividad](#uso-de-carriles-en-los-diagramas-de-actividad)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Diagramas actividad
 
 Los diagramas de actividad son representaciones gráficas de algoritmos o procesos, en las que se usan símbolos específicos para mostrar los pasos y decisiones. Son una herramienta esencial en la planificación, análisis y comunicación de sistemas.

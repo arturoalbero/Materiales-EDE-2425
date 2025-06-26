@@ -8,6 +8,30 @@ Existen varios tipos de diagramas de interacción.
 
 En este apartado, vamos a trabajar los diagramas de secuencia por ser los más relevantes y, al mismo tiempo, los más complejos de entender. Al final, introduciremos los diagramas de comunicación.
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Diagramas de interacción](#diagramas-de-interacción)
+  - [¿Qué es un diagrama de secuencia y para qué se usa?](#qué-es-un-diagrama-de-secuencia-y-para-qué-se-usa)
+  - [Componentes básicos de un diagrama de secuencia y cómo construirlo](#componentes-básicos-de-un-diagrama-de-secuencia-y-cómo-construirlo)
+    - [Actores y Objetos](#actores-y-objetos)
+    - [Líneas de vida](#líneas-de-vida)
+      - [Líneas de vida y bloques de activación](#líneas-de-vida-y-bloques-de-activación)
+      - [Fragmentos combinados: condicionales y bucles](#fragmentos-combinados-condicionales-y-bucles)
+      - [Condicional (alt)](#condicional-alt)
+      - [Bucle (loop)](#bucle-loop)
+      - [Combinación de activación y fragmentos](#combinación-de-activación-y-fragmentos)
+      - [Añadir estados al diagrama de secuencia](#añadir-estados-al-diagrama-de-secuencia)
+    - [Mensajes](#mensajes)
+    - [Construcción de diagramas de secuencia](#construcción-de-diagramas-de-secuencia)
+  - [Diagramas de comunicación](#diagramas-de-comunicación)
+
+<!-- /code_chunk_output -->
+
+
+
 ## ¿Qué es un diagrama de secuencia y para qué se usa?
 
 Un **diagrama de secuencia** es un tipo de diagrama de comportamiento en UML que modela la interacción entre actores (usuarios u otros sistemas) y los objetos de un sistema en un orden temporal. Su principal objetivo es mostrar el flujo de mensajes o eventos que ocurren entre diferentes participantes a lo largo del tiempo, destacando el **orden cronológico** de las interacciones.

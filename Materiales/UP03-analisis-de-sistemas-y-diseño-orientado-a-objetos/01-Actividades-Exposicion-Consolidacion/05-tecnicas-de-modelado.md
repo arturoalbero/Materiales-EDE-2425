@@ -1,5 +1,38 @@
 # Técnicas de modelado
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Técnicas de modelado](#técnicas-de-modelado)
+  - [Modelizar las relaciones de Herencia y sus alternativas](#modelizar-las-relaciones-de-herencia-y-sus-alternativas)
+    - [El Dominio del Problema](#el-dominio-del-problema)
+    - [Tipos de Herencia](#tipos-de-herencia)
+      - [Herencia Múltiple vs. Herencia Simple más Interfaces](#herencia-múltiple-vs-herencia-simple-más-interfaces)
+      - [Herencia Privada o Herencia Pública (En C++)](#herencia-privada-o-herencia-pública-en-c)
+      - [Herencia frente a Composición](#herencia-frente-a-composición)
+      - [Lenguajes Orientados a Objetos sin Herencia de Clases (como Rust)](#lenguajes-orientados-a-objetos-sin-herencia-de-clases-como-rust)
+      - [Lenguajes Orientados a Objetos usando Prototipos (como JavaScript)](#lenguajes-orientados-a-objetos-usando-prototipos-como-javascript)
+  - [Técnicas de Modelado con Diagramas de Clases UML](#técnicas-de-modelado-con-diagramas-de-clases-uml)
+    - [1. Identificación de Clases Candidatas](#1-identificación-de-clases-candidatas)
+    - [2. Definición de Atributos y Comportamientos (Métodos)](#2-definición-de-atributos-y-comportamientos-métodos)
+    - [3. Modelado de Relaciones entre Clases](#3-modelado-de-relaciones-entre-clases)
+    - [4. Refinamiento y Verificación](#4-refinamiento-y-verificación)
+  - [De Diagrama Entidad-Relación a Diagrama de Clases UML: Una Aproximación](#de-diagrama-entidad-relación-a-diagrama-de-clases-uml-una-aproximación)
+    - [Reglas de Conversión Aproximadas](#reglas-de-conversión-aproximadas)
+      - [1\. Entidades -> Clases](#1-entidades---clases)
+      - [2\. Atributos de Entidades -> Atributos de Clases](#2-atributos-de-entidades---atributos-de-clases)
+      - [3\. Relaciones -> Asociaciones](#3-relaciones---asociaciones)
+      - [4\. Entidades Débiles -> Clases (con Composición/Agregación)](#4-entidades-débiles---clases-con-composiciónagregación)
+      - [5\. Atributos Multivaluados -> Colecciones o Clases Separadas](#5-atributos-multivaluados---colecciones-o-clases-separadas)
+    - [Consideraciones Adicionales](#consideraciones-adicionales)
+
+<!-- /code_chunk_output -->
+
+
+
+
 ## Modelizar las relaciones de Herencia y sus alternativas
 
 Entendido. Vamos a desarrollar la sección sobre el dominio del problema y los tipos de herencia, incluyendo las alternativas y cómo se gestiona en diferentes lenguajes.

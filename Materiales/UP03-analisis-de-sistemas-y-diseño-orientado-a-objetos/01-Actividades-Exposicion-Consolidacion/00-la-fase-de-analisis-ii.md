@@ -1,4 +1,4 @@
-### **La fase de análisis II: Del análisis al diseño orientado a objetos**
+# **La fase de análisis II: Del análisis al diseño orientado a objetos**
 
 Una vez que sabemos qué debe hacer el sistema, debemos decidir cómo lo va a hacer. El diseño orientado a objetos nos permite organizar el sistema en clases, atributos, métodos y relaciones entre objetos. Esta forma de estructurar el software lo hace más mantenible, reutilizable y cercano a la realidad.
 

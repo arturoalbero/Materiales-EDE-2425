@@ -1,4 +1,4 @@
-### **La fase de análisis**
+# **La fase de análisis**
 
 Antes de escribir una sola línea de código, es necesario comprender qué necesita el cliente o usuario. Esta tarea forma parte de la fase de análisis, en la que se estudian los requisitos del sistema y se definen sus comportamientos. Aquí se representa lo que debe hacer el sistema, no cómo se va a hacer.
 

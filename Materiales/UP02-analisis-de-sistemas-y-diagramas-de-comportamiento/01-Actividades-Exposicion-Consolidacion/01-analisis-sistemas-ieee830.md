@@ -1,5 +1,19 @@
 # Especificación de requisitos del sistema
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Especificación de requisitos del sistema](#especificación-de-requisitos-del-sistema)
+  - [Introducción al análisis de sistemas](#introducción-al-análisis-de-sistemas)
+  - [Especificación de requisitos de sistemas](#especificación-de-requisitos-de-sistemas)
+  - [El estándar IEEE 830 para representar la especificación de requisitos de un sistema](#el-estándar-ieee-830-para-representar-la-especificación-de-requisitos-de-un-sistema)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Introducción al análisis de sistemas
 
 El análisis de sistemas es una fase del desarrollo de software que consiste en el proceso mediante el cual se estudian y descomponen los componentes de un sistema para entender su funcionamiento, identificar problemas y encontrar soluciones eficaces. Este proceso se utiliza en ingeniería, informática, administración y muchas otras áreas para desarrollar o mejorar sistemas complejos. Entre sus utilidades, encontramos las siguientes:

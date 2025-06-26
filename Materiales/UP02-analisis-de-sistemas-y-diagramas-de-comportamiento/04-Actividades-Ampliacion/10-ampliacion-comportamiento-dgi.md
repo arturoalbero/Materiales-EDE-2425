@@ -1,5 +1,20 @@
+# Ampliación: Diagramas Globales de Interacciones
 
-# Diagramas Globales de Interacciones
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Ampliación: Diagramas Globales de Interacciones](#ampliación-diagramas-globales-de-interacciones)
+  - [Diagramas Globales de Interacciones](#diagramas-globales-de-interacciones)
+  - [Estructura de un Diagrama Global de Interacciones](#estructura-de-un-diagrama-global-de-interacciones)
+  - [Entrega de la actividad de ampliación](#entrega-de-la-actividad-de-ampliación)
+
+<!-- /code_chunk_output -->
+
+
+
+## Diagramas Globales de Interacciones
 
 Los diagramas globales de interacciones son una herramienta de modelado poderosa que te permite obtener una vista de alto nivel del flujo de control dentro de un sistema, mientras que, al mismo tiempo, te permite profundizar en los detalles de cómo los objetos interactúan en cada paso. Imagina un mapa de carreteras que, además de mostrarte las rutas principales, te permite hacer zoom en cada cruce para ver cómo se mueven los coches en detalle. Eso es un diagrama global de interacciones.
 

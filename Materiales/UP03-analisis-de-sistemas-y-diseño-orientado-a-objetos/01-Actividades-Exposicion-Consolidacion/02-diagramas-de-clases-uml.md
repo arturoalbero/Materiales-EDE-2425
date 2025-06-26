@@ -1,5 +1,22 @@
 # Diagramas de clase UML
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Diagramas de clase UML](#diagramas-de-clase-uml)
+  - [Construcción de un diagrama de clases](#construcción-de-un-diagrama-de-clases)
+  - [Métodos y atributos](#métodos-y-atributos)
+  - [Tipos de visibilidad](#tipos-de-visibilidad)
+  - [Herramientas para la creación de Diagramas de clases UML](#herramientas-para-la-creación-de-diagramas-de-clases-uml)
+
+<!-- /code_chunk_output -->
+
+
+
+
+
 ## Construcción de un diagrama de clases
 
 Para representar una clase emplearemos diagramas de clases del estándar UML. Cada clase se representa con una caja que tiene tres apartados:
@@ -26,11 +43,14 @@ class EstoEsUnaClase{
 
 </details>
 
+## Métodos y atributos
 
 Podemos pensar en los atributos y métodos de una clase de la siguiente forma:
 
 - **Atributos:** Conforman las propiedades del objeto.
 - **Métodos:** Conforman el comportamiento del objeto.
+
+## Tipos de visibilidad
 
 Cuando definimos una clase, los diferentes componentes tienen una visibilidad determinada:
 
@@ -107,7 +127,9 @@ class AtributoPaquete{
 ```
 </details>
 
-La visibilidad es una herramienta clave a la hora de determinar la encapsulación de la información. A las partes públicas (generalmente métodos) se las conoce como la API (application programming interface) del objeto.
+La visibilidad es una herramienta clave a la hora de determinar la **encapsulación** de la información. A las partes públicas (generalmente métodos) se las conoce como la API (application programming interface) del objeto.
+
+## Herramientas para la creación de Diagramas de clases UML
 
 Para estos diagramas se está usando [PlantUML](https://plantuml.com/es/class-diagram). Para que aparezcan los signos indicados se debe especificar antes de empezar a escribir el diagrama la línea `skinparam classAttributeIconSize 0`. Si no se hace, aparecen formas geométricas de diferentes colores según la visibilidad, y están rellenas o no según si son atributo o método:
 
@@ -139,16 +161,12 @@ Además de Plantuml, puedes usar [Mermaidjs](https://mermaid.js.org/syntax/class
 Por otro lado, existen herramientas especializadas como [Visual Paradigm Online](https://online.visual-paradigm.com/drive/#proj=0&dashboard), [Lucidchart](https://www.lucidchart.com/pages/es) o [Miro](https://miro.com/es/) que sirven para crear diagramas de clases UML (y otros muchos diagramas). Técnicamente, puedes emplear cualquier herramienta de diseño para crear un diagrama de cualquier tipo.
 
 > **Actividad** 
-> Creación de diagramas a partir de una definición
-> 
 > Crea un diagrama de clase que se corresponda con cada una de estas definiciones:
 >
 > - Para representar un libro, necesitamos saber su autor, su editorial, su año de publicación, su ISBN y su número de páginas. Un libro se puede leer.
 > - Para representar a un perro, necesitamos saber su nombre, su raza y su edad. Un perro puede ladrar y pasear.
 
 > **Actividad**
->Explicación de diagramas
->
 >Explica los siguientes diagramas:
 
 ![alt text](images/image-6.png)

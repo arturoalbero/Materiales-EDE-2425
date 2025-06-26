@@ -1,3 +1,21 @@
+# Cuaderno de ejercicios 03
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Cuaderno de ejercicios 03](#cuaderno-de-ejercicios-03)
+  - [Ejercicios de modelización](#ejercicios-de-modelización)
+    - [Ejercicio 1: Gestor de Liga de Fútbol](#ejercicio-1-gestor-de-liga-de-fútbol)
+    - [Ejercicio 2: Gestor de Aeropuertos](#ejercicio-2-gestor-de-aeropuertos)
+    - [Ejercicio 3: Sistema de Gestión de Turnos en un Hospital](#ejercicio-3-sistema-de-gestión-de-turnos-en-un-hospital)
+
+<!-- /code_chunk_output -->
+
+
+
+## Ejercicios de modelización
+
 ### Ejercicio 1: Gestor de Liga de Fútbol
 
 Se ha encargado desarrollar un gestor para una liga de fútbol. La liga debe estar identificada por un nombre y una temporada, definida por el año de inicio y el de finalización. La liga estará compuesta por un máximo de 22 equipos.
@@ -15,7 +33,6 @@ El sistema debe proporcionar las siguientes funcionalidades:
 - Calcular los goles a favor de cada equipo.
 - Identificar al máximo goleador ("pichichi") de la liga.
 
----
 
 ### Ejercicio 2: Gestor de Aeropuertos
 
@@ -35,7 +52,6 @@ Se debe poder:
 
 El sistema debe permitir acceder a la información completa de cada vuelo y cada tripulante.
 
----
 
 ### Ejercicio 3: Sistema de Gestión de Turnos en un Hospital
 
@@ -55,7 +71,6 @@ El sistema debe permitir:
 
 Se debe acceder fácilmente a la información completa de cada empleado, sus turnos y los departamentos del hospital.
 
----
 
 
 

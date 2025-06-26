@@ -1,5 +1,23 @@
 # Convertir VSCode en un editor de Markdown con el poder de las extensiones.
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Convertir VSCode en un editor de Markdown con el poder de las extensiones.](#convertir-vscode-en-un-editor-de-markdown-con-el-poder-de-las-extensiones)
+  - [1\. ¿Qué es Markdown y cómo se utiliza?](#1-qué-es-markdown-y-cómo-se-utiliza)
+    - [Sintaxis básica de Markdown](#sintaxis-básica-de-markdown)
+  - [2\. Utilizar Markdown en Visual Studio Code](#2-utilizar-markdown-en-visual-studio-code)
+    - [Instalación de Visual Studio Code](#instalación-de-visual-studio-code)
+      - [Extensiones importantes](#extensiones-importantes)
+      - [Comandos útiles dentro de VSCode usando Markdown All In One](#comandos-útiles-dentro-de-vscode-usando-markdown-all-in-one)
+  - [Memoria de entrega](#memoria-de-entrega)
+
+<!-- /code_chunk_output -->
+
+
+
 ## 1\. ¿Qué es Markdown y cómo se utiliza?
 
 **Markdown** es un lenguaje de marcado ligero que permite formatear texto de manera sencilla e intuitiva. Es muy utilizado para escribir documentación, blogs o cualquier otro tipo de texto que luego se convierte a HTML, ya que facilita mucho su legibilidad. Un documento Markdown es esencialmente texto plano que se puede leer fácilmente y que luego se puede exportar a otros formatos como HTML o PDF.

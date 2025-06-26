@@ -2,6 +2,19 @@
 
 Continuando con la Programación Orientada a Objetos, una vez comprendida la estructura de una **clase** y un **objeto**, el siguiente paso fundamental es cómo los modelamos para que representen eficazmente el mundo real o el problema que queremos resolver. La **modelización** es el proceso de identificar las clases y objetos necesarios, definir sus atributos y comportamientos, y establecer las relaciones entre ellos, aún sin introducir la herencia.
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Modelización de Clases y Objetos](#modelización-de-clases-y-objetos)
+  - [Identificación de Clases y Objetos](#identificación-de-clases-y-objetos)
+      - [¿Cómo identificamos clases?](#cómo-identificamos-clases)
+    - [Definición de Atributos y Métodos](#definición-de-atributos-y-métodos)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Identificación de Clases y Objetos
 
 El primer paso en la modelización es identificar las entidades clave en el dominio del problema. El dominio del problema se establece en el documento de Especificación de Requerimientos del Sistema (IEEE 830) o en documentos similares. Generalmente, las **clases** corresponden a sustantivos o conceptos abstractos importantes. Es muy similar al diagrama Entidad-Relación que se trabaja en bases de datos, pero en el diagrama de clases UML también modelizamos las acciones que realiza cada elemento.

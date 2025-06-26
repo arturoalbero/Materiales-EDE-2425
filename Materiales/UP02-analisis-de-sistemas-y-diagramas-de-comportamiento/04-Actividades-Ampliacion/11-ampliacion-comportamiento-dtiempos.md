@@ -1,4 +1,19 @@
-# Diagramas de tiempos
+
+# Ampliación: Diagramas de tiempos
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Ampliación: Diagramas de tiempos](#ampliación-diagramas-de-tiempos)
+  - [Definición y uso de los Diagramas de Tiempos](#definición-y-uso-de-los-diagramas-de-tiempos)
+  - [Elementos Clave de un Diagrama de Tiempos](#elementos-clave-de-un-diagrama-de-tiempos)
+  - [Entrega de la actividad de ampliación](#entrega-de-la-actividad-de-ampliación)
+
+<!-- /code_chunk_output -->
+
+
 
 ## Definición y uso de los Diagramas de Tiempos
 

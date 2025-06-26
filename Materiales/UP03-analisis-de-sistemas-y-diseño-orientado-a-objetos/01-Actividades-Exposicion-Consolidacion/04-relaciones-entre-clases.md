@@ -1,4 +1,20 @@
-## Relaciones entre clases
+# Relaciones entre clases
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Relaciones entre clases](#relaciones-entre-clases)
+  - [Relaciones de Herencia](#relaciones-de-herencia)
+  - [Relaciones de componente](#relaciones-de-componente)
+  - [Otras relaciones](#otras-relaciones)
+
+<!-- /code_chunk_output -->
+
+
+
+## Relaciones de Herencia
 
 A través de los diagramas UML podemos expresar las relaciones entre las clases de múltiples maneras, mediante líneas que las unen. A su vez, también podemos especificar cardinalidades, como en los diagramas Entidad-Relación empleados en base de datos, para cuantificar los detalles de las relaciones, e incluso nombrar a dichas relaciones (generalmente con un verbo). Representamos las cardinalidades con 0, 1, muchos (representado a veces con `*` o una letra) o números fijos. Las clases se pueden relacionar entre ellas de las siguientes maneras:
 
@@ -34,6 +50,8 @@ SerVivo <|--Perro
 @enduml
 ```
 </details>
+
+## Relaciones de componente
 
 - **Componente:** "tiene un". Una clase contiene como atributo un objeto (o varios) de otra.
 - **Composición:** De tipo *componente*. En este caso, el atributo es dependiente de la clase principal.
@@ -93,7 +111,7 @@ Profesor -- Alumno : Enseña >
 </details>
 
 
-### Otras relaciones
+## Otras relaciones
 
 Además de esas relaciones básicas, existen otras un poco más avanzadas.
 
