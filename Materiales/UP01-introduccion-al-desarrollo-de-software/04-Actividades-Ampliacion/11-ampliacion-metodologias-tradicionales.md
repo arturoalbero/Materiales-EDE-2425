@@ -1,3 +1,21 @@
+# Ampliación: Metodologías tradicionales
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Ampliación: Metodologías tradicionales](#ampliación-metodologías-tradicionales)
+  - [Metodologías tradicionales](#metodologías-tradicionales)
+    - [**1. Elementos de una metodología**](#1-elementos-de-una-metodología)
+    - [**2. Metodologías tradicionales**](#2-metodologías-tradicionales)
+      - [**2.1. Ejemplo: RUP**](#21-ejemplo-rup)
+      - [**2.2. Ejemplo: MSF**](#22-ejemplo-msf)
+
+<!-- /code_chunk_output -->
+
+
+
 ## Metodologías tradicionales
 
 Como el desarrollo de productos de software no es una tarea sencilla, existen diversas metodologías que podemos seguir para este desarrollo. Una **metodología** es un conjunto de técnicas y métodos que nos ayudan a afrontar cada etapa de un ciclo de vida. De esta manera, podemos:
