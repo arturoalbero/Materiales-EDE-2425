@@ -9,3 +9,5 @@ Realiza una presentación usando power point o cualquier software equivalente de
     - Lenguajes de programación por paradigmas
 - Introducción a la programación
 - Herramientas para el desarrollo de programas
+
+Recuerda que puedes usar Office 365 con tu identidad digital facilitada por la Conselleria de Educació.

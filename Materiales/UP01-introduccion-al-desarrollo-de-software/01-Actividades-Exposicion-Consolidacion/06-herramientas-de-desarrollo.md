@@ -13,6 +13,7 @@
     - [Herramientas de Pruebas Automatizadas: Aseguramiento de la Calidad](#herramientas-de-pruebas-automatizadas-aseguramiento-de-la-calidad)
     - [Herramientas de Integración y Entrega Continua (CI/CD): Automatización del Ciclo de Desarrollo](#herramientas-de-integración-y-entrega-continua-cicd-automatización-del-ciclo-de-desarrollo)
     - [Herramientas de Colaboración y Gestión de Proyectos: Coordinación de Equipos](#herramientas-de-colaboración-y-gestión-de-proyectos-coordinación-de-equipos)
+    - [Tutoriales](#tutoriales)
 
 <!-- /code_chunk_output -->
 
@@ -65,3 +66,16 @@ La comunicación efectiva y la gestión estructurada de tareas son esenciales pa
 
 
 La selección adecuada y la implementación eficaz de estas herramientas son determinantes para la productividad del equipo y para la entrega de productos de software de alta calidad.
+
+### Tutoriales
+
+> **Actividad**
+> A continuación tienes una serie de tutoriales para emplear las herramientas de colaboración. Elige una herramienta y documenta el proceso de uso para aplicarlo en un futuro en los retos cooperativos de las unidades 2, 3, 4, 5 y 6 de este módulo profesional.
+
+* [Cómo usar MS Planner](https://www.youtube.com/watch?v=y_YSCZDbNxI)
+
+* [Cómo usar MS Teams](https://www.youtube.com/watch?v=T6rA-LevWvA)
+
+* [Cómo usar Trello](https://trello.com/guide)
+
+* [Cómo usar Jira](https://www.atlassian.com/es/software/jira/guides/getting-started/introduction#dig-into-specific-features)

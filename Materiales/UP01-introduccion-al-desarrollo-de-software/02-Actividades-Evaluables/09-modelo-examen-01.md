@@ -101,3 +101,11 @@ A) La espiral se centra en el desarrollo de software, mientras que el modelo en 
 B) El modelo en espiral permite iteraciones y mejoras continuas, mientras que el modelo en V sigue un proceso más rígido y secuencial
 C) El modelo en V es un proceso ágil, mientras que el modelo en espiral no lo es
 D) Ambos modelos son idénticos, solo cambian los nombres
+
+15) Cuál de estas afirmaciones sobre el Desarrollo guiado por pruebas (TDD) es falsa
+
+A) Es una metodología ágil que se centra en el cliente
+B) Es una metodología ágil que se centra en el desarrollador
+C) Requiere primero desarrollar las pruebas
+D) Se usa cuando el problema es incierto
+

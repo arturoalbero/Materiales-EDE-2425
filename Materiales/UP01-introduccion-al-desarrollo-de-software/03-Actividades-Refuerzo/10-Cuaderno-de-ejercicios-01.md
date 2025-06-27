@@ -15,3 +15,18 @@ Para hacer una prueba, primero añade el documento sobre el que quieras practica
 > **Actividad**
 > Genera 5 preguntas de tipo test de cada uno de los documentos
 
+> **Actividad**
+> Investiga en los apuntes y copia las definiciones de los siguientes términos:
+> * Kanban
+> * TDD
+> * Lenguajes de programación de cuarta generación
+> * Paradigma funcional
+> * Ciclo de vida de cascada
+> * Manifiesto ágil
+> * Scrum
+> * Jira
+> * VS Code
+> * Editor de código
+> * Debugger
+> * Fases de desarrollo
+> * Ingeniería del software

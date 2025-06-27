@@ -65,7 +65,7 @@ Es importante disponer de un conjunto de pruebas unitarias que puedan lanzarse a
 
 El objetivo principal es definir las pruebas que el sistema debe superar antes de escribir el código correspondiente, de manera que nos aseguramos de que la aplicación se puede comprobar, y definimos pruebas para cada característica. De esta manera, evitamos escribir código innecesario (esto es, código que no está ligado a ninguna prueba).
 
-### **3. Ejemplo: Scrum**
+### **Scrum**
 
 **Scrum** es una metodología ágil que se puede utilizar en proyectos complejos. Utiliza procesos iterativos e incrementales, y se puede aplicar tanto a productos de software como a otros ámbitos. Su nombre proviene de la “melé” que hacen los jugadores de rugby.
 
@@ -89,21 +89,25 @@ Además de la reunión al inicio de la iteración, también hay reuniones diaria
 
 Cada *user story* en el *backlog* tiene asignado un tiempo, normalmente en horas, días o incluso semanas. Por lo tanto, el tiempo total estimado de un *sprint* es la suma de todas las *user stories* elegidas para ese *sprint*.
 
+![alt text](image-11.png)
+
 Para determinar si el tiempo total estimado difiere mucho del tiempo real, podemos utilizar algunas herramientas adicionales como los *burndown charts*, que nos ayudan gráficamente a determinar qué medidas podemos tomar para reducir esa diferencia.
 
-**Ejercicio 1:**
+> **Actividad**
+>
+>Intenta responder a estas preguntas:
+>
+>  * ¿Qué es un *sprint* en Scrum?
+>  * ¿Quién se encarga de priorizar las tareas que se deben hacer en cada *sprint*?
+>  * ¿Cómo se puede calcular la fecha final de entrega de un *sprint*?
 
-En este vídeo tienes un resumen de la metodología Scrum. Después de verlo, intenta responder a estas preguntas:
-
-  * ¿Qué es un *sprint* en Scrum?
-  * ¿Quién se encarga de priorizar las tareas que se deben hacer en cada *sprint*?
-  * ¿Cómo se puede calcular la fecha final de entrega de un *sprint*?
-
-### **4. Ejemplo: Kanban**
+### **Kanban**
 
 **Kanban** es otra metodología ágil, que es muy fácil de aplicar. Su nombre es una combinación de dos palabras japonesas: *kan* (“visual”) y *ban* (“tarjeta”), así que podemos deducir que el componente principal de esta metodología consiste en utilizar tarjetas que representan las diferentes tareas que debemos completar en el proceso de desarrollo.
 
 Los orígenes de la metodología Kanban se remontan a más de 60 años. A finales de los años 1940, Toyota comenzó a optimizar sus procesos de ingeniería, basándose en el mismo modelo que utilizan los supermercados para optimizar sus existencias. Como los niveles de inventario deberían ajustarse a los patrones de consumo, el exceso de stock se puede (y debe) controlar. De esta manera, Toyota podía alinear sus niveles de inventario con el consumo real de materiales. Los trabajadores pasaban una tarjeta entre los equipos cuando un contenedor de materiales se había vaciado, indicando la cantidad exacta de material necesaria. El almacén tendría un nuevo contenedor de material preparado para ser entregado a la fábrica, y luego enviarían un nuevo *kanban* al proveedor para proporcionar un nuevo contenedor.
+
+![alt text](image-10.png)
 
 Aplicado a los procesos de desarrollo de software, Kanban permite a los equipos ajustar la cantidad de trabajo en proceso (*WIP*) a la capacidad del equipo. Esto proporciona a los equipos opciones de planificación más flexibles, una entrega más rápida y un enfoque más claro.
 
@@ -138,11 +142,13 @@ Kanban tiene algunas similitudes con la metodología Scrum, ya que ambas son met
 
 Ambas metodologías se pueden aplicar a la vez. Scrum es más adecuado para dar retroalimentación al equipo y en la planificación a corto plazo, mientras que Kanban se puede utilizar para el trabajo diario o en entornos con un alto grado de variabilidad en las prioridades.
 
------
 
-**Ejercicio 2:**
 
-En este vídeo tienes un ejemplo de la metodología Kanban. Intenta responder a estas preguntas después de verlo:
+> **Actividad**
+>
+> Intenta responder a estas preguntas después de verlo:
+>
+>  * ¿Cuál es la función principal de los límites de trabajo en proceso (*WIP limits*)? ¿Qué pasa cuando intentamos mover una tarea a una columna que ya ha superado este límite?
+>  * ¿Cómo se pueden combinar Kanban y Scrum? ¿Cuál es el objetivo principal de añadir Scrum a Kanban?
 
-  * ¿Cuál es la función principal de los límites de trabajo en proceso (*WIP limits*)? ¿Qué pasa cuando intentamos mover una tarea a una columna que ya ha superado este límite?
-  * ¿Cómo se pueden combinar Kanban y Scrum? ¿Cuál es el objetivo principal de añadir Scrum a Kanban?
+[Fuente](https://nachoiborraies.github.io/entornos/md/en/03c)
