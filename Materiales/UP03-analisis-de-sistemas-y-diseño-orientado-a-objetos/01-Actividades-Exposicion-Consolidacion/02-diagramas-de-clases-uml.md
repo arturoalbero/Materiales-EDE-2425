@@ -14,9 +14,6 @@
 <!-- /code_chunk_output -->
 
 
-
-
-
 ## Construcción de un diagrama de clases
 
 Para representar una clase emplearemos diagramas de clases del estándar UML. Cada clase se representa con una caja que tiene tres apartados:
