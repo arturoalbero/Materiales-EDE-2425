@@ -47,11 +47,6 @@ En este documento vamos a introducirnos en una de las fases más importantes del
 
 <!-- /code_chunk_output -->
 
-
-
->**Actividad:** 
-> A lo largo de este documento se introducirán conceptos relacionados con la fase de pruebas. Realiza un mapa conceptual, un esquema o una infografía con las fases de las pruebas de software, asociando cada una a las distintas herramientas que se van introduciendo.
-
 ## Las pruebas de software dentro del desarrollo de un sistema  
 
 El desarrollo de software sigue una serie de fases para garantizar que el producto final sea funcional, eficiente y libre de errores. Una de las fases fundamentales es la **prueba y depuración del software**, donde se verifica que el código cumple con los requisitos y funciona correctamente en diferentes escenarios.  

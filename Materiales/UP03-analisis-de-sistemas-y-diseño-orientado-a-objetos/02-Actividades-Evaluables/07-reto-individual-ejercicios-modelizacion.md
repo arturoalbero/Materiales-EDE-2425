@@ -81,3 +81,17 @@ La página web debe facilitar varias funcionalidades clave para el día a día d
 
 Finalmente, el sistema debe contemplar la creación de un **usuario especial**. Este usuario tendrá **acceso total a todas las acciones** que pueden realizar los trabajadores, lo que le permitirá una supervisión completa del sistema. Adicionalmente, y con un propósito de depuración y verificación, este usuario especial podrá **simular la interacción de un cliente de la tienda** para comprobar el correcto funcionamiento de las funcionalidades orientadas al usuario final.
 
+## Rubrica
+
+| Ejercicio | ÍTEM | Criterio Evaluación | PESO |
+|---|---|---|---
+|1 | Identifica los componentes de las clases | 5a | 1
+|1 | Identifica las relaciones| 5a | 1
+|1 | Calidad en la explicación| 5c | 1
+|
+|2 | Adecuación al problema | 5c | 1
+|2 | Sintaxis adecuada | 5b | 1
+|2 | Formación correcta de las clases | 5b,5d | 2
+|2 | Formación correcta de las relaciones |5b,5d | 2
+|2 | Calidad de la presentación | 5b | 1
+

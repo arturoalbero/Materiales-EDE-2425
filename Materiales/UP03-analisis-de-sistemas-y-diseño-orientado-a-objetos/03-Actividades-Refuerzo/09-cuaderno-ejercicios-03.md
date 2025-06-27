@@ -5,6 +5,7 @@
 <!-- code_chunk_output -->
 
 - [Cuaderno de ejercicios 03](#cuaderno-de-ejercicios-03)
+  - [Ejercicios de diagramas](#ejercicios-de-diagramas)
   - [Ejercicios de modelización](#ejercicios-de-modelización)
     - [Ejercicio 1: Gestor de Liga de Fútbol](#ejercicio-1-gestor-de-liga-de-fútbol)
     - [Ejercicio 2: Gestor de Aeropuertos](#ejercicio-2-gestor-de-aeropuertos)
@@ -12,7 +13,22 @@
 
 <!-- /code_chunk_output -->
 
+## Ejercicios de diagramas
+> **Actividad**
+> 1. Explica los siguientes diagramas UML extraídos de diversas fuentes
+> 2. Crea una versión equivalente (en la medida de lo posible) en Diagrama Entidad Relación
 
+**1**
+![alt text](image.png)
+
+**2**
+![alt text](image-1.png)
+
+**3**
+![alt text](image-2.png)
+
+**4**
+![alt text](image-3.png)
 
 ## Ejercicios de modelización
 
@@ -70,7 +86,5 @@ El sistema debe permitir:
 - Consultar la disponibilidad de un empleado en un horario determinado.
 
 Se debe acceder fácilmente a la información completa de cada empleado, sus turnos y los departamentos del hospital.
-
-
 
 
