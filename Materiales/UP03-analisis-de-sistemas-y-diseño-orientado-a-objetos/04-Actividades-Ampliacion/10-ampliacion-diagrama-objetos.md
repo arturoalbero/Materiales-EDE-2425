@@ -109,3 +109,6 @@ Utiliza un diagrama de objetos cuando:
   * Estás **verificando la estructura** de tu modelo de clases con datos de ejemplo.
   * Quieres ilustrar **escenarios de prueba** o configuraciones específicas.
   * Deseas comunicar una **instantánea del sistema** en un momento particular.
+
+> **Actividad**
+> Realiza un diagrama de objetos a partir de la información recabada en el diagrama del primer ejercicio del reto individual.

@@ -123,3 +123,6 @@ Utiliza un diagrama de componentes cuando:
   * Necesitas visualizar las **dependencias entre módulos** y subsistemas.
   * Quieres comunicar las **interfaces públicas** de tus componentes.
   * Estás planeando la **reutilización de código** o el desarrollo de un sistema basado en servicios.
+
+> **Actividad**
+> Realiza un diagrama de componentes que refleje la organización de un instituto, con aulas, despachos, talleres, pizarras, etc.

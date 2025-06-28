@@ -120,3 +120,5 @@ Utiliza un diagrama de despliegue cuando:
   * Deseas documentar el **entorno de producción** o de prueba.
   * Quieres visualizar las **conexiones y protocolos de red** entre los nodos.
 
+> **Actividad**
+> Crea un diagrama de despliegue a partir de la información recabada en el ejercicio 1 del reto individual.
