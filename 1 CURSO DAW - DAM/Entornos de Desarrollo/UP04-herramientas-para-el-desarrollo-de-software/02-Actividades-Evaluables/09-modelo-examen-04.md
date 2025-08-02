@@ -1,4 +1,6 @@
-## EXAMEN (tipo Test)
+# EXAMEN 
+
+## TEST
 
 1.	¿Qué es un compilador?
 o	A) Un programa que convierte código fuente en lenguaje máquina
@@ -61,3 +63,8 @@ o   B) Con Java
 o   C) Con HTML
 o   D) Con Typescript
 
+## EJERCICIO INGENIERÍA INVERSA
+
+Crea el código en lenguaje Java (o cualquier otro que especifiques) correspondiente a este diagrama de clases:
+
+![alt text](image-1.png)
